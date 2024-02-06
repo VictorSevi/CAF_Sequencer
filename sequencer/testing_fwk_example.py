@@ -23,6 +23,7 @@ def main():
             test_case.add_test_step(test_step)
         test_suite.add_test_case(test_case)
     test_suite.execute()
+    input("Test end, please press enter....")
     
 
 if __name__ == "__main__":

@@ -186,9 +186,9 @@ class test_action:
       #self.vdb=vdb_object
    
    def execute(self):
-      log=""
+      log="\n"
       if(self.action_type=="MFA"):
-         log="\n"+self.action_text
+         log=log+"\n"+self.action_text
          self.log=log
          print(log)
          input("Press enter when done...")
@@ -231,14 +231,14 @@ class test_action:
          self.log="\n"+self.action_text
          print(self.action_text)
          while(validation!="si" and validation!="no"):
-            validation=input("¿Está OK? (Si/No)")
+            validation=input("\n¿Está OK? (Si/No)")
             validation=validation.lower()
 
          
          if(validation=="no"):
-               log=log+"\n"+self.action_text+"--------> NOK    Revise step "+str(self.id)
+               log=log+"\n"+self.action_text+"--------> NOK    Revise step "+str(self.id)+"\n"
          else:
-               log=log+"\n"+self.action_text+"--------> OK "+str(self.id)
+               log=log+"\n"+self.action_text+"--------> OK "+str(self.id)+"\n"
 
          print(log)
          self.log=self.log+"\n"+log

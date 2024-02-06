@@ -47,12 +47,15 @@ if file_path:
     flag_case_descript=0
     flag_case_initials=0
     is_step=0
+    is_case=0
     test_step={}
     test_steps_list=[]
     test_action_list=[]
+    test_cases_list=[]
 
     for line in arr:
         if not("." in line.item(1)) and (not line.item(1)=="nan"):
+            is_suite=1
             test_case={
                 "name":line.item(2),
                 "id": line.item(1),
@@ -84,8 +87,8 @@ if file_path:
             test_action_list.append({"text": line.item(3),"type":"ACA","variables":line.item(4).splitlines()})
             test_step["test_actions"]=test_action_list
             
-        elif not (line.item(5)):   
-            test_action_list.append({"text": line.item(3),"type":"ACA","variables":line.item(4).splitlines()})
+        elif not (line.item(6)):   
+            test_action_list.append({"text": line.item(3),"type":"MCA"})
             test_step["test_actions"]=test_action_list
         
         
@@ -93,22 +96,18 @@ if file_path:
             is_step=0
             test_steps_list.append(test_step)
             test_case["test_steps"]=test_steps_list
-            
+
         
-        #if is_suite==1:
-        #    is_suite=0
-        #    test_case[]=
-
         #if is_case==1:
-        #    is_case=0
+        #    is_suite=0
+        #    test_cases_list.append(test_case)
+        #    test_suite["Test_Cases"]= test_cases_list
+    
+    test_cases_list.append(test_case)
+    test_suite["Test_Cases"]= test_cases_list
 
-
-
-        #json_str = json.dumps(test_case, indent=4)
-        #print(json_str)  
-
-    with open("C://Users//17940//Python_Testing//structure.json", "w") as outfile:
-        json.dump(test_case, outfile, indent = 4)
+    with open("C://Users//17940//Python_Testing//CAF_Sequencer//sequencer//structure.json", "w") as outfile:
+        json.dump(test_suite, outfile, indent = 4)
 
 
     #json_str = json.dumps(test_step, indent=4)
