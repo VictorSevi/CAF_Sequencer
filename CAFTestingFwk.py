@@ -1,10 +1,10 @@
 
-import logging
-from settings import *
-from glaciation.helper import mainTest
-import glaciation.testing.generic as tgf
-from glaciation.cdu.api import CduAPIWrapper
-from glaciation.cdu.vardb import VardbVarWrapper
+#import logging
+#from settings import *
+#from glaciation.helper import mainTest
+#import glaciation.testing.generic as tgf
+#from glaciation.cdu.api import CduAPIWrapper
+#from glaciation.cdu.vardb import VardbVarWrapper
 
 ######################################################## Test Frame definition ####################################
 #class test_frame:
@@ -155,15 +155,15 @@ class test_case:
 ################################################################### Test Steps definitions ##################################################################
 
 class test_step:
-   def __init__(self,step_id):
+   def __init__(self,step_id,name):
       self.id=step_id
+      self.name=name
       self.log=""
       self.test_actions=[]
 
    def execute(self):
-      print("" + self.index)
-      self.log=self.log+"" + self.index
-      input("")
+      for action in self.test_actions:
+         action.execute()
 
    def get_log(self):
       return self.log  
@@ -177,53 +177,53 @@ class test_step:
 ################################################################### Test Action definitions ##################################################################
 
 class test_action:
-   def __init__(self,action_id,action_text,action_type,vdb_object,vdb_object):
+   def __init__(self,action_id,action_text,action_type): #,vdb_object
       self.log=""
       self.id=action_id
       self.action_text=action_text
       self.action_type=action_type
       self.variables=[{"variable":"","value":0,"max":0,"min":0,"device_name":""}]
-      self.vdb=vdb_object
+      #self.vdb=vdb_object
    
    def execute(self):
       log=""
       if(self.action_type=="MFA"):
          log="\n"+self.action_text
-         input("Press enter when done...")
          self.log=log
          print(log)
+         input("Press enter when done...")
          
-      elif(self.action_type=="ACA"):
-         self.log="\n"+self.action_text
-         print()
-         for var in self.variables:
-            try:
-               var_read=self.vdb.readVar(var["device_name"], var["variable"])
-            except:
-               log=log+"\n could not read variable: "+var["variable"]+" from "+var["device_name"]
-            
-            if((var_read<var["min"] or var_read>var["max"]) and var_read!=var["value"]):
-               log=log+"\n"+var["variable"]+"--------> NOK    Revise step "+str(self.id)
-            else:
-               log=log+"\n"+var["variable"]+"--------> OK "+str(self.id)
-
-         print(log)
-         self.log=self.log+"\n"+log
-
-
-      elif(self.action_type=="AFA"):
-         
-         self.log="\n"+self.action_text
-         print(self.action_text)
-         for var in self.variables:
-            try:
-               self.vdb.forceVar(var["device_name"], var["variable"])
-               log=log+"Variable forced succesfully: "+var["variable"]+" to "+var["device_name"]
-            except:
-               log=log+"\n could not force variable: "+var["variable"]+" in "+var["device_name"]
-         
-         print(log)
-         self.log=self.log+"\n"+log
+      #elif(self.action_type=="ACA"):
+      #   self.log="\n"+self.action_text
+      #   print()
+      #   for var in self.variables:
+      #      try:
+      #         var_read=self.vdb.readVar(var["device_name"], var["variable"])
+      #      except:
+      #         log=log+"\n could not read variable: "+var["variable"]+" from "+var["device_name"]
+      #      
+      #      if((var_read<var["min"] or var_read>var["max"]) and var_read!=var["value"]):
+      #         log=log+"\n"+var["variable"]+"--------> NOK    Revise step "+str(self.id)
+      #      else:
+      #         log=log+"\n"+var["variable"]+"--------> OK "+str(self.id)
+#
+      #   print(log)
+      #   self.log=self.log+"\n"+log
+#
+#
+      #elif(self.action_type=="AFA"):
+      #   
+      #   self.log="\n"+self.action_text
+      #   print(self.action_text)
+      #   for var in self.variables:
+      #      try:
+      #         self.vdb.forceVar(var["device_name"], var["variable"])
+      #         log=log+"Variable forced succesfully: "+var["variable"]+" to "+var["device_name"]
+      #      except:
+      #         log=log+"\n could not force variable: "+var["variable"]+" in "+var["device_name"]
+      #   
+      #   print(log)
+      #   self.log=self.log+"\n"+log
          
 
       elif(self.action_type=="MCA"):
@@ -236,9 +236,9 @@ class test_action:
 
          
          if(validation=="no"):
-               log=log+"\n"+var["variable"]+"--------> NOK    Revise step "+str(self.id)
+               log=log+"\n"+self.action_text+"--------> NOK    Revise step "+str(self.id)
          else:
-               log=log+"\n"+var["variable"]+"--------> OK "+str(self.id)
+               log=log+"\n"+self.action_text+"--------> OK "+str(self.id)
 
          print(log)
          self.log=self.log+"\n"+log
@@ -246,5 +246,6 @@ class test_action:
    def get_log(self):
       return self.log
    
-   def add_variables(self):
-      
+   def add_variables(self, variable, value, tolerance):
+      var_data={"variable":variable,"value":value ,"min":variable-tolerance,"max":variable+tolerance,"device_name":"CCU"}
+      self.variables.append(var_data)
