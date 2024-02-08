@@ -1,0 +1,88 @@
+{
+    "Suite_id": "5",
+    "result": "NOK",
+    "Test_Cases": [
+        {
+            "Case_id": "5.01",
+            "result": "NOK",
+            "Test_Steps": [
+                {
+                    "Step_id": "5.01020",
+                    "result": "OK",
+                    "Test_Actions": [
+                        "NE",
+                        "NE"
+                    ]
+                },
+                {
+                    "Step_id": "5.01030",
+                    "result": "OK",
+                    "Test_Actions": [
+                        "OK"
+                    ]
+                },
+                {
+                    "Step_id": "5.01040",
+                    "result": "NOK",
+                    "Test_Actions": [
+                        "NOK",
+                        "OK",
+                        "NE"
+                    ]
+                },
+                {
+                    "Step_id": "5.01050",
+                    "result": "NOK",
+                    "Test_Actions": [
+                        "NOK"
+                    ]
+                },
+                {
+                    "Step_id": "5.01060",
+                    "result": "OK",
+                    "Test_Actions": [
+                        "NE"
+                    ]
+                },
+                {
+                    "Step_id": "5.01070",
+                    "result": "OK",
+                    "Test_Actions": [
+                        "OK",
+                        "OK"
+                    ]
+                },
+                {
+                    "Step_id": "5.01080",
+                    "result": "OK",
+                    "Test_Actions": [
+                        "NE"
+                    ]
+                },
+                {
+                    "Step_id": "5.01090",
+                    "result": "NOK",
+                    "Test_Actions": [
+                        "OK",
+                        "NOK",
+                        "NE"
+                    ]
+                },
+                {
+                    "Step_id": "5.01100",
+                    "result": "OK",
+                    "Test_Actions": [
+                        "NE"
+                    ]
+                },
+                {
+                    "Step_id": "5.01120",
+                    "result": "OK",
+                    "Test_Actions": [
+                        "OK"
+                    ]
+                }
+            ]
+        }
+    ]
+}
