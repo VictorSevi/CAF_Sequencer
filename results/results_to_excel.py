@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np 
 import json
+from openpyxl import load_workbook
 
 def devolver_text(text):
     return str(text)
@@ -10,6 +11,8 @@ def write_results(json_file,excel_file):
     with open(json_file) as input_file:
         json_info=json.load(input_file)
     df = pd.read_excel(excel_file, converters={"Case identifier": devolver_text})
+    workbook = load_workbook(excel_file)
+    sheet = workbook.active
 
 
     #for suite in json_info:
@@ -23,10 +26,10 @@ def write_results(json_file,excel_file):
                 df.loc[i, 'Result'] = ac
                 i=i+1
 
+    for i, valor in enumerate(df["Result"], start=1):
+        sheet.cell(row=i + 1, column=6, value=valor)
 
-    print(df)
-
-    df.to_excel(excel_file, index=False)
+    workbook.save("Protocol_Dxxxxxx_RUN_"+str(json_info["Run"])+".xlsx")
 
 if __name__ == "__main__":
     write_results("results.json","ProtPrueba.xlsx")

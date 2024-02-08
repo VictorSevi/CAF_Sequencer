@@ -1,4 +1,15 @@
-{
+{    
+"Run":1,
+"Protocol_edition":"A",
+"Sequencer Version":"1.0.0",
+"Protocol_name":"DOxxxxxxxxxx_Propulsion Management Functional Factory Type Test",
+"Protocol_Performer":"Victor Sevillano Gamarra",
+"Execution":"Wed 2 Jan 2023",
+"Time_spent":"3h 20min 10s",
+"Used Items":"NS 1234567890, Calibration date: 10/01/2022, Fluke Model 31-B, Code: C10.1.2.3.4",
+"Test_Suite":
+    [
+        {
     "Suite_id": "5",
     "result": "NOK",
     "Test_Cases": [
@@ -25,16 +36,16 @@
                     "Step_id": "5.01040",
                     "result": "NOK",
                     "Test_Actions": [
-                        "NOK",
                         "OK",
+                        "NOK",
                         "NE"
                     ]
                 },
                 {
                     "Step_id": "5.01050",
-                    "result": "NOK",
+                    "result": "OK",
                     "Test_Actions": [
-                        "NOK"
+                        "OK"
                     ]
                 },
                 {
@@ -61,10 +72,10 @@
                 },
                 {
                     "Step_id": "5.01090",
-                    "result": "NOK",
+                    "result": "OK",
                     "Test_Actions": [
                         "OK",
-                        "NOK",
+                        "OK",
                         "NE"
                     ]
                 },
@@ -83,6 +94,8 @@
                     ]
                 }
             ]
+        }
+    ]
         }
     ]
 }
