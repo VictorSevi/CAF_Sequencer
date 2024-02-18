@@ -19,17 +19,23 @@
 #            if c==x.get_code():
 #                  x.execute()
 ############################################################# Test frame definition ############################################################################
+import tkinter as tk
+from tkinter import messagebox
 
-
-from time import gmtime
+from time import time
 from time import strftime
+from time import localtime
 
-class test_global:
-   def __init__(self,protocol_name,protocol_code):
+class protocol:
+   def __init__(self,protocol_name,test_global):
       self.protocol_name = protocol_name
-      self.protocol_code = protocol_code
+      self.protocol_version = test_global
       self.test_suites = []
       self.log = ""
+      self.tester_name =""
+      self.tester_chapa =""
+      self.start_time=time()
+      self.end_time=time()
 
    def add_test_suite(self, test_suite):
       self.test_suites.append(test_suite)
@@ -46,11 +52,17 @@ class test_global:
 
    
    def execute(self):
-   
+      
+      while self.tester_name=="":
+         self.tester_name=input("Name :")
+      while self.tester_chapa=="":
+         self.tester_chapa=input("Chapa : ")
       for ts in self.test_suites:
          ts.title()
          ts.execute()
          self.log=self.log+ts.get_log()
+      self.end_time=time()
+
       
    def get_log(self):
       return self.log
@@ -59,6 +71,31 @@ class test_global:
          with open(out_file,'w') as file:
             file.write(self.log)
             file.close()
+   
+   def get_result_json(self):
+      protocol_struct={
+         "Run":1,
+         "Protocol_edition":self.protocol_version,
+         "Sequencer Version":"1.0.0",
+         "Protocol_name":self.protocol_name,
+         "Performer_name":self.tester_name,
+         "Performer_chapa":self.tester_chapa,
+         "Execution":strftime("%a, %d %b %Y %H:%M:%S",localtime(time())),
+         "Time_spent":self.execution_time(),
+         "Used Items":"NS 1234567890, Calibration date: 10/01/2022, Fluke Model 31-B, Code: C10.1.2.3.4",
+         "Test_Suites":[ts.get_result_json() for ts in self.test_suites]
+      }
+      return protocol_struct
+   
+   def execution_time(self):
+      time_secs=self.end_time-self.start_time
+      h=int(time_secs/36000)
+      m=int(time_secs/60)-h*60
+      s=int(time_secs)-h*3600-m*60
+      return str(h)+"h "+str(m)+"mins "+str(s)+"s"
+
+      
+
 
 
 ################################################################### Test Suite definitions ##################################################################
@@ -69,8 +106,8 @@ class test_suite:
       self.name=suite_name
       self.log_content=""
       self.test_cases=[]
-      self.start_time=gmtime()
-      self.end_time=gmtime()
+      self.start_time=time()
+      self.end_time=time()
       self.result_list=[]
       self.global_result="NE"
 
@@ -78,16 +115,13 @@ class test_suite:
       
       log=( "\n========================================= Test Suite "+ self.id +"=========================================="
       +"\n=="
-      +"\n==      Title : "+ self.name.splitlines()[1])
-      
-      for lines in self.name.splitlines()[1:]:
-         log=log+"\n==              "+lines+"\n=="
+      +"\n==      Title : "+ self.name.splitlines()[0]+"\n==")
    
       print(log)
       self.log_content=self.log_content+log
 
    def execute(self,makefile=0):
-      self.start_time=gmtime()
+      self.start_time=time()
       log=""
       for tc in self.test_cases:
          tc.title()
@@ -96,7 +130,7 @@ class test_suite:
          log=log+tc.get_log()
          self.result_list.append(tc.get_result())
       self.log_content=log
-      self.end_time=gmtime()
+      self.end_time=time()
       self.global_result="NOK" if "NOK" in self.result_list else "OK"
    
    def get_log(self):
@@ -135,8 +169,8 @@ class test_case:
     self.id=case_id
     self.description=case_description
     self.Initial_Conditions=Initial_conditions
-    self.start_time=gmtime()
-    self.end_time=gmtime()
+    self.start_time=time()
+    self.end_time=time()
     self.csv_results_path=""
     self.result_list=[]
     self.global_result="NE"
@@ -146,12 +180,12 @@ class test_case:
        return self.name
    
    def execute(self):
-      self.start_time=gmtime()
+      self.start_time=time()
       for ts in self.test_steps:
          ts.execute()
          self.log_content=self.log_content+ts.get_log()
          self.result_list.append(ts.get_result())
-      self.end_time=gmtime()
+      self.end_time=time()
       self.global_result="NOK" if "NOK" in self.result_list else "OK"
 
    
@@ -164,7 +198,7 @@ class test_case:
       for lines in self.description.splitlines()[1:]:
          log=log+"\n==                     "+lines
 
-      log=log+"\n==       Time : "+strftime("%a, %d %b %Y %H:%M:%S", gmtime())
+      log=log+"\n==       Time : "+strftime("%a, %d %b %Y %H:%M:%S", localtime(time()))
       log=log+"\n=="
       
       print(log)
@@ -213,19 +247,19 @@ class test_step:
       self.name=name
       self.log=""
       self.test_actions=[]
-      self.start_time=gmtime()
-      self.end_time=gmtime()
+      self.start_time=time()
+      self.end_time=time()
       self.result_list=[]
       self.global_result="NE"
 
    def execute(self,makefile=0):
-      self.start_time=gmtime()
+      self.start_time=time()
       for action in self.test_actions:
          action.execute()
          self.log=self.log+action.get_log()
          if(action.action_type=="ACA" or action.action_type=="MCA"):
             self.result_list.append(action.get_result())
-      self.end_time=gmtime()
+      self.end_time=time()
       self.global_result="NOK" if "NOK" in self.result_list else "OK"
 
 
@@ -254,24 +288,89 @@ class test_step:
 ################################################################### Test Action definitions ##################################################################
 
 class test_action:
-   def __init__(self,action_id,action_text,action_type): #,vdb_object
+   def __init__(self,action_id,action_text,action_type,cmd=True): #,vdb_object
       self.log=""
       self.id=action_id
       self.action_text=action_text
       self.action_type=action_type
       self.variables=[{"variable":"","value":0,"max":0,"min":0,"device_name":""}]
       self.global_result="NE"
+      self.cmd=cmd
       #self.vdb=vdb_object
    
-   def execute(self):
-      log="\n"
-      if(self.action_type=="MFA"):
-         log=log+"\n"+self.action_text
-         #self.log=log
-         print(log)
-         input("Press enter when done...")
+   def execute(self):    
+      if self.cmd:
+         log="\n"
+         if(self.action_type=="MFA"):
+            log=log+"\n"+self.action_text
+            #self.log=log
+            print(log)
+            input("Press enter when done...")
+
+
+         elif(self.action_type=="MCA"):
+            validation=""
+            log="\n"+self.action_text
+            print(log)
+            while(validation!="si" and validation!="no"):
+               validation=input("\n¿Está OK? (Si/No)")
+               validation=validation.lower()
+
+
+            if(validation=="no"):
+                  log=log+"--------> NOK    Revise step "+str(self.id)+" "+strftime("%a, %d %b %Y %H:%M:%S", localtime(time()))+"\n"
+                  self.global_result="NOK"
+            else:
+                  log=log+"--------> OK "+str(self.id)+" "+strftime("%a, %d %b %Y %H:%M:%S", localtime(time()))+"\n"
+                  self.global_result="OK"
+
+            print(log)
+            self.log=self.log+log
+      else:
+         ventana=tk.Tk()
+         # Crear la ventana principal
+         ventana.title(str(self.id))
+
+         # Establecer tamaño inicial de la ventana
+         ventana.geometry("600x300")
+
+         # Crear etiquetas y cuadros de entrada
+         if(self.action_type=="MFA"):
+            order_text = tk.Label(ventana, text=self.action_text,pady=50)
+            order_text.pack()
+
+            boton_OK = tk.Button(ventana, text="OK",width=8,height=2,pady=50)#,command=ventana.destroy())
+            boton_OK.pack()
+            
+
+         elif(self.action_type=="MCA"):
+            order_text = tk.Label(ventana, text=self.action_text)
+            order_text.pack(pady=150)
+            boton_OK = tk.Button(ventana, text="OK", command=lambda: self.set_ok())
+            boton_OK.pack(pady=300)
+            boton_NOK = tk.Button(ventana, text="NOK", command=lambda: self.set_nok())
+            boton_NOK.pack(pady=300)
          
-      #elif(self.action_type=="ACA"):
+         ventana.mainloop()
+          
+   def set_ok(self):
+      self.global_result="OK"
+
+   def set_nok(self):
+      self.global_result="NOK"
+   
+   def get_log(self):
+      return self.log
+   
+   def add_variables(self, variable, value, tolerance):
+      var_data={"variable":variable,"value":value ,"min":variable-tolerance,"max":variable+tolerance,"device_name":"CCU"}
+      self.variables.append(var_data)
+      
+   def get_result(self):
+      return self.global_result
+   
+
+         #elif(self.action_type=="ACA"):
       #   self.log="\n"+self.action_text
       #   print()
       #   for var in self.variables:
@@ -302,33 +401,3 @@ class test_action:
       #   
       #   print(log)
       #   self.log=self.log+"\n"+log
-         
-
-      elif(self.action_type=="MCA"):
-         validation=""
-         log="\n"+self.action_text
-         print(log)
-         while(validation!="si" and validation!="no"):
-            validation=input("\n¿Está OK? (Si/No)")
-            validation=validation.lower()
-
-         
-         if(validation=="no"):
-               log=log+"--------> NOK    Revise step "+str(self.id)+" "+strftime("%a, %d %b %Y %H:%M:%S", gmtime())+"\n"
-               self.global_result="NOK"
-         else:
-               log=log+"--------> OK "+str(self.id)+" "+strftime("%a, %d %b %Y %H:%M:%S", gmtime())+"\n"
-               self.global_result="OK"
-
-         print(log)
-         self.log=self.log+log
-         
-   def get_log(self):
-      return self.log
-   
-   def add_variables(self, variable, value, tolerance):
-      var_data={"variable":variable,"value":value ,"min":variable-tolerance,"max":variable+tolerance,"device_name":"CCU"}
-      self.variables.append(var_data)
-      
-   def get_result(self):
-      return self.global_result

@@ -1,8 +1,14 @@
-import pandas as pd
+
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 import numpy as np 
 import json
+import os
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="pandas")
+import pandas as pd
+
+PARSER_VERSION="1.0.0"
 
 # Prompt the user to select an Excel file
 root = Tk()
@@ -14,6 +20,17 @@ file_path = askopenfilename(
 
 def devolver_text(text):
     return str(text)
+
+
+def get_edition(path):
+    file_name = os.path.basename(path)
+    position=file_name.find("Ed.")
+    return file_name[position+3]
+
+def get_title(path):
+    file_name = os.path.basename(path)
+    position=file_name.find("_Ed.")
+    return file_name[0:position]
     
  
 if file_path:
@@ -97,51 +114,18 @@ if file_path:
             test_steps_list.append(test_step)
             test_case["test_steps"]=test_steps_list
 
-        
-        #if is_case==1:
-        #    is_suite=0
-        #    test_cases_list.append(test_case)
-        #    test_suite["Test_Cases"]= test_cases_list
     
     test_cases_list.append(test_case)
     test_suite["Test_Cases"]= test_cases_list
 
-    with open("C://Users//17940//Python_Testing//CAF_Sequencer//sequencer//structure.json", "w") as outfile:
-        json.dump(test_suite, outfile, indent = 4)
+    json_content={
+        "Protocol_edition":get_edition(file_path),
+        "Parser_Version":PARSER_VERSION,
+        "Protocol_name":get_title(file_path),
+        "Test_Suites":[test_suite] }
 
-
-    #json_str = json.dumps(test_step, indent=4)
-    #print(json_str)  
-
-
-        #elif not line.item(2) and line.item(2)
-
-
-           
-
-  
-    
-    #arr=df.to_numpy()
-    #x=arr.item(2,2)
-    #print(x)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    #df.to_excel('modified_excel_file.xlsx', index=False)
- 
-    #print("File processed successfully!")
+    with open("C://Users//17940//Python_Testing//CAF_Sequencer//json_protocols//"+get_title(file_path)+".json", "w") as outfile:
+        json.dump(json_content, outfile, indent = 4)
 else:
     print("No file selected.")
-
 

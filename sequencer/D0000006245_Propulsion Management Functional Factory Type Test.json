@@ -5,6 +5,7 @@
     "Test_Suites": [
         {
             "id": "5",
+            "name": "Doors loop",
             "Test_Cases": [
                 {
                     "name": "Doors",
@@ -29,15 +30,6 @@
                                 {
                                     "text": "\u201cPMR Stop Request\u201d indicator glows in the Driving Cab HMI.",
                                     "type": "MCA"
-                                }
-                            ]
-                        },
-                        {
-                            "id": "nan",
-                            "test_actions": [
-                                {
-                                    "text": NaN,
-                                    "type": "MFA"
                                 },
                                 {
                                     "text": "A message \"Wagen h\u00e4lt\" will be displayed in the interior displays.",
@@ -59,24 +51,6 @@
                             "test_actions": [
                                 {
                                     "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Door Release.",
-                                    "type": "MFA"
-                                }
-                            ]
-                        },
-                        {
-                            "id": "nan",
-                            "test_actions": [
-                                {
-                                    "text": NaN,
-                                    "type": "MFA"
-                                }
-                            ]
-                        },
-                        {
-                            "id": "nan",
-                            "test_actions": [
-                                {
-                                    "text": NaN,
                                     "type": "MFA"
                                 },
                                 {
@@ -117,15 +91,6 @@
                             ]
                         },
                         {
-                            "id": "nan",
-                            "test_actions": [
-                                {
-                                    "text": NaN,
-                                    "type": "MFA"
-                                }
-                            ]
-                        },
-                        {
                             "id": "5.01080",
                             "test_actions": [
                                 {
@@ -143,24 +108,6 @@
                             "test_actions": [
                                 {
                                     "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Door Release.",
-                                    "type": "MFA"
-                                }
-                            ]
-                        },
-                        {
-                            "id": "nan",
-                            "test_actions": [
-                                {
-                                    "text": NaN,
-                                    "type": "MFA"
-                                }
-                            ]
-                        },
-                        {
-                            "id": "nan",
-                            "test_actions": [
-                                {
-                                    "text": NaN,
                                     "type": "MFA"
                                 },
                                 {

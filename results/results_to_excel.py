@@ -16,25 +16,25 @@ def write_results(json_file,excel_file):
 
 
     #for suite in json_info:
-    df.loc[df['Case identifier'] == json_info["Suite_id"], 'Result'] = json_info["result"]
-    for tc in json_info["Test_Cases"]:
-        df.loc[df['Case identifier'] == tc["Case_id"], 'Result'] = tc["result"]
-        print(df)
-        for ts in tc["Test_Steps"]:
-            i=df.index[df['Case identifier'] == ts["Step_id"]].tolist()[0]
-            for ac in ts["Test_Actions"]:
-                df.loc[i, 'Result'] = ac
-                i=i+1
+    json_suites=json_info#["Test_Suites"][0]
+    #df.loc[df['Case identifier'] == json_suites["Suite_id"], 'Result'] = json_suites["result"]
+    for tsu in json_suites["Test_Suites"]:
+        df.loc[df['Case identifier'] == tsu["Suite_id"], 'Result'] = tsu["result"]
+        for tc in tsu["Test_Cases"]:
+            df.loc[df['Case identifier'] == tc["Case_id"], 'Result'] = tc["result"]
+            for ts in tc["Test_Steps"]:
+                i=df.index[df['Case identifier'] == ts["Step_id"]].tolist()[0]
+                for ac in ts["Test_Actions"]:
+                    df.loc[i, 'Result'] = ac
+                    i=i+1
 
     for i, valor in enumerate(df["Result"], start=1):
         sheet.cell(row=i + 1, column=6, value=valor)
-
+        
     workbook.save("Protocol_Dxxxxxx_RUN_"+str(json_info["Run"])+".xlsx")
 
 if __name__ == "__main__":
     write_results("results.json","ProtPrueba.xlsx")
-
-
 
 
 
