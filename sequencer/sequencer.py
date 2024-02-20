@@ -19,8 +19,8 @@ def main():
             test_case = fwk.test_case(case["name"],case["initial_conditions"],case["description"],str(case["id"]))
             for step in case["test_steps"]:
                 test_step = fwk.test_step(step["id"],"xxx")   
-                for action in step["test_actions"]:
-                    test_action = fwk.test_action(step["id"],action["text"],action["type"],cmd=False)   
+                for index,action in enumerate(step["test_actions"]):
+                    test_action = fwk.test_action(step["id"],action["text"],action["type"],cmd=False,row=index)
                     test_step.add_test_action(test_action)
                 test_case.add_test_step(test_step)
             test_suite.add_test_case(test_case)

@@ -50,7 +50,6 @@ class protocol:
       """)
       print(log)
 
-   
    def execute(self):
       
       while self.tester_name=="":
@@ -63,7 +62,6 @@ class protocol:
          self.log=self.log+ts.get_log()
       self.end_time=time()
 
-      
    def get_log(self):
       return self.log
    
@@ -94,7 +92,14 @@ class protocol:
       s=int(time_secs)-h*3600-m*60
       return str(h)+"h "+str(m)+"mins "+str(s)+"s"
 
+   def execute_by_id(self,suite_index,case_index=-1,step_index=-1):
+      if(case_index==-1):
+         self.test_suites[suite_index].execute()
+      else:
+         self.test_suites[suite_index].execute_by_id(case_index,step_index)
+
       
+
 
 
 
@@ -157,6 +162,12 @@ class test_suite:
          "Test_Cases":[tc.get_result_json() for tc in self.test_cases]
       }
       return suite_struct
+
+   def execute_by_id(self,case_index,step_index):
+      if(step_index==-1):
+         self.test_cases[case_index].execute()
+      else:
+         self.test_cases[case_index].execute_by_id(step_index)
 
 
 ################################################################### Test Cases definitions ##################################################################
@@ -239,6 +250,8 @@ class test_case:
       }
       return case_struct
 
+   def execute_by_id(self,step_index):
+      self.test_steps[step_index].execute()
 ################################################################### Test Steps definitions ##################################################################
 
 class test_step:
@@ -252,16 +265,15 @@ class test_step:
       self.result_list=[]
       self.global_result="NE"
 
-   def execute(self,makefile=0):
+   def execute(self):
       self.start_time=time()
-      for action in self.test_actions:
+      for action in enumerate(self.test_actions):
          action.execute()
          self.log=self.log+action.get_log()
          if(action.action_type=="ACA" or action.action_type=="MCA"):
             self.result_list.append(action.get_result())
       self.end_time=time()
       self.global_result="NOK" if "NOK" in self.result_list else "OK"
-
 
    def get_log(self):
       return self.log  
@@ -288,7 +300,7 @@ class test_step:
 ################################################################### Test Action definitions ##################################################################
 
 class test_action:
-   def __init__(self,action_id,action_text,action_type,cmd=True): #,vdb_object
+   def __init__(self,action_id,action_text,action_type,cmd=True,row=0): #,vdb_object
       self.log=""
       self.id=action_id
       self.action_text=action_text
@@ -296,10 +308,12 @@ class test_action:
       self.variables=[{"variable":"","value":0,"max":0,"min":0,"device_name":""}]
       self.global_result="NE"
       self.cmd=cmd
+      #self.frame_loc=frame_place
+      self.row=row
       #self.vdb=vdb_object
    
-   def execute(self):    
-      if self.cmd:
+   def execute(self):
+      if True:
          log="\n"
          if(self.action_type=="MFA"):
             log=log+"\n"+self.action_text
@@ -326,32 +340,42 @@ class test_action:
 
             print(log)
             self.log=self.log+log
-      else:
-         ventana=tk.Tk()
-         # Crear la ventana principal
-         ventana.title(str(self.id))
-
-         # Establecer tamaño inicial de la ventana
-         ventana.geometry("600x300")
-
-         # Crear etiquetas y cuadros de entrada
-         if(self.action_type=="MFA"):
-            order_text = tk.Label(ventana, text=self.action_text,pady=50)
-            order_text.pack()
-
-            boton_OK = tk.Button(ventana, text="OK",width=8,height=2,pady=50)#,command=ventana.destroy())
-            boton_OK.pack()
-            
-
-         elif(self.action_type=="MCA"):
-            order_text = tk.Label(ventana, text=self.action_text)
-            order_text.pack(pady=150)
-            boton_OK = tk.Button(ventana, text="OK", command=lambda: self.set_ok())
-            boton_OK.pack(pady=300)
-            boton_NOK = tk.Button(ventana, text="NOK", command=lambda: self.set_nok())
-            boton_NOK.pack(pady=300)
-         
-         ventana.mainloop()
+      #else:
+      #   # Crear etiquetas y cuadros de entrada
+      #   if(self.action_type=="MFA"):
+      #      frame_place=tk.Frame(self.frame_loc)
+      #      frame_place.pack(fill=tk.BOTH, expand=True)
+      #      frame_place.columnconfigure(0, weight=10)
+      #      frame_place.columnconfigure(1, weight=1)
+      #      frame_place.rowconfigure(0, weight=1)
+#
+      #      order_text = tk.Label(frame_place, text=self.action_text,pady=50)
+      #      order_text.grid(row=self.row, column=0)
+      #      #order_text.pack()
+#
+      #      boton_OK = tk.Button(frame_place, text="OK",width=8,height=2,pady=50)
+      #      boton_OK.grid(row=self.row, column=1)
+      #      #boton_OK.pack()
+#
+      #   elif(self.action_type=="MCA"):
+      #      frame_place=tk.Frame(self.frame_loc)
+      #      frame_place.pack(fill=tk.BOTH, expand=True)
+      #      frame_place.columnconfigure(0, weight=8)
+      #      frame_place.columnconfigure(1, weight=1)
+      #      frame_place.columnconfigure(2, weight=1)
+      #      frame_place.rowconfigure(0, weight=1)
+#
+      #      order_text = tk.Label(frame_place, text=self.action_text,pady=50)
+      #      order_text.grid(row=self.row, column=0)
+      #      #order_text.pack()
+#
+      #      boton_OK = tk.Button(frame_place, text="OK",width=8,height=2,pady=50,command=self.set_ok)
+      #      boton_OK.grid(row=self.row, column=1)
+      #      #boton_OK.pack()
+#
+      #      boton_OK = tk.Button(frame_place, text="NOK",width=8,height=2,pady=50,command=self.set_nok)
+      #      boton_OK.grid(row=self.row, column=2)
+      #      #boton_OK.pack()
           
    def set_ok(self):
       self.global_result="OK"
@@ -370,6 +394,8 @@ class test_action:
       return self.global_result
    
 
+
+
          #elif(self.action_type=="ACA"):
       #   self.log="\n"+self.action_text
       #   print()
@@ -383,21 +409,25 @@ class test_action:
       #         log=log+"\n"+var["variable"]+"--------> NOK    Revise step "+str(self.id)
       #      else:
       #         log=log+"\n"+var["variable"]+"--------> OK "+str(self.id)
+
+
+
 #
-      #   print(log)
-      #   self.log=self.log+"\n"+log
+#   print(log)
+#   self.log=self.log+"\n"+log
 #
 #
-      #elif(self.action_type=="AFA"):
-      #   
-      #   self.log="\n"+self.action_text
-      #   print(self.action_text)
-      #   for var in self.variables:
-      #      try:
-      #         self.vdb.forceVar(var["device_name"], var["variable"])
-      #         log=log+"Variable forced succesfully: "+var["variable"]+" to "+var["device_name"]
-      #      except:
-      #         log=log+"\n could not force variable: "+var["variable"]+" in "+var["device_name"]
-      #   
-      #   print(log)
-      #   self.log=self.log+"\n"+log
+#elif(self.action_type=="AFA"):
+#   
+#   self.log="\n"+self.action_text
+#   print(self.action_text)
+#   for var in self.variables:
+#      try:
+#         self.vdb.forceVar(var["device_name"], var["variable"])
+#         log=log+"Variable forced succesfully: "+var["variable"]+" to "+var["device_name"]
+#      except:
+#         log=log+"\n could not force variable: "+var["variable"]+" in "+var["device_name"]
+#   
+#   print(log)
+#   self.log=self.log+"\n"+log
+   
