@@ -7,6 +7,7 @@ import CAFTestingFwk as fwk
 import sign_in_menu
 import parser_to_json
 import protocol_tree
+import botonera
 
 
 prt=fwk.protocol("","")
@@ -18,7 +19,7 @@ class app():
 
     def upload_json(self,json_file):
         
-        self.protocol=fwk.protocol(json_file["Protocol_name"],json_file["Protocol_edition"])
+        self.protocol=fwk.protocol(json_file["Protocol_name"],json_file["Protocol_edition"],tester_name=self.credentials["Name"],tester_chapa=self.credentials["Chapa"])
         for suite in json_file["Test_Suites"]:
             test_suite=fwk.test_suite(suite["name"],suite["id"])
             for case in suite["Test_Cases"]:
@@ -26,20 +27,23 @@ class app():
                 for step in case["test_steps"]:
                     test_step = fwk.test_step(step["id"],"xxx")   
                     for index,action in enumerate(step["test_actions"]):
-                        test_action = fwk.test_action(step["id"],action["text"],action["type"],cmd=True,row=index)
+                        test_action = fwk.test_action(step["id"],action["text"],action["type"],self.loc,cmd=False)
                         test_step.add_test_action(test_action)
                     test_case.add_test_step(test_step)
                 test_suite.add_test_case(test_case)
             self.protocol.add_test_suite(test_suite)
     
     def execute_part(self,i,j,k):
-        self.protocol.execute_by_id(0,0,0)
+        self.protocol.execute_by_id(i,j,k)
 
     def set_credentials(self,name, chapa):
         self.credentials={"Name":name, "Chapa":chapa}
     
     def get_credentials(self):
         return self.credentials
+    
+    def set_execution_loc(self,loc):
+        self.loc=loc
 
 
 class gui():
@@ -59,32 +63,12 @@ class gui():
         self.global_frame.rowconfigure(2, weight=1)
         self.global_frame.columnconfigure(0, weight=1)
 
-        #self.botonera = botonera_superior(self.global_frame)
-
-        #botonera
-        self.bt_frame = ttk.Frame(self.global_frame)
-        self.bt_frame.grid(row=0, sticky="nsew")
-
-        #crear boton de Carga
-        self.bt_load = ttk.Button(self.bt_frame, text="Load",command=self.load)
-        self.bt_load.grid(column=0,row=0)
-
-        #crear boton de ayuda
-        self.bt_help = ttk.Button(self.bt_frame, text="Help",command=self.help)
-        self.bt_help.grid(column=4,row=0)
-
-        #crear boton de Configurasao
-        self.bt_config = ttk.Button(self.bt_frame, text="Config",command=self.config)
-        self.bt_config.grid(column=2,row=0)
-
-        #crear boton de informacion
-        self.bt_info = ttk.Button(self.bt_frame, text="Info",command=self.info)
-        self.bt_info.grid(column=3,row=0)
-    
-        #crear boton de parser
-        self.bt_info = ttk.Button(self.bt_frame, text="Create json",command=self.create_json)
-        self.bt_info.grid(column=1,row=0)
-
+        self.botonera = botonera.botonera_superior(self.global_frame,
+                                                   load_func=self.load,
+                                                   help_func=self.help,
+                                                   config_func=self.config,
+                                                   info_func=self.info,
+                                                   json_func=self.create_json)
 
 
         # Frame principal
@@ -95,9 +79,6 @@ class gui():
         self.frame.columnconfigure(1, weight=10)
 
         self.mapa_contenido = protocol_tree.protocol_map(self.frame,self.execute_iid)
-        #self.frme_note=ttk.Frame(self.frame)
-        #self.frme_note.grid(row=0,column=1)
-        #self.vista_general = general_view(self.frame)
 
         # Crear un Notebook (pestañas)
         self.notebook = ttk.Notebook(self.frame)
@@ -105,11 +86,14 @@ class gui():
 
         # Pestaña 1
         tab1 = tk.Frame(self.notebook)
-        self.notebook.add(tab1, text="Status")
+        self.notebook.add(tab1, text="Execution")
+        self.app.set_execution_loc(tab1)
 
         # Pestaña 2
         tab2 = tk.Frame(self.notebook)
-        self.notebook.add(tab2, text="Execution")
+        self.notebook.add(tab2, text="Status")
+        conectlab=tk.Label(tab2,text="No connections active!!", fg="red", font=("Arial",48),pady=150)
+        conectlab.pack()
 
         
         #self.descripcion = tk.Label(self.frame,text="Texto de ejemplo", bg="white")
@@ -168,34 +152,6 @@ class gui():
         self.app.execute_part(int(id[0]),int(id[2]),int(id[4]))
         
 
-
-        
-class botonera_superior():
-    def __init__(self,frame_place, r=0, c=0):
-        #crear frame para botones
-        self.bt_frame = ttk.Frame(frame_place)
-        self.bt_frame.grid(row=r, sticky="nsew")
-
-        #crear boton de Carga
-        self.bt_load = ttk.Button(self.bt_frame, text="Load",command=self.load)
-        self.bt_load.grid(column=0,row=0)
-
-        #crear boton de ayuda
-        self.bt_help = ttk.Button(self.bt_frame, text="Help",command=self.help)
-        self.bt_help.grid(column=4,row=0)
-
-        #crear boton de Configurasao
-        self.bt_config = ttk.Button(self.bt_frame, text="Config",command=self.config)
-        self.bt_config.grid(column=2,row=0)
-
-        #crear boton de informacion
-        self.bt_info = ttk.Button(self.bt_frame, text="Info",command=self.info)
-        self.bt_info.grid(column=3,row=0)
-    
-        #crear boton de parser
-        self.bt_info = ttk.Button(self.bt_frame, text="Create json",command=self.create_json)
-        self.bt_info.grid(column=1,row=0)
-
 def main():
     #app = gui(root)
     #root.mainloop()
@@ -211,3 +167,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
