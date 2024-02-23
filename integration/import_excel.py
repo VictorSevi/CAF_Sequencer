@@ -1,6 +1,7 @@
 
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
+import tkinter as tk
 import numpy as np 
 import json
 import os
@@ -10,6 +11,30 @@ import pandas as pd
 import parses_frame
 
 PARSER_VERSION="1.0.0"
+
+
+def generating_screen(title):
+    root=Tk()
+    root.title("generated json") 
+    root.iconbitmap("caf_icon.ico")
+    root.geometry("500x200")
+    root.resizable(width=False, height=False)
+    root.rowconfigure(0,weight=20)
+    root.rowconfigure(1,weight=1) 
+    
+    #add structure
+    #frame= tk.Frame(root,)
+    #frame.pack(fill=tk.BOTH, expand=True)
+
+    #add text
+    #close_bt = tk.Button(root, text="Sign in",command=root.destroy)
+    #close_bt.pack()
+
+    #add text
+    label = tk.Label(root, anchor="center", text="json file generated in sandbox: \n"+"C://Users//17940//Python_Testing//CAF_Sequencer//json_protocols//"+ title +".json",pady=100,wraplength=450)
+    label.pack()
+
+
 
 def load_file():
     # Prompt the user to select an Excel file
@@ -78,19 +103,22 @@ def parser(protocolo):
             case.update_initials(initial_conditions)
             flag_case_initials=False
 
-        elif not line.item(8) and not line.item(7):
+        elif not line.item(8): #and not line.item(7):
             if not first_step:case.add(step)
             step=parses_frame.test_step(line.item(1))
             step.add(parses_frame.test_action(line.item(2),"MFA"))
             first_step=False
 
             if not (line.item(6)):
-                step.add(parses_frame.test_action(line.item(3),"ACA"))
+                a=parses_frame.test_action(line.item(3),"ACA")
+                
+                step.add(a)
+                
 
             elif not (line.item(7)=='True'):
                 step.add(parses_frame.test_action(line.item(3),"MCA"))
 
-        elif line.item(8) and not line.item(7):
+        elif line.item(8): # and not line.item(7):
             if not (line.item(6)=='True'):
                 step.add(parses_frame.test_action(line.item(3),"ACA"))
 
@@ -115,6 +143,6 @@ def parser(protocolo):
 
 if __name__ == "__main__":
     x_path=load_file()
-    print(x_path)
     objeto_protocolo=parses_frame.protocol(PARSER_VERSION,x_path)
     parser(objeto_protocolo)
+    generating_screen(objeto_protocolo.get_title())

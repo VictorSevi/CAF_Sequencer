@@ -1,0 +1,905 @@
+{
+    "Run": 1,
+    "Protocol_edition": "A",
+    "Sequencer Version": "1.0.0",
+    "Protocol_name": "D0000006246_Boarding System Functional Type test ",
+    "Performer_name": "",
+    "Performer_chapa": "",
+    "Execution": "Fri, 23 Feb 2024 15:40:37",
+    "Time_spent": "0h 0mins 0s",
+    "Used Items": "NS 1234567890, Calibration date: 10/01/2022, Fluke Model 31-B, Code: C10.1.2.3.4",
+    "Test_Suites": [
+        {
+            "Suite_id": "1",
+            "result": "NE",
+            "Test_Cases": [
+                {
+                    "Case_id": "1.01",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "1.01020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01110",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01120",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01130",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01140",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01150",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01160",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01170",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01180",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01190",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01200",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01210",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01220",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.01230",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "1.02",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "1.02020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.02030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.02040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.02050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.02060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.02070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.02080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.02090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "1.03",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "1.03020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03110",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03120",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.03130",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "1.04",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "1.04020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04110",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04120",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.04130",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "1.05",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "1.05020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05110",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "1.05120",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Suite_id": "2",
+            "result": "NE",
+            "Test_Cases": [
+                {
+                    "Case_id": "2.01",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "2.01020",
+                            "result": "OK",
+                            "Test_Actions": [
+                                "NE"
+                            ]
+                        },
+                        {
+                            "Step_id": "2.01030",
+                            "result": "OK",
+                            "Test_Actions": [
+                                "NE"
+                            ]
+                        },
+                        {
+                            "Step_id": "2.01040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "2.01050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "2.01060",
+                            "result": "OK",
+                            "Test_Actions": [
+                                "NE"
+                            ]
+                        },
+                        {
+                            "Step_id": "2.01070",
+                            "result": "OK",
+                            "Test_Actions": [
+                                "NE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "2.02",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "2.02020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "2.02030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "2.02040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "2.02050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "2.02060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "2.02070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Suite_id": "3",
+            "result": "NE",
+            "Test_Cases": [
+                {
+                    "Case_id": "3.01",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "3.01020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01050",
+                            "result": "OK",
+                            "Test_Actions": [
+                                "NE"
+                            ]
+                        },
+                        {
+                            "Step_id": "3.01060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01090",
+                            "result": "OK",
+                            "Test_Actions": [
+                                "NE",
+                                "NE"
+                            ]
+                        },
+                        {
+                            "Step_id": "3.01100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01110",
+                            "result": "OK",
+                            "Test_Actions": [
+                                "NE",
+                                "NE"
+                            ]
+                        },
+                        {
+                            "Step_id": "3.01120",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01130",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01140",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01150",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01160",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01170",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01180",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01190",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.01200",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "3.02",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "3.02020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "3.02100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Suite_id": "4",
+            "result": "NE",
+            "Test_Cases": [
+                {
+                    "Case_id": "4.01",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "4.01020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.01030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.01040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.01050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.01060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "4.02",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "4.02020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.02030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.02040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.02050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.02060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "4.03",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "4.03020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.03030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.03040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.03050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.03060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "4.04",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "4.04020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.04030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.04040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.04050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "4.04060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Suite_id": "5",
+            "result": "NE",
+            "Test_Cases": [
+                {
+                    "Case_id": "5.01",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "5.01020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.01110",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "5.02",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "5.02020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02070",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02080",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02090",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02100",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.02110",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                },
+                {
+                    "Case_id": "5.03",
+                    "result": "NE",
+                    "Test_Steps": [
+                        {
+                            "Step_id": "5.03020",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.03030",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.03040",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.03050",
+                            "result": "NE",
+                            "Test_Actions": []
+                        },
+                        {
+                            "Step_id": "5.03060",
+                            "result": "NE",
+                            "Test_Actions": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

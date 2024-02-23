@@ -5,7 +5,7 @@ from tkinter import filedialog
 import os
 import CAFTestingFwk as fwk
 import sign_in_menu
-import parser_to_json
+import import_excel
 import protocol_tree
 import botonera
 
@@ -17,10 +17,10 @@ class app():
         self.credentials={"Name":"", "Chapa":""}
         self.protocol=fwk.protocol("","")
 
-    def upload_json(self,json_file):
+    def upload_json(self):
         
-        self.protocol=fwk.protocol(json_file["Protocol_name"],json_file["Protocol_edition"],tester_name=self.credentials["Name"],tester_chapa=self.credentials["Chapa"])
-        for suite in json_file["Test_Suites"]:
+        self.protocol=fwk.protocol(self.json_file["Protocol_name"],self.json_file["Protocol_edition"],tester_name=self.credentials["Name"],tester_chapa=self.credentials["Chapa"])
+        for suite in self.json_file["Test_Suites"]:
             test_suite=fwk.test_suite(suite["name"],suite["id"])
             for case in suite["Test_Cases"]:
                 test_case = fwk.test_case(case["name"],case["initial_conditions"],case["description"],str(case["id"]))
@@ -44,11 +44,43 @@ class app():
     
     def set_execution_loc(self,loc):
         self.loc=loc
+    
+    def help(self):
+        os.system("C://Users//17940//Python_Testing//CAF_Sequencer//documentation//CAF_PRESENTACION_CORPORATIVA_CAST_2023_V_150PPP.pdf")
+    #TBD
+    def config(self):
+        b=tk.Tk()
+        message=tk.Message(b, text="la configurasao")
+        b.geometry("300x200")
+        message.pack(pady=50)
+        message.config(aspect=10,width=200)
+    #TBD
+    def info(self):
+        c=tk.Tk()
+        message=tk.Message(c, text="Hecho por el vity")
+        message.config(aspect=10)
+        c.geometry("300x200")
+        message.pack()
+    #TBD
+    def create_json(self):
+            x_path=import_excel.load_file()
+            objeto_protocolo=import_excel.parses_frame.protocol(import_excel.PARSER_VERSION,x_path)
+            import_excel.parser(objeto_protocolo)
+            import_excel.generating_screen(objeto_protocolo.get_file_path())
+    
+    def load(self,json_file):
+        self.json_file=json_file
+        self.upload_json()
+
+    def json_res(self):
+        with open("C://Users//17940//Python_Testing//CAF_Sequencer//results//DO_prueba.json", "w") as outfile:
+            json.dump(self.protocol.get_result_json(), outfile, indent = 4)
 
 
 class gui():
     def __init__(self,master, running_app):
         
+        #Main Window create
         self.app=running_app
         self.master=master
         self.json_file=""
@@ -56,6 +88,7 @@ class gui():
         self.master.geometry("1100x550")
         self.master.iconbitmap("caf_icon.ico")
 
+        #Global frame  structure definition
         self.global_frame=ttk.Frame(self.master)
         self.global_frame.pack(fill=tk.BOTH, expand=True)
         self.global_frame.rowconfigure(0, weight=1)
@@ -65,10 +98,10 @@ class gui():
 
         self.botonera = botonera.botonera_superior(self.global_frame,
                                                    load_func=self.load,
-                                                   help_func=self.help,
-                                                   config_func=self.config,
-                                                   info_func=self.info,
-                                                   json_func=self.create_json)
+                                                   help_func=self.app.help,
+                                                   config_func=self.app.config,
+                                                   info_func=self.app.info,
+                                                   json_func=self.app.create_json)
 
 
         # Frame principal
@@ -85,12 +118,12 @@ class gui():
         self.notebook.grid(row=0,column=1, sticky="nsew")
 
         # Pestaña 1
-        tab1 = tk.Frame(self.notebook)
+        tab1 = tk.Frame(self.notebook, bg="white")
         self.notebook.add(tab1, text="Execution")
         self.app.set_execution_loc(tab1)
 
         # Pestaña 2
-        tab2 = tk.Frame(self.notebook)
+        tab2 = tk.Frame(self.notebook, bg="white")
         self.notebook.add(tab2, text="Status")
         conectlab=tk.Label(tab2,text="No connections active!!", fg="red", font=("Arial",48),pady=150)
         conectlab.pack()
@@ -118,52 +151,34 @@ class gui():
         self.label_info= ttk.Label(self.info_frame,anchor="e", text="CAF-2024")
         self.label_info.grid(row=0,column=2, sticky="nsew")
 
-    def help(self):
-        os.system("C://Users//17940//Python_Testing//CAF_Sequencer//documentation//CAF_PRESENTACION_CORPORATIVA_CAST_2023_V_150PPP.pdf")
-    #TBD
-    def config(self):
-        b=tk.Tk()
-        message=tk.Message(b, text="la configurasao")
-        b.geometry("300x200")
-        message.pack(pady=50)
-        message.config(aspect=10,width=200)
-    #TBD
-    def info(self):
-        c=tk.Tk()
-        message=tk.Message(c, text="Hecho por el vity")
-        message.config(aspect=10)
-        c.geometry("300x200")
-        message.pack()
-    #TBD
-    def create_json(self):
-        parser_to_json.parser()
-    def load(self):
-        filename=filedialog.askopenfilename(filetypes=(("Archivos JSON", "*.json"), ("Todos los archivos", "*.*")), title="Select Excel File")
-        self.json_file=json.load(open(filename))
-        self.mapa_contenido.update_content(self.json_file)
-        self.app.upload_json(self.json_file)
+        bt=ttk.Button(self.info_frame,text="json",command=self.app.json_res)
+        bt.grid(row=0,column=3, sticky="nsew")
+
     
     def get_frame(self):
         return self.frame
     
     def execute_iid(self):
         id=self.mapa_contenido.get_selection()[0]
-        print(len(id))
         self.app.execute_part(int(id[0]),int(id[2]),int(id[4]))
+
+    def load(self):
+        filename=filedialog.askopenfilename(filetypes=(("Archivos JSON", "*.json"), ("Todos los archivos", "*.*")), title="Select Excel File")
+        self.json_file=json.load(open(filename))
+        self.app.load(self.json_file)
+        self.mapa_contenido.update_content(self.json_file)
         
 
 def main():
-    #app = gui(root)
-    #root.mainloop()
-    root1 = tk.Tk()
+    #root1 = tk.Tk()
     a=app()
-    m=sign_in_menu.sign_in(root1,a)
-    root1.mainloop()
+    #m=sign_in_menu.sign_in(root1,a)
+    #root1.mainloop()
 
-    if(m.passed()):
-        root2= tk.Tk()
-        g=gui(root2,a)
-        root2.mainloop()
+    #if(m.passed()):
+    root2= tk.Tk()
+    g=gui(root2,a)
+    root2.mainloop()
 
 if __name__ == "__main__":
     main()

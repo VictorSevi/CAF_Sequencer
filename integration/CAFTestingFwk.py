@@ -269,8 +269,9 @@ class test_step:
    def execute(self):
       self.start_time=time()
       for action in self.test_actions:
+         action.visualice()
+      for action in self.test_actions:
          action.execute()
-         self.log=self.log+action.get_log()
          if(action.action_type=="ACA" or action.action_type=="MCA"):
             self.result_list.append(action.get_result())
       self.end_time=time()
@@ -314,7 +315,42 @@ class test_action:
       self.row=0
       self.executed=False
       #self.vdb=vdb_object
-   
+   def visualice(self):
+      # Crear etiquetas y cuadros de entrada
+      if(self.action_type=="MFA"):
+         self.frame_place=tk.Frame(self.frame_loc, borderwidth=2, relief="solid", pady=5,padx=5, bg="white")
+         self.frame_place.pack(fill=tk.BOTH, expand=True)
+         self.frame_place.columnconfigure(0, weight=10)
+         self.frame_place.columnconfigure(1, weight=1)
+         self.frame_place.rowconfigure(0, weight=1 )
+         order_text = tk.Label(self.frame_place, text=self.action_text,pady=50, font=("Arial",15))
+         order_text.grid(row=self.row, column=0)
+         #order_text.pack( 
+         self.boton_OK = tk.Button(self.frame_place, text="Done",width=8,height=2,pady=50,command=self.next_act)
+         self.boton_OK.grid(row=self.row, column=1)
+         self.boton_OK.config(state="disabled")
+         #boton_OK.pack(   
+      elif(self.action_type=="MCA"):
+         self.frame_place=tk.Frame(self.frame_loc,borderwidth=2, relief="solid", pady=5,padx=5, bg="white")
+         self.frame_place.pack(fill=tk.BOTH, expand=True)
+         self.frame_place.columnconfigure(0, weight=8)
+         self.frame_place.columnconfigure(1, weight=1)
+         self.frame_place.columnconfigure(2, weight=1)
+         self.frame_place.rowconfigure(0, weight=1 )
+         order_text = tk.Label(self.frame_place, text=self.action_text,pady=50,font=("Arial",15))
+         order_text.grid(row=self.row, column=0)
+         #order_text.pack( 
+         self.boton_OK = tk.Button(self.frame_place, text="OK",width=8,height=2,pady=50,command=self.set_ok,bg="green")
+         self.boton_OK.grid(row=self.row, column=1)
+         self.boton_OK.config(state="disabled")
+         #boton_OK.pack(   
+         self.boton_NOK = tk.Button(self.frame_place, text="NOK",width=8,height=2,pady=50,command=self.set_nok,bg="red")
+         self.boton_NOK.grid(row=self.row, column=2)
+         self.boton_OK.config(state="disabled")
+         #boton_OK.pack()
+
+
+
    def execute(self):
       if self.cmd:
          log="\n"
@@ -323,8 +359,6 @@ class test_action:
             #self.log=log
             print(log)
             input("Press enter when done...")
-
-
          elif(self.action_type=="MCA"):
             validation=""
             log="\n"+self.action_text
@@ -344,41 +378,18 @@ class test_action:
             print(log)
             self.log=self.log+log
       else:
-         # Crear etiquetas y cuadros de entrada
+         self.button_not_pressed=True
          if(self.action_type=="MFA"):
-            self.frame_place=tk.Frame(self.frame_loc)
-            self.frame_place.pack(fill=tk.BOTH, expand=True)
-            self.frame_place.columnconfigure(0, weight=10)
-            self.frame_place.columnconfigure(1, weight=1)
-            self.frame_place.rowconfigure(0, weight=1)
-
-            order_text = tk.Label(self.frame_place, text=self.action_text,pady=50, font=("Arial",20))
-            order_text.grid(row=self.row, column=0)
-            #order_text.pack()
-
-            boton_OK = tk.Button(self.frame_place, text="Done",width=8,height=2,pady=50,command=self.next_act)
-            boton_OK.grid(row=self.row, column=1)
-            #boton_OK.pack()
+            self.boton_OK.config(state="normal")
+            while(self.button_not_pressed):
+               pass
 
          elif(self.action_type=="MCA"):
-            self.frame_place=tk.Frame(self.frame_loc)
-            self.frame_place.pack(fill=tk.BOTH, expand=True)
-            self.frame_place.columnconfigure(0, weight=8)
-            self.frame_place.columnconfigure(1, weight=1)
-            self.frame_place.columnconfigure(2, weight=1)
-            self.frame_place.rowconfigure(0, weight=1)
+            self.boton_OK(state="normal")
+            self.boton_NOK.config(state="normal")
+            while(self.button_not_pressed):
+               pass
 
-            order_text = tk.Label(self.frame_place, text=self.action_text,pady=50,font=("Arial",20))
-            order_text.grid(row=self.row, column=0)
-            #order_text.pack()
-
-            boton_OK = tk.Button(self.frame_place, text="OK",width=8,height=2,pady=50,command=self.set_ok,bg="green")
-            boton_OK.grid(row=self.row, column=1)
-            #boton_OK.pack()
-
-            boton_OK = tk.Button(self.frame_place, text="NOK",width=8,height=2,pady=50,command=self.set_nok,bg="red")
-            boton_OK.grid(row=self.row, column=2)
-            #boton_OK.pack()
 
             
    def get_end(self):
@@ -388,15 +399,18 @@ class test_action:
       self.global_result="OK"
       self.frame_place.destroy()
       self.executed=True
+      self.button_not_pressed=False
 
    def set_nok(self):
       self.global_result="NOK"
       self.frame_place.destroy()
       self.executed=True
+      self.button_not_pressed=False
 
    def next_act(self):
       self.frame_place.destroy()
       self.executed=True
+      self.button_not_pressed=False
    
    def get_log(self):
       return self.log
