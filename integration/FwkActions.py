@@ -4,12 +4,15 @@ import tkinter as tk
 
 
 class text_action:
-   def __init__(self,gui_item,next_action=None,cmd=False, row=0 ):
+   def __init__(self,gui_item,next_action=None,cmd=False, row=0, text='',type='' ):
       self.gui_item = gui_item
       self.next_action = next_action
       self.there_is_next = False
       self.row=row
       self.termminal=False
+      self.text = text
+      self.type = type
+      self.content={"text":self.text,"type":self.type}
       
    def execute(self,i):
       self.frame_loc=tk.Frame(self.gui_item,bg='white', borderwidth = 2, relief="solid")
@@ -31,12 +34,13 @@ class text_action:
 
    def is_CA(self): return False
 
+   def get_result_json(self): return self.content
 
 
 class MFA_test_action(text_action):
    def __init__(self,gui_item,text, row=0):
-      super().__init__(gui_item,row=row)
-      self.text = text
+      super().__init__(gui_item,row=row,text=text,type='MFA')
+      
 
    def execute(self,i):
       super().execute(i)
@@ -64,9 +68,10 @@ class MFA_test_action(text_action):
 
 class MCA_test_action(text_action):
    def __init__(self,gui_item,text, result='NE',row=0):
-      super().__init__(gui_item,row=row)
+      super().__init__(gui_item,row=row,text=text, type='MCA')
       self.text = text
       self.result = result
+      self.content.update({"result": self.result})
 
    def execute(self,i):
       super().execute(i)

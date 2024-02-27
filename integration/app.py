@@ -1,14 +1,13 @@
 import json
 import tkinter as tk
-from tkinter import ttk
 from tkinter import filedialog
 import os
 import CAFTestingFwk as fwk
-import sign_in_menu
 import import_excel
-import protocol_tree
-import botonera
-import FwkActions as actions
+from time import localtime
+from time import time
+from time import strftime
+import os
 
 
 class app():
@@ -18,6 +17,7 @@ class app():
     def upload_json(self):
         self.protocol=fwk.protocol(self.loc,self.json_file,self.exend)
         self.protocol.tree_load(self.tree)
+        self.UT=2
     
     def set_action_execution_end(self,func): self.exend=func
 
@@ -59,9 +59,17 @@ class app():
         self.upload_json()
 
     def json_res(self):
-        with open("C://Users//17940//Python_Testing//CAF_Sequencer//results//DO_prueba.json", "w") as outfile:
+        fecha=strftime("%a %d %b %Y %H-%M-%S",localtime(time()))
+        self.sandbox="C:\\Users\\17940\\Python_Testing\\CAF_Sequencer\\Executions"
+        self.folder_structure="UT"+str(self.UT)+ "\\"+self.protocol.get_name().strip()
+        folder_path=os.path.join(self.sandbox,self.folder_structure)
+        name_template='RUN_'+self.protocol.get_code()+fecha+'.json'
+        
+        if not os.path.exists(folder_path):os.makedirs(folder_path)
+            
+        with open(os.path.join(folder_path,name_template), "w") as outfile:
             json.dump(self.protocol.get_result_json(), outfile, indent = 4)
-
+#"RUN_"+self.protocol.get_code()+ fecha
     def set_tree(self,tree):self.tree=tree
 
     def get_result_id(self,exe_idd):return self.protocol.get_result_byid(exe_idd)

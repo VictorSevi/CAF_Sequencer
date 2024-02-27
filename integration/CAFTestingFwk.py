@@ -6,6 +6,21 @@ from time import strftime
 from time import localtime
 import FwkActions as actions
 
+
+
+
+class test_struct:
+    def __init__(self):
+        self.items=[]
+        self.items_array=[]
+        self.content={}      
+    def add(self,item):
+        self.items_array.append(item.get_json_struct())
+        self.items.append(item)
+    def get_json_struct(self):
+        return self.content
+
+
 class protocol:
    def __init__(self,loc,json_file,func_fin_exe,tester_name="",tester_chapa=""):
       self.exend = func_fin_exe
@@ -13,12 +28,27 @@ class protocol:
       self.protocol_name = self.json_file["Protocol_name"]
       self.protocol_version = self.json_file["Protocol_edition"]
       self.test_suites = []
+      self.items_array=[]
       self.tester_name =tester_name
       self.tester_chapa =tester_chapa
       self.start_time=time()
       self.end_time=time()
       self.result='NE'
       self.loc=loc
+      self.protocol_struct={
+         "Protocol_edition":self.protocol_version,
+         "Parser_Version":"1.0.0",
+         "Sequencer Version":"1.0.0",
+         "Protocol_name":self.protocol_name,
+         "Performer_name":self.tester_name,
+         "Performer_chapa":self.tester_chapa,
+         "Execution":strftime("%a, %d %b %Y %H:%M:%S",localtime(time())),
+         "Time_spent":self.execution_time(),
+         "Used Items":"NS 1234567890, Calibration date: 10/01/2022, Fluke Model 31-B, Code: C10.1.2.3.4",
+         "result":self.result,
+         "Test_Suites":self.items_array
+      }
+      
       
       for suite in self.json_file["Test_Suites"]:
           tsu=test_suite(suite["name"],suite["id"])
@@ -42,22 +72,10 @@ class protocol:
           self.add_test_suite(tsu)
 
    def add_test_suite(self, test_suite):
+      self.items_array.append(test_suite.get_result_json())
       self.test_suites.append(test_suite)
    
-   def get_result_json(self):
-      protocol_struct={
-         "Run":1,
-         "Protocol_edition":self.protocol_version,
-         "Sequencer Version":"1.0.0",
-         "Protocol_name":self.protocol_name,
-         "Performer_name":self.tester_name,
-         "Performer_chapa":self.tester_chapa,
-         "Execution":strftime("%a, %d %b %Y %H:%M:%S",localtime(time())),
-         "Time_spent":self.execution_time(),
-         "Used Items":"NS 1234567890, Calibration date: 10/01/2022, Fluke Model 31-B, Code: C10.1.2.3.4",
-         "Test_Suites":[ts.get_result_json() for ts in self.test_suites]
-      }
-      return protocol_struct
+   def get_result_json(self):return self.protocol_struct
    
    def execution_time(self):
       time_secs=self.end_time-self.start_time
@@ -71,6 +89,8 @@ class protocol:
    def get_result(self): return self.result
 
    def get_name(self):return self.protocol_name
+
+   def get_code(self):return self.protocol_name[:11]
 
    def tree_load(self,tree):
       for item in tree.get_children():
@@ -104,24 +124,27 @@ class test_suite:
       self.start_time=time()
       self.end_time=time()
       self.result_list=[]
+      self.items_array=[]
       self.result="NE"
+      self.suite_struct={
+         "id":self.id,
+         "result":self.result,
+         "name": self.name,
+         "Test_Cases":self.items_array
+      }
 
 
    def execute(self,makefile=0):
       a=0
    
    
-   def add_test_case(self,test_case): self.test_cases.append(test_case)
+   def add_test_case(self,test_case):
+      self.items_array.append(test_case.get_result_json()) 
+      self.test_cases.append(test_case)
   
    def get_result(self):return self.result
    
-   def get_result_json(self):
-      suite_struct={
-         "Suite_id":self.id,
-         "result":self.result,
-         "Test_Cases":[tc.get_result_json() for tc in self.test_cases]
-      }
-      return suite_struct
+   def get_result_json(self):return self.suite_struct
 
    def execute_by_id(self,case_index,step_index):
       if(step_index==-1):
@@ -151,17 +174,26 @@ class test_suite:
 
 class test_case:
    def __init__(self,Case_name, Initial_conditions, case_description,case_id):
-    self.log_content=""
-    self.test_steps=[]
-    self.name=Case_name
-    self.id=case_id
-    self.description=case_description
-    self.Initial_Conditions=Initial_conditions
-    self.start_time=time()
-    self.end_time=time()
-    self.csv_results_path=""
-    self.result_list=[]
-    self.result="NE"
+      self.log_content=""
+      self.test_steps=[]
+      self.name=Case_name
+      self.id=case_id
+      self.description=case_description
+      self.Initial_Conditions=Initial_conditions
+      self.start_time=time()
+      self.end_time=time()
+      self.csv_results_path=""
+      self.result_list=[]
+      self.items_array=[]
+      self.result="NE"
+      self.case_struct={
+            "name": self.name,
+            "id": self.id,
+            "result": "NE",
+            "description": self.description,
+            "initial_conditions": self.Initial_Conditions,
+            "test_steps":  self.items_array
+        }
 
 
    def get_name(self):
@@ -177,6 +209,7 @@ class test_case:
       self.result="NOK" if "NOK" in self.result_list else "OK"
 
    def add_test_step(self,test_step):
+      self.items_array.append(test_step.get_result_json()) 
       self.test_steps.append(test_step)
 
    def write_log(self,out_file="Test_Case.txt"):
@@ -190,13 +223,7 @@ class test_case:
    def get_result(self):
       return self.result
    
-   def get_result_json(self): 
-      case_struct={ 
-         "Case_id":self.id,
-         "result":self.result,
-         "Test_Steps":[ts.get_result_json() for ts in self.test_steps]
-      }
-      return case_struct
+   def get_result_json(self): return  self.case_struct
 
    def execute_by_id(self,step_index):
       self.test_steps[step_index].execute()
@@ -229,7 +256,14 @@ class test_step:
       self.start_time=time()
       self.end_time=time()
       self.result_list=[]
+      self.items_array=[]
       self.result="NE"
+      self.content={ 
+         "id": self.id,
+         "result":self.result,
+         "test_actions":self.items_array
+      }
+
 
    def execute(self):
       self.start_time=time()
@@ -239,6 +273,7 @@ class test_step:
       self.end_time=time()
 
    def add_test_action(self,test_action):
+      self.items_array.append(test_action.get_result_json()) 
       self.test_actions.append(test_action)
 
    def get_result_list(self):
@@ -247,14 +282,7 @@ class test_step:
    def get_result(self):
       return self.result
 
-   def get_result_json(self):
-
-      step_struct={ 
-         "Step_id":self.id,
-         "result":self.result,
-         "Test_Actions":self.result_list
-      }
-      return step_struct
+   def get_result_json(self): return self.content
 
    def tree_load(self,tree,subitem,k,i,j):
       #step_tag=('ok_tag' if self.result=="OK" else ('nok_tag' if self.result=="NOK" else 'ne_tag'))
