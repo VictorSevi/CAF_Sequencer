@@ -2,13 +2,14 @@ import tkinter as tk
 from tkinter import ttk
 
 class botonera_superior():
-    def __init__(self,frame_place,load_func,help_func,config_func,info_func,json_func,r=0, c=0):
+    def __init__(self,frame_place,app,r=0, c=0):#frame_place,load_func,help_func,config_func,info_func,json_func,r=0, c=0):
 
-        self.load=load_func
-        self.help=help_func
-        self.config=config_func
-        self.info=info_func
-        self.create_json=json_func
+        self.app=app
+        self.load=app.load
+        self.help=app.help
+        self.config=app.config
+        self.info=app.info
+        self.create_json=app.json_res
 
         #crear frame para botones
         self.bt_frame = ttk.Frame(frame_place)

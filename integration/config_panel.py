@@ -18,19 +18,19 @@ class config_pan():
 
     
 
-def main():
-    #app = gui(root)
-    #root.mainloop()
-    root1 = tk.Tk()
-    a=app()
-    m=sign_in_menu.sign_in(root1,a)
-    root1.mainloop()
-
-    if(m.passed()):
-        root2= tk.Tk()
-        g=gui(root2,a)
-        root2.mainloop()
-
-if __name__ == "__main__":
-    main()
+#def main():
+#    #app = gui(root)
+#    #root.mainloop()
+#    #root1 = tk.Tk()
+#    #a=app()
+#    #m=sign_in_menu.sign_in(root1,a)
+#    #root1.mainloop()
+##
+#    #if(m.passed()):
+#    #    root2= tk.Tk()
+#    #    g=gui(root2,a)
+#    #    root2.mainloop()
+#
+#if __name__ == "__main__":
+#    main()
 
