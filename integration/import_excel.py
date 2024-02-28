@@ -2,39 +2,13 @@
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 import tkinter as tk
-import numpy as np 
 import json
-import os
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="pandas")
 import pandas as pd
 import parses_frame
 
 PARSER_VERSION="1.0.0"
-
-
-def generating_screen(title):
-    root=Tk()
-    root.title("generated json") 
-    root.iconbitmap("caf_icon.ico")
-    root.geometry("500x200")
-    root.resizable(width=False, height=False)
-    root.rowconfigure(0,weight=20)
-    root.rowconfigure(1,weight=1) 
-    
-    #add structure
-    #frame= tk.Frame(root,)
-    #frame.pack(fill=tk.BOTH, expand=True)
-
-    #add text
-    #close_bt = tk.Button(root, text="Sign in",command=root.destroy)
-    #close_bt.pack()
-
-    #add text
-    label = tk.Label(root, anchor="center", text="json file generated in sandbox: \n"+"C://Users//17940//Python_Testing//CAF_Sequencer//json_protocols//"+ title +".json",pady=100,wraplength=450)
-    label.pack()
-
-
 
 def load_file():
     # Prompt the user to select an Excel file
@@ -64,7 +38,6 @@ def parser(protocolo):
     #5 empty vars
     #6 Empty Res
     #7 Empty Act
-
 
     print(df)
     arr=df.to_numpy()
@@ -145,4 +118,3 @@ if __name__ == "__main__":
     x_path=load_file()
     objeto_protocolo=parses_frame.protocol(PARSER_VERSION,x_path)
     parser(objeto_protocolo)
-    generating_screen(objeto_protocolo.get_title())

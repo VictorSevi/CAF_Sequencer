@@ -4,12 +4,11 @@ from tkinter import ttk
 class botonera_superior():
     def __init__(self,frame_place,app,r=0, c=0):#frame_place,load_func,help_func,config_func,info_func,json_func,r=0, c=0):
 
-        self.app=app
         self.load=app.load
         self.help=app.help
         self.config=app.config
         self.info=app.info
-        self.create_json=app.json_res
+        self.create_json=app.create_json
 
         #crear frame para botones
         self.bt_frame = ttk.Frame(frame_place)

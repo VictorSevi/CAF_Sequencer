@@ -1,14 +1,8 @@
-import json
 import tkinter as tk
 from tkinter import ttk
-from tkinter import filedialog
-import os
-import CAFTestingFwk as fwk
-import sign_in_menu
 import import_excel
 import protocol_tree
 import botonera
-import FwkActions as actions
 import app
 
 
@@ -68,30 +62,26 @@ class gui():
 
         #etiquetas del frame informativo
 
-        self.label_version = ttk.Label(self.info_frame,anchor="w", text="v0.0.0")
+        self.label_version = ttk.Label(self.info_frame,anchor="w", text="v1.0.0")
         self.label_version.grid(row=0,column=0, sticky="nsew")
 
-        self.label_protocol = ttk.Label(self.info_frame,anchor="center", text="Chapa: "+str(self.app.get_credentials().get("Chapa"))+"  Name: "+str(self.app.get_credentials().get("Name")))
+        self.label_protocol = ttk.Label(self.info_frame,anchor="center", text="Chapa: "+str(self.app.get_credentials().get("Chapa"))+"  Name: "+str(self.app.get_credentials().get("Name"))+"  UT: "+str(self.app.get_credentials().get("UT")))
         self.label_protocol.grid(row=0,column=1, sticky="nsew")
 
-        self.label_info= ttk.Label(self.info_frame,anchor="e", text="CAF-2024")
+        self.label_info= ttk.Label(self.info_frame,anchor="e", text="CAF-Testing")
         self.label_info.grid(row=0,column=2, sticky="nsew")
 
-        bt=ttk.Button(self.info_frame,text="json",command=self.app.json_res)
+        bt=ttk.Button(self.info_frame,text="Save",command=self.app.json_res)
         bt.grid(row=0,column=3, sticky="nsew")
     
 
 def main():
     #root1 = tk.Tk()
     a=app.app()
-    #m=sign_in_menu.sign_in(root1,a)
-    #root1.mainloop()
-
-    #if(m.passed()):
-
-    root2= tk.Tk()
-    g=gui(root2,a)
-    root2.mainloop()
+    if(a.sign_in_menu()):
+        root2= tk.Tk()
+        g=gui(root2,a)
+        root2.mainloop()
 
 if __name__ == "__main__":
     main()

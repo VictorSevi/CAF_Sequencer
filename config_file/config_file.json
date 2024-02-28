@@ -1,0 +1,8 @@
+{
+    "json_protocols": "C:/Users/17940/Python_Testing/CAF_Sequencer/Json_Protocols",
+    "json_runs": "C:/Users/17940/Python_Testing/CAF_Sequencer/Executions",
+    "excel_runs": "",
+    "IP": "10.1.2.3.4",
+    "Key": "password2",
+    "Connection": "CCU_CP4"
+}

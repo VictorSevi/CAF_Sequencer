@@ -22,7 +22,7 @@ class test_struct:
 
 
 class protocol:
-   def __init__(self,loc,json_file,func_fin_exe,tester_name="",tester_chapa=""):
+   def __init__(self,loc,json_file,func_fin_exe,tester_name="",tester_chapa="",UT=""):
       self.exend = func_fin_exe
       self.json_file=json_file
       self.protocol_name = self.json_file["Protocol_name"]
@@ -36,6 +36,7 @@ class protocol:
       self.result='NE'
       self.loc=loc
       self.protocol_struct={
+         "UT":UT,
          "Protocol_edition":self.protocol_version,
          "Parser_Version":"1.0.0",
          "Sequencer Version":"1.0.0",
