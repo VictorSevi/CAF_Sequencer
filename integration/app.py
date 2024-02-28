@@ -31,7 +31,9 @@ class app():
         self.JSON_Runs=settings_obj["json_runs"]
         
 
-    def set_action_execution_end(self,func): self.exend=func
+    def set_action_execution_end(self,func): 
+        self.exend=func
+
 
     def sign_in_menu(self):
         s=sign_in_tab.sign_in()

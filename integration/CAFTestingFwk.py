@@ -87,18 +87,15 @@ class protocol:
 
    def execute_by_id(self,idd): self.get_test_items(idd).execute()
 
-   def get_result(self): return self.result
+   def get_result(self): 
+      self.update_result() 
+      return self.result
 
    def get_name(self):return self.protocol_name
 
    def get_code(self):return self.protocol_name[:11]
 
-   def tree_load(self,tree):
-      for item in tree.get_children():
-         tree.delete(item)
 
-      for i,suite in enumerate(self.test_suites):
-         suite.tree_load(tree,i)
         
    def get_test_items(self, idd):
       if idd[1]==-1: return self.test_suites[idd[0]]
@@ -113,7 +110,28 @@ class protocol:
       if 'NOK' in self.result_list: self.result='NOK'
       elif 'NE' in self.result_list: self.result='NE'
       else: self.result='OK'
-         
+
+   def tree_load(self,tree):
+      for item in tree.get_children():
+         tree.delete(item)
+      for i,suite in enumerate(self.test_suites):
+         suite.tree_load(tree,i)
+
+   def update_tree_items(self, tree):
+      # Obtener los IDs de los elementos bajo el padre dado
+      suites_ids = tree.get_children("")
+      for i in suites_ids:
+         cases_ids = tree.get_children(i)
+         for j in cases_ids:
+            seteps_ids = tree.get_children(j)
+            for k in seteps_ids:
+               res=self.get_result_byid(tuple(int(num) for num in k.split()))
+               tree.item(k, values=(res))
+            res=self.get_result_byid(tuple(int(num) for num in j.split()))
+            tree.item(j, values=(res))
+         res=self.get_result_byid(tuple(int(num) for num in i.split()))
+         tree.item(i, values=(res))
+       
 
 ################################################################### Test Suite definitions ##################################################################
 
@@ -145,7 +163,9 @@ class test_suite:
   
    def get_result(self):return self.result
    
-   def get_result_json(self):return self.suite_struct
+   def get_result_json(self):
+      self.update_result() 
+      return self.suite_struct
 
    def execute_by_id(self,case_index,step_index):
       if(step_index==-1):
@@ -170,6 +190,8 @@ class test_suite:
       if 'NOK' in self.result_list: self.result='NOK'
       elif 'NE' in self.result_list: self.result='NE'
       else: self.result='OK'
+
+
 
 ################################################################### Test Cases definitions ##################################################################
 
@@ -222,6 +244,7 @@ class test_case:
       return self.log_content
    
    def get_result(self):
+      self.update_result() 
       return self.result
    
    def get_result_json(self): return  self.case_struct
@@ -281,6 +304,7 @@ class test_step:
       return self.result_list
    
    def get_result(self):
+      self.update_result()
       return self.result
 
    def get_result_json(self): return self.content

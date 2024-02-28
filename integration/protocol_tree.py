@@ -48,10 +48,9 @@ class protocol_map():
     def eje(self):
         self.bt_exe.config(state='normal')
         self.app.get_protocol().update_result()
-        res=self.app.get_result_id(self.exe_idd)
-        self.tree.item(self.sel_id, values=(res))
+        self.app.get_protocol().update_tree_items(self.tree)
         
-
+        
     def update_content(self):
         # Actualizar protocolo
         self.app.get_protocol().tree_load(self.tree)
@@ -65,8 +64,6 @@ class protocol_map():
         self.app.execute_part(self.exe_idd)
         self.bt_exe.config(state='disable')
 
-def exe():
-    print("execute button")
 
  
 if __name__ == "__main__":
