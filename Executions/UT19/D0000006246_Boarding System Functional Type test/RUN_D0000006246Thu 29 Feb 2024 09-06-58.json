@@ -1,11 +1,12 @@
 {
+    "UT": "19",
     "Protocol_edition": "A",
     "Parser_Version": "1.0.0",
     "Sequencer Version": "1.0.0",
     "Protocol_name": "D0000006246_Boarding System Functional Type test ",
     "Performer_name": "",
     "Performer_chapa": "",
-    "Execution": "Wed, 28 Feb 2024 16:21:25",
+    "Execution": "Thu, 29 Feb 2024 09:06:11",
     "Time_spent": "0h 0mins 0s",
     "Used Items": "NS 1234567890, Calibration date: 10/01/2022, Fluke Model 31-B, Code: C10.1.2.3.4",
     "result": "NE",

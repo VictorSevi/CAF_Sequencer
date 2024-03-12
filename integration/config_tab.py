@@ -67,10 +67,11 @@ class config_tab:
         self.config_json.update({"Key":self.password.get_entry()})
         self.config_json.update({"Connection":self.Connection_name.get_entry()}) 
 
-        jsonfile=open(self.file_path,'w')
+        jsonfile=open(self.file_cfg_path,'w')
         print(self.config_json)     
         json.dump(self.config_json, jsonfile, indent = 4)
         jsonfile.close()
+        self.master.destroy()
         
 
 class cuadro_sel:
@@ -128,3 +129,6 @@ class connection_entry:
     def get_entry(self): return self.entrada.get()
 
 
+if __name__ == "__main__":
+    c=config_tab()
+    c.main()

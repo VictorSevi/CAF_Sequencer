@@ -10,7 +10,7 @@ class sign_in():
         self.master = tk.Tk()
         self.master.title("Secuenciador Sign in") 
         self.master.geometry("500x300")
-        self.master.iconbitmap("caf_icon.ico")
+        #self.master.iconbitmap("caf_icon.ico")
         self.master.resizable(width=False, height=False)
         
 
@@ -30,19 +30,19 @@ class sign_in():
         self.bt_load.grid(column=0,row=4,sticky="nsew")
 
         #Crear Text space Chapa
-        self.entry_chapa = ttk.Entry(self.global_frame)
+        self.entry_chapa = ttk.Entry(self.global_frame, font=('Arial',14))
         self.entry_chapa.grid(column=1,row=1,sticky="nsew",pady=10, ipady=10, padx=10, ipadx=10)
         self.label_chapa = ttk.Label(self.global_frame, text="Chapa",anchor="center",font=("Arial", 14))
         self.label_chapa.grid(column=0,row=1,sticky="nsew")
 
         #Crear Text space Nombre
-        self.entry_name = ttk.Entry(self.global_frame)
+        self.entry_name = ttk.Entry(self.global_frame,font=('Arial',14))
         self.entry_name.grid(column=1,row=2,sticky="nsew",pady=10, ipady=10, padx=10, ipadx=10)
         self.label_name = ttk.Label(self.global_frame, text="Name",anchor="center",font=("Arial", 14))
         self.label_name.grid(column=0,row=2,sticky="nsew")
 
         #Crear Text space UT
-        self.entry_ut = ttk.Entry(self.global_frame)
+        self.entry_ut = ttk.Entry(self.global_frame,font=('Arial',14))
         self.entry_ut.grid(column=1,row=3,sticky="nsew",pady=10, ipady=10, padx=10, ipadx=10)
         self.label_ut = ttk.Label(self.global_frame, text="UT",anchor="center",font=("Arial", 14))
         self.label_ut.grid(column=0,row=3,sticky="nsew")

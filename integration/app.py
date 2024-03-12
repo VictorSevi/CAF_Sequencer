@@ -12,6 +12,7 @@ import config_tab
 import info_tab
 import sign_in_tab
 from tkinter import messagebox
+from gui import gui as g
 
 
 class app():
@@ -19,22 +20,49 @@ class app():
         self.credentials={"Name":"", "Chapa":"", "UT":""}
         self.load_config()
 
-    def upload_json(self):
-        self.protocol=fwk.protocol(self.loc,self.json_file,self.exend,UT=self.credentials["UT"])
-        self.protocol.tree_load(self.tree)
-    
+    #se actualiza la configuracion 
     def load_config(self):
         with open('C:\\Users\\17940\\Python_Testing\\CAF_Sequencer\\config_file\\config_file.json', "r") as cfgfile:
-            settings_obj=json.load(cfgfile)
+            self.settings_obj=json.load(cfgfile)
         cfgfile.close()
-        self.JSON_Templates=settings_obj["json_protocols"]
-        self.JSON_Runs=settings_obj["json_runs"]
+        self.JSON_Templates=self.settings_obj["json_protocols"]
+        self.JSON_Runs=self.settings_obj["json_runs"]
         
+    #se obtiene el protocolo que se esta ejecutando (Modificar clase protocolo)
+    def get_protocol(self): return self.protocol
 
+    #ejecutar por idd TB DELETED revisar en 
+    def execute_part(self,idd): self.protocol.execute_by_id(idd)
+    
+
+
+############# No van a hacer falta ##############################
+    
+    #se setea el lugar de ejecucion de las acciones (para acciones)
+    def set_execution_loc(self,loc):self.loc=loc
+    
+    #se pasa una referencia al arbol del protocolo ejecutado. Eso vendrá de la clase pro   
+    def set_tree(self,tree):self.tree=tree
+
+    
+    #se fija la accion a realizar cuando acaba la ejcución de la ultima accion de un step
     def set_action_execution_end(self,func): 
         self.exend=func
 
+    #funcion a realizar cuando se acaba una ejecución
+    def exend(self):a=1
 
+
+############### Llamadas a pantallas ################################
+
+    #se lanza pantalla principal
+    def main_screen(self):
+        self.gui=g(self.credentials)
+        self.gui.get_botonera().config(load=self.load,config=self.config,create_json=self.create_json, help=self.help, info=self.info)
+        self.gui.get_save_button().config(command=self.json_res)
+        self.gui.main()
+
+    #se lanza menu de inicio
     def sign_in_menu(self):
         s=sign_in_tab.sign_in()
         s.main()
@@ -42,25 +70,24 @@ class app():
         self.UT=self.credentials["UT"]
         return s.success()
 
-    def get_protocol(self): return self.protocol
 
-    def execute_part(self,idd): self.protocol.execute_by_id(idd)
-        
-    def get_credentials(self):return self.credentials
+############### Funciones llamda de botones ################################
 
-    def set_execution_loc(self,loc):self.loc=loc
-    
-    def help(self):os.system("C://Users//17940//Python_Testing//CAF_Sequencer//documentation//CAF_PRESENTACION_CORPORATIVA_CAST_2023_V_150PPP.pdf")
+    #tab de ayuda
+    def help(self):
+        os.system("C://Users//17940//Python_Testing//CAF_Sequencer//documentation//CAF_PRESENTACION_CORPORATIVA_CAST_2023_V_150PPP.pdf")
 
+    #tab de configuracion
     def config(self):
-        cfg_tab = config_tab.config_tab()
-        cfg_tab.main()
+        config_tab.config_tab().main()
         self.load_config()
 
-    def info(self):
-        inf=info_tab.info_tab()
-        inf.main()
-        
+    # SE abre la tab de info
+    def info(self): 
+        informative=info_tab.info_tab()
+        informative.main()
+
+    #para el import excel 
     def create_json(self):
         try:
             x_path=import_excel.load_file()
@@ -71,11 +98,17 @@ class app():
         else:
             messagebox.showinfo("Generado!", "Generado correctamente en Sandbox")
     
+    #se hace cuando se carga un json de protocolo
     def load(self):
         filename=filedialog.askopenfilename(filetypes=(("Archivos JSON", "*.json"), ("Todos los archivos", "*.*")), title="Select Excel File")
         self.json_file=json.load(open(filename))
-        self.upload_json()
+        self.protocol=fwk.protocol(self.gui.get_execution_tab(),self.json_file,self.exend,UT=self.credentials["UT"],tester_name=self.credentials["Name"],tester_chapa=self.credentials["Chapa"])
+        self.gui.get_mapa_contenido().update_title(self.protocol.get_name())
+        self.protocol.tree_load(self.gui.get_mapa_contenido().get_tree())
+        mapa=self.gui.get_mapa_contenido()
+        mapa.bt_exe.config(command=lambda:self.protocol.execute_by_id(mapa.sel_iid()))
 
+    #cuando se pulsa el boton save
     def json_res(self):
         try:
             fecha=strftime("%a %d %b %Y %H-%M-%S",localtime(time()))
@@ -92,13 +125,14 @@ class app():
             messagebox.showerror("Error", "No se ha podido guardar!")
         else:
             messagebox.showinfo("Guardado!", "Guardado correcto en Sandbox")
-        
 
-    def set_tree(self,tree):self.tree=tree
-
-    def get_result_id(self,exe_idd):return self.protocol.get_result_byid(exe_idd)
+    #se ejecuta para actualizar los resultados del arbol, lo mismo, TB DELETED
+    def get_result_id(self,exe_idd):
+        return self.protocol.get_result_byid(exe_idd)
 
 
 if __name__ == "__main__":
     a=app()
-    a.sign_in_menu()
+    #if(a.sign_in_menu()):
+    a.main_screen()
+    #a.info()

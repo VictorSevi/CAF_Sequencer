@@ -7,8 +7,6 @@ from time import localtime
 import FwkActions as actions
 
 
-
-
 class test_struct:
     def __init__(self):
         self.items=[]
@@ -22,6 +20,7 @@ class test_struct:
 
 
 class protocol:
+
    def __init__(self,loc,json_file,func_fin_exe,tester_name="",tester_chapa="",UT=""):
       self.exend = func_fin_exe
       self.json_file=json_file
@@ -50,7 +49,6 @@ class protocol:
          "Test_Suites":self.items_array
       }
       
-      
       for suite in self.json_file["Test_Suites"]:
           tsu=test_suite(suite["name"],suite["id"])
           for case in suite["Test_Cases"]:
@@ -76,7 +74,12 @@ class protocol:
       self.items_array.append(test_suite.get_result_json())
       self.test_suites.append(test_suite)
    
-   def get_result_json(self):return self.protocol_struct
+   def get_result_json(self):
+      self.update_result()
+      self.update_items_array()
+      return self.protocol_struct
+   
+   def update_items_array(self): self.items_array=[ suite.get_result_json() for suite in self.test_suites]
    
    def execution_time(self):
       time_secs=self.end_time-self.start_time
@@ -94,9 +97,7 @@ class protocol:
    def get_name(self):return self.protocol_name
 
    def get_code(self):return self.protocol_name[:11]
-
-
-        
+       
    def get_test_items(self, idd):
       if idd[1]==-1: return self.test_suites[idd[0]]
       else: return self.test_suites[idd[0]].get_test_items(idd)
@@ -152,11 +153,9 @@ class test_suite:
          "Test_Cases":self.items_array
       }
 
-
    def execute(self,makefile=0):
       a=0
-   
-   
+     
    def add_test_case(self,test_case):
       self.items_array.append(test_case.get_result_json()) 
       self.test_cases.append(test_case)
@@ -164,8 +163,11 @@ class test_suite:
    def get_result(self):return self.result
    
    def get_result_json(self):
-      self.update_result() 
+      self.update_result()
+      self.update_items_array() 
       return self.suite_struct
+   
+   def update_items_array(self): self.items_array=[ case.get_result_json() for case in self.test_cases]
 
    def execute_by_id(self,case_index,step_index):
       if(step_index==-1):
@@ -197,7 +199,7 @@ class test_suite:
 
 class test_case:
    def __init__(self,Case_name, Initial_conditions, case_description,case_id):
-      self.log_content=""
+
       self.test_steps=[]
       self.name=Case_name
       self.id=case_id
@@ -206,7 +208,6 @@ class test_case:
       self.start_time=time()
       self.end_time=time()
       self.csv_results_path=""
-      self.result_list=[]
       self.items_array=[]
       self.result="NE"
       self.case_struct={
@@ -217,7 +218,6 @@ class test_case:
             "initial_conditions": self.Initial_Conditions,
             "test_steps":  self.items_array
         }
-
 
    def get_name(self):
        return self.name
@@ -234,52 +234,43 @@ class test_case:
    def add_test_step(self,test_step):
       self.items_array.append(test_step.get_result_json()) 
       self.test_steps.append(test_step)
+   
+   def get_result(self): return self.update_result() 
 
-   def write_log(self,out_file="Test_Case.txt"):
-      with open(out_file,'w') as file:
-         file.write(self.log)
-         file.close()
+   def get_result_json(self):
+      self.update_result()
+      self.update_items_array()  
+      return self.case_struct
    
-   def get_log(self):
-      return self.log_content
-   
-   def get_result(self):
-      self.update_result() 
-      return self.result
-   
-   def get_result_json(self): return  self.case_struct
+   def update_items_array(self): self.items_array=[ step.get_result_json() for step in self.test_steps]
 
-   def execute_by_id(self,step_index):
-      self.test_steps[step_index].execute()
+   def execute_by_id(self,step_index):self.test_steps[step_index].execute()
 
    def tree_load(self,tree,item,i,j):
-      #case_tag=('ok_tag' if self.result else ('nok_tag' if self.result=="NOK" else 'ne_tag'))
-      subitem = tree.insert(item, tk.END, text=self.id,iid=(i,j,-1),values=(self.result))#,tags=(case_tag,))
+      subitem = tree.insert(item, tk.END, text=self.id,iid=(i,j,-1),values=(self.result))
       for k,step in enumerate(self.test_steps):
          step.tree_load(tree,subitem,k,i,j)
 
    def get_test_items(self, idd):
       return self.test_steps[idd[2]]
    
-   
    def update_result(self):
-      for items in self.test_steps:
-         items.update_result()
-      self.result_list = [steps.get_result() for steps in self.test_steps]
-      if 'NOK' in self.result_list: self.result='NOK'
-      elif 'NE' in self.result_list: self.result='NE'
+      result_list = [steps.update_result() for steps in self.test_steps]
+      if 'NOK' in result_list: self.result='NOK'
+      elif 'NE' in result_list: self.result='NE'
       else: self.result='OK'
+      return self.result
+
+
 ################################################################### Test Steps definitions ##################################################################
 
 class test_step:
    def __init__(self,step_id,name=""):
       self.id=step_id
       self.name=name
-      self.log=""
       self.test_actions=[]
       self.start_time=time()
       self.end_time=time()
-      self.result_list=[]
       self.items_array=[]
       self.result="NE"
       self.content={ 
@@ -287,7 +278,6 @@ class test_step:
          "result":self.result,
          "test_actions":self.items_array
       }
-
 
    def execute(self):
       self.start_time=time()
@@ -298,27 +288,28 @@ class test_step:
 
    def add_test_action(self,test_action):
       self.items_array.append(test_action.get_result_json()) 
-      self.test_actions.append(test_action)
+      self.test_actions.append(test_action)   
 
-   def get_result_list(self):
-      return self.result_list
-   
+   #mirtelo bien
    def get_result(self):
+      return self.update_result()
+
+   def get_result_json(self):
       self.update_result()
-      return self.result
+      self.update_items_array()  
+      return self.content
+   
+   def update_items_array(self):self.items_array=[ ac.get_result_json() for ac in self.test_actions]
 
-   def get_result_json(self): return self.content
-
-   def tree_load(self,tree,subitem,k,i,j):
-      #step_tag=('ok_tag' if self.result=="OK" else ('nok_tag' if self.result=="NOK" else 'ne_tag'))
-      tree.insert(subitem, tk.END, text=self.id,iid=(i,j,k),values=(self.result))#,tags=(step_tag,)) 
+   def tree_load(self,tree,subitem,k,i,j): tree.insert(subitem, tk.END, text=self.id,iid=(i,j,k),values=(self.result))
 
    def update_result(self):
-      self.result_list = []
+      result_list = []
       for action in self.test_actions:
          if action.is_CA():
-               self.result_list.append(action.get_result())
+               result_list.append(action.get_result())
 
-      if 'NOK' in self.result_list: self.result='NOK'
-      elif 'NE' in self.result_list: self.result='NE'
+      if 'NOK' in result_list: self.result='NOK'
+      elif 'NE' in result_list: self.result='NE'
       else: self.result='OK'
+      return self.result

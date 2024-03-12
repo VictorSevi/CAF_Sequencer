@@ -1,11 +1,21 @@
+##########################################################################################################################
+#
+#   Código para la clase de la vista lateral de árbol donde se incluye la estructura del protocolo así como, titulo 
+#   del protocolo edición y Botones de control de ejecución. Debe instanciar un protocolo ya que toda esta sección 
+#   controla y monitorizael objeto protocolo que se haya cargado en la app.
+#
+#   Created by: Víctor Sevillano Gamarra a 01/03/2024 v1.0.0
+#
+#########################################################################################################################
+
+
 import tkinter as tk
 from tkinter import ttk
 
 class protocol_map():
-    def __init__(self,frame_place,app, r=0, c=0):
+    def __init__(self,frame_place, r=0, c=0):
         
         #marco del mapa de protocolo
-        self.app=app
         self.frame = ttk.Frame(frame_place)
         self.frame.grid(row=r, column=c, sticky="nsew")
         self.frame.rowconfigure(0,weight=1)
@@ -26,48 +36,44 @@ class protocol_map():
         self.titulo=ttk.Label(self.frame,text="No item selected")
         self.titulo.grid(row=0, column=0, sticky="nsew")
 
-        #se crea el boton de ejecucion
-        self.frame_buttons=ttk.Button()
-        self.bt_exe = ttk.Button(self.frame, text="Execute",command=self.execute_iid)
-        self.bt_exe.grid(column=0,row=2)
+        #se crea el marco de botones de ejecucion
+        self.frame_buttons=ttk.Frame(self.frame)
+        self.frame_buttons.grid(column=0,row=2)
 
-        # Estilos para los tags
-        self.style = ttk.Style(self.frame)
+        #se crea boton de ejecucion
+        self.bt_exe = ttk.Button(self.frame_buttons, text="Execute")
+        self.bt_exe.grid(column=0,row=0)
+
+        #se crea boton de stop ejecucion
+        self.bt_stop = ttk.Button(self.frame_buttons, text="Stop")
+        self.bt_stop.grid(column=1,row=0)
         
-        self.style.configure('ok_tag', foreground='green')
-        self.style.configure('nok_tag', foreground='red')
-        self.style.configure('ne_tag', foreground='black')
+    def set_protocol(self,protocol):
+        self.protocol=protocol
+        self.protocol.set_action_execution_end(self.eje)     #TBD
+        self.protocol.set_tree(self.tree)                    #TBD
 
-        self.tree.tag_configure("ok_tag", foreground="green")
-        self.tree.tag_configure("nok_tag", foreground="red")
-        self.tree.tag_configure("ne_tag", foreground="black")
-
-        self.app.set_action_execution_end(self.eje)
-        self.app.set_tree(self.tree)
 
     def eje(self):
-        self.bt_exe.config(state='normal')
-        self.app.get_protocol().update_result()
-        self.app.get_protocol().update_tree_items(self.tree)
+        self.protocol.update_result()
+        self.protocol.update_tree_items(self.tree)
         
         
-    def update_content(self):
-        # Actualizar protocolo
-        self.app.get_protocol().tree_load(self.tree)
-        self.titulo.configure(text=self.app.get_protocol().get_name())
+    def update_title(self, title): self.titulo.configure(text=title)
 
-    def execute_iid(self):
-        self.sel_id=self.tree.selection()[0]
-        self.exe_idd=[]
-        for i in self.sel_id.split():
-             self.exe_idd.append(int(i))
-        self.app.execute_part(self.exe_idd)
-        self.bt_exe.config(state='disable')
+    def sel_iid(self): return [int(i) for i in self.tree.selection()[0].split()]
+        
+    def Exe_bt_disable(self):self.bt_exe.config(state='disable')
 
+    def Exe_bt_enable(self):self.bt_exe.config(state='normal')
 
- 
+    def Stop_bt_disable(self):self.bt_stop.config(state='disable')
+
+    def Stop_bt_enable(self):self.bt_stop.config(state='normal')
+
+    def get_tree(self): return self.tree
+    
 if __name__ == "__main__":
     x=tk.Tk()
-    s=protocol_map(x,exe)
+   # s=protocol_map(x)
     x.mainloop()
-
