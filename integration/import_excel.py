@@ -14,7 +14,7 @@ def load_file():
     # Prompt the user to select an Excel file
     root = Tk()
     root.withdraw()  # Hide the main window
-    file_path=askopenfilename(filetypes=[("Excel Files", "*.xlsx")], title="Select Excel File")
+    file_path=askopenfilename(filetypes=[("Excel Files", "*.xlsm")], title="Select Excel File")
     if file_path:
         return file_path
     else:
@@ -26,77 +26,77 @@ def devolver_text(text):
 
 def parser(protocolo):
     # Load the selected Excel file
-    df = pd.read_excel(protocolo.get_file_path(), converters={"Case identifier": devolver_text,"Action Description": devolver_text})
- 
+    df = pd.read_excel(protocolo.get_file_path(),sheet_name='Protocolo', converters={"Nº": devolver_text,"ACTION": devolver_text}, header=3)
+
+
+    # Limpiar los nombres de las columnas (remover saltos de línea y espacios innecesarios)
+    df.columns = df.columns.str.replace('\n', ' ').str.strip()
+
+    print(df.columns)
+
     # Unmerge cells in column C, keeping values in the first row
-    df['Result Description'] = df['Result Description'].ffill()
-    df['Case identifier'] = df['Case identifier'].astype(str)
-    df["Empty_Vars"] = df["Variables"].isna()
-    df["Empty_Res"] = df["Result Description"].isna()
-    df["Empty_Act"] = df["Action Description"].isna()
+    df['RES. from C1'] = df['RES. from C1'].ffill()
+    df['Nº'] = df['Nº'].astype(str)
+    df["Empty_Vars"] = df["AL Nº VARIABLE"].isna()
+    df["Empty_Res"] = df["EXPECTED RESULT"].isna()
+    df["Empty_Act"] = df["ACTION"].isna()
 
-    #5 empty vars
-    #6 Empty Res
-    #7 Empty Act
-
-    print(df)
-    arr=df.to_numpy()
     flag_case_initials=False
     first_step=True
     first_case=True
     first_suite=True
 
-
     
-    for line in arr:
-
+    for index,line in df.iterrows():
         #Detectas si se define una suite
-        if not "." in line.item(1) and not 'nan'in line.item(1):
+        if "." not in line['Nº'] and line['Empty_Res']:
             if not first_suite:
                 case.add(step)
                 suite.add(case)
                 protocolo.add(suite) 
-            suite = parses_frame.test_suite(line.item(1),line.item(2))
+            suite = parses_frame.test_suite(line['Nº'],line['ACTION'])
             first_suite=False 
             first_case=True
 
         #Detectas si se define un case
-        elif "." in line.item(1) and len(line.item(1))<7:
+        elif "." in line['Nº'] and len(line['Nº'])<7:
             if not first_case:
                 case.add(step)
                 suite.add(case)
-            case = parses_frame.test_case(line.item(2),line.item(1),line.item(2))
+            case = parses_frame.test_case(line['ACTION'],line['Nº'],line['ACTION'])
             flag_case_initials=True   
             first_case=False
             first_step=True        
 
-        #Si la anterior linea es un case esta es una condición inicial
+        #Si la anterior linea es un case esta es una condición inicial del caso anterior
         elif flag_case_initials:
-            initial_conditions=line.item(2).splitlines()[1:]
+            initial_conditions=str(line['ACTION']).splitlines()[1:]
             case.update_initials(initial_conditions)
             flag_case_initials=False
 
-        elif not line.item(8): #and not line.item(7):
+        #Si es Manual Force Action
+        elif not line['Empty_Act']: #and not line.item(7):
             if not first_step:case.add(step)
-            step=parses_frame.test_step(line.item(1))
-            step.add(parses_frame.test_action(line.item(2),"MFA"))
+            step=parses_frame.test_step(line['Nº'])
+            step.add(parses_frame.test_action(line['ACTION'],"MFA"))
             first_step=False
 
-            if not (line.item(6)):
-                a=parses_frame.test_action(line.item(3),"ACA")
+            if not line['Empty_Vars']:
+                a=parses_frame.test_action(line['EXPECTED RESULT'],"ACA")
                 
                 step.add(a)
                 
 
-            elif not (line.item(7)=='True'):
-                step.add(parses_frame.test_action(line.item(3),"MCA"))
+            elif line['Empty_Vars']:
+                step.add(parses_frame.test_action(line['EXPECTED RESULT'],"MCA"))
 
-        elif line.item(8): # and not line.item(7):
-            if not (line.item(6)=='True'):
-                step.add(parses_frame.test_action(line.item(3),"ACA"))
+        #Si es Automatic ceck Action
+        elif line['Empty_Act']: # and not line.item(7):
+            if not (line['Empty_Vars']):
+                step.add(parses_frame.test_action(line['EXPECTED RESULT'],"ACA"))
 
-            elif not (line.item(7)=='True'):
-                step.add(parses_frame.test_action(line.item(3),"MCA"))
+            elif line['Empty_Vars']:
+                step.add(parses_frame.test_action(line['EXPECTED RESULT'],"MCA"))
             
             #step.update_content()
             #case.update_content()
@@ -110,7 +110,7 @@ def parser(protocolo):
     
 
 
-    with open("C://Users//17940//Python_Testing//CAF_Sequencer//json_protocols//"+ protocolo.get_title()+".json", "w") as outfile:
+    with open("C://Users//17940//Desktop//json_pruebas//"+ protocolo.get_title()+".json", "w") as outfile:
         json.dump(protocol_content, outfile, indent = 4)
 
 

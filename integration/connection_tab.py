@@ -1,4 +1,4 @@
-#import app
+import app
 import logging
 from glaciation.helper import mainTest
 import glaciation.testing.generic as tgf

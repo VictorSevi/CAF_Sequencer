@@ -22,7 +22,7 @@ class app():
 
     #se actualiza la configuracion 
     def load_config(self):
-        with open('C:\\Users\\17940\\Python_Testing\\CAF_Sequencer\\config_file\\config_file.json', "r") as cfgfile:
+        with open('C:\\Users\\17940\\CAF_Sequencer\\config_file\\config_file.json', "r") as cfgfile:
             self.settings_obj=json.load(cfgfile)
         cfgfile.close()
         self.JSON_Templates=self.settings_obj["json_protocols"]
@@ -34,8 +34,6 @@ class app():
     #ejecutar por idd TB DELETED revisar en 
     def execute_part(self,idd): self.protocol.execute_by_id(idd)
     
-
-
 ############# No van a hacer falta ##############################
     
     #se setea el lugar de ejecucion de las acciones (para acciones)

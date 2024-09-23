@@ -82,3 +82,7 @@ class sign_in():
 
     def main(self):
         self.master.mainloop()
+    
+if __name__=="__main__":
+    si=sign_in()
+    si.main()
