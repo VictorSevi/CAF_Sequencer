@@ -1,0 +1,3380 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.10 - STT Train management and set-up system V5_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "VEHICLE SWITCH ON/OFF",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nVehicle Switch ON Normal conditions, HV in catenary\nTest steps are independent of  cabine. \nTest must be repeated from both cabins.",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVehicle Switch ON Normal conditions, HV in catenary\nTest steps are independent of  cabine. \nTest must be repeated from both cabins.",
+                    "initial_conditions": [
+                        "- vehicle switched off.",
+                        "- Pantograh  lowered.",
+                        "- \"PREVIOUS OF LOADS\" Battery vehicle Line (Pot. 500 and 510) energized.",
+                        "- Battery contactors open in both battery auxiliary boxes.",
+                        "- \"vehicle ON LOADS\" TL (Pot. 1000) de-energized.",
+                        "-Both \"CAB KEYS\" and  \"DRIVING MODE SELECTOR\" of \"CAB ACTIVE KEY SWITCH/DIRECTION SELECTOR PANEL\" (10A01) \"0\" position.",
+                        "-vehicle Stopped"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Check in the cabin that it is possible to switch OFF/ON the cabin lights via the pushbutton 72S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab light Switch ON/OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Check in the cabin that hazard lights can be switche ON/OFF via teh Hazard light switch 76S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Hazard lights are switched ON/OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Check that Z6 light is available in cabin C1, by activating 76S02 switch",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Exterior right Red lamp is switched ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN\n- Active 10A01 switching Cab Active Key from 0 to 1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN\n- Move direction selector 10A01 from 0 to 1 position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle is Switched ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Lamp Test executed",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Measure time since command vehicle ON, and HMI start up.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Once HMI starts, check pantogarph symbol indicates pantograph is down",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Measure time since command vehicle ON, and TCMS start up.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check not faulty message from Fire Detection System or Event Recorder are showed",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Battery Voltage is showed in the HMI",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In active CABIN\n-Command pantograph raise",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantograph raise UP",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Pantograph symbol dissapears from the HMI",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HV catenary value is showed in the HMI",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "APS starts Operation",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC in cabin starts operation",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC in department starts operation",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Internal displays start up after the pantograph is up.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "TCMS will menage the Test in the following systems",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC system, the system performs the autotest during the startup and provides the results to TCMS as alarms",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Brake system, see functional description XXX",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Emergency Brake \u00bd Loop",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "IN active CABIN\n-Select \"V\" Direction",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Propulsion Main Contactors are closed.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "IN active CABIN\nMove direction selector to \"1\" ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Propulsion Main Contactors are opened.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check variables  in Bus",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Command pantograph lowering",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Prior pantograph is lowered\n-Check that HVAC units are stoopped.\n-Compressor is stopped\n-APS is stopped\nOnce auxiliary loads are stopped, the pantograph will be lowered.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVehicle Switch OFF forced  from HMI\nTest procedure demonstrates the process to inmediate switch OFF the vehicle.\nTest steps are independent of  cabine. \nTest must be repeated from both cabins.",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVehicle Switch OFF forced  from HMI\nTest procedure demonstrates the process to inmediate switch OFF the vehicle.\nTest steps are independent of  cabine. \nTest must be repeated from both cabins.",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Direction Selector in \"V\" position",
+                        "-vehicle Stopped",
+                        "-Doors opened",
+                        "-Pantograph up"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\n- Move direction selector from V to 0 position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Relay 10K11 is de-energized",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nDeactive the cabin, moving to 0 position.\nAt HMI, PB  to force the battery disconection is Active.\nPress the pushbutton to disconnect the battery.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pushbutton Starts Flashing to indicate vehicle will be inmediatelly disconnected",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Battery sequence disconnection starts.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC is stopped.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Doors are commanded to be closed",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Air compressor is disabled",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior lighting is switched to dimmed level",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "APS is stopped",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Pantograph is lowered",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Once battery disconnection sequence finish vehicle is switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check that following systems are mantained ON for 30 minutes since the battery is switched OFF.\nIVU Box panel (83A02 in C1 car\nOBU rack (83A01) in C2 car\nIvanto Router(80A10) in C2 car\nConfort Network 2(88A02) in C2 car\nRadio Rack (80A01) in C2 car\nAutomatic Person Counter system (97A05) in C2 car",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTest procedure demonstrates the process to switch OFF the vehicle after lost HV",
+                    "id": "1.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTest procedure demonstrates the process to switch OFF the vehicle after lost HV",
+                    "initial_conditions": [
+                        "-vehicle Switch ON for more than 5 min",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Cab Reading Light is ON",
+                        "-Direction Selector in \"V\" position",
+                        "-vehicle simulated in movement",
+                        "-Pantograph up"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.03011",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect HV from catenary",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All demisters OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "All camera heaters OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect HV from catenary and wait 10 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HVAC will be OFF in all the cars",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CAB HVAC will be OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Lights are reduced to Emergency Lighting",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "USB plugs will switched OFF (91X01 to 91X08)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior TFT and PIS will switched OFF (83A21 to 83A26)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Frontal and exterior displays will switched OFF (83A30, 83A31, 83A35 and 83A36)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate zero speed",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "RIGHT AND LEFT SIDE MARKER LIGHT switched OFF (76H23 to 76H34)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Exterior Headlights switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Reading Light switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Direct light-Door light switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "BCU switched OFF 30A01\nCheck variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "TCU switched OFF 01A01\nCheck Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "FWCDS switched OFF 49A01",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "PZB switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LEFT HMI switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Radio 80A01 switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Counting System switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Ivanto WIFI MODEM switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "After 30 minutes",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "RIGHT SIDE REAR-VIEW TFT switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LEFT SIDE REAR-VIEW TFT switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CCTV VIDEO RECORDER UNIT switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CONFORT NETWORK CAR SWITCH 1 switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CONFORT NETWORK CAR SWITCH 2 switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "After 60 minutes",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DCUs switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "After 120 minutes",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Vehicle will switch OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTest procedure follows the loads disconnection proccess to switch OFF the vehicle but battery disconnection is disabled.",
+                    "id": "1.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTest procedure follows the loads disconnection proccess to switch OFF the vehicle but battery disconnection is disabled.",
+                    "initial_conditions": [
+                        "-vehicle Switch ON for more than 5 min",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Cab Reading Light is ON",
+                        "-Direction Selector in \"1\" position",
+                        "-Pantograph up"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.04011",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect HV from catenary",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All demisters OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "All camera heaters OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect HV from catenary and wait 10 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HVAC will be OFF in all the cars",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CAB HVAC will be OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Lights are reduced to Emergency Lighting",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "USB plugs will switched OFF (91X01 to 91X08)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior TFT and PIS will switched OFF (83A21 to 83A26)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Frontal and exterior displays will switched OFF (83A30, 83A31, 83A35 and 83A36)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "RIGHT AND LEFT SIDE MARKER LIGHT switched OFF (76H23 to 76H34)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Reading Light switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "BCU switched OFF 30A01",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "TCU switched OFF 01A01",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "FWCDS switched OFF 49A01",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "PZB is OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LEFT HMI is OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Radio 80A01 switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Counting System switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Ivanto WIFI MODEM switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "After 30 minutes",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "RIGHT SIDE REAR-VIEW TFT switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LEFT SIDE REAR-VIEW TFT switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CCTV VIDEO RECORDER UNIT switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CONFORT NETWORK CAR SWITCH 1 switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CONFORT NETWORK CAR SWITCH 2 switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "After 60 minutes",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DCUs switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "After 120 minutes",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press Virtual pushbutton which inhibits the battery disconnection",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Vehicle will not switch OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Switch OFF the vehicle\n- Move direction selector 10A01 from 1 to 0 position\n- Active 10A01 switching Cab Active Key from 1 to 0",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Battery is OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTest procedure demonstrates the process to switch OFF the vehicle after lost HV, and how if HV is recovered the vehicle will reset back again",
+                    "id": "1.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTest procedure demonstrates the process to switch OFF the vehicle after lost HV, and how if HV is recovered the vehicle will reset back again",
+                    "initial_conditions": [
+                        "-vehicle Switch ON for more than 5 min",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Cab Reading Light is ON",
+                        "-Direction Selector in \"V\" position",
+                        "-vehicle simulated in movement",
+                        "-Pantograph up"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.05011",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect HV from catenary",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All demisters OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "All camera heaters OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect HV from catenary and wait 10 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HVAC will be OFF in all the cars",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CAB HVAC will be OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Lights are reduced to Emergency Lighting",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "USB plugs will switched OFF (91X01 to 91X08)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior TFT and PIS will switched OFF (83A21 to 83A26)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Frontal and exterior displays will switched OFF (83A30, 83A31, 83A35 and 83A36)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate zero speed",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "RIGHT AND LEFT SIDE MARKER LIGHT switched OFF (76H23 to 76H34)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Exterior Headlights switched off",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Reading Light switched off",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Direct light-Door light switched OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "BCU switched OFF 30A01\nCheck variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "TCU switched OFF 01A01\nCheck Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "FWCDS switched OFF 49A01",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "PZB is OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LEFT HMI is OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Radio 80A01 switched off",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Counting System switched off",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Ivanto WIFI MODEM switched off",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect HV",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All systems will normalice ",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test Case\nvehicle Switch OFF, waiting time to switch off the vehicle after cab disabled\nTest procedure demonstrates the process to switch OFF, and time to switch it OFF",
+                    "id": "1.06",
+                    "result": "NE",
+                    "description": "Purpose of the Test Case\nvehicle Switch OFF, waiting time to switch off the vehicle after cab disabled\nTest procedure demonstrates the process to switch OFF, and time to switch it OFF",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-vehicle SHUTDOWN LOADS T.L. energized.",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Direction Selector in \"V\" in active cabin",
+                        "-vehicle Stopped",
+                        "-Pantograph up"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.06020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\n- Move direction selector from V to 0 position\n- Move 10A01 switching Cab Active Key from 1 to 0",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency brake 1/2 loop will open",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Go to Tail cabine and:\n- Active 10A01 switching Cab Active Key from 0 to 1\n- Move direction selector from 0 to V position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "CAB ACTIVE RELAYS will be energised and this cabine become Active CABIN",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In new Active CABIN\n- Move direction selector from V to 0 position\n- Active 10A01 switching Cab Active Key from 1 to 0",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency brake 1/2 loop will open",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "10' (minutes) after",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Battery sequence disconnection starts.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC is stopped.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Doors are commanded to be closed",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Air compressor is disabled",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior lighting is switched to dimmed level",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "APS is stopped",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Pantograph is lowered",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Once battery disconnection sequence finish vehicle is switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "TEST that shutdown loads vehicle Line status remain in ON",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "shutdown loads TL status is ON (Pot 500= 24VDC)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVehicle is  forced switched OFF  from HMI but vehicle is not stopped-\nTest procedure demonstrates the process to switch OFF the vehicle can not be executed as the vehicle is in speed.\nTest steps are independent of  cabine. ",
+                    "id": "1.07",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVehicle is  forced switched OFF  from HMI but vehicle is not stopped-\nTest procedure demonstrates the process to switch OFF the vehicle can not be executed as the vehicle is in speed.\nTest steps are independent of  cabine. ",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Direction Selector in \"V\" position"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.07020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate V> 0Km/h",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Zero speed relays 18K01, 18K02 and 18K03 de-energized",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.07030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\n- Move direction selector from V to 0 position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.07040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nAt HMI PB  to force the battery disconection is disabled.\nPress the pushbutton to disconnect the battery.\nDeactive the cabin",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.07050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate V=0Km/h",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Zero speed relays 18K01, 18K02 and 18K03 energized",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nNot possibility of activiting other cabin after one  is already activated",
+                    "id": "1.08",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nNot possibility of activiting other cabin after one  is already activated",
+                    "initial_conditions": [
+                        "-Vehicle Switch ON",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Direction Selector in \"1\" position",
+                        "-Vehicle Stopped"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.08020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In TAIL CABIN\n- Move 10A01 switching Cab Active Key from 0 to 1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.08030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In TAIL CABIN\n- Move 10A01 switching Cab Active Key from 1 to 0",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.08040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nDisconnect potential cable 10122 from terminal X1 of 10K02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.08050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nReconnect potential cable 10122 from terminal X1 of 10K02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.08060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nDisconnect potential cable 10122 from terminal 02 of 10K01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.08070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nReconnect potential cable 10122 from terminal 02 of 10K01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.08080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nShortcircuit terminals 03 and 04 of 10A01.B Cab-Key module",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.08090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nReconnect potential cable 86160.07 from terminal 03 of 10A01 Cab-Key module",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nCheck availabilty of hazard lights in non active cabin\nCheck availability of pantograph down command in non active cabin",
+                    "id": "1.09",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nCheck availabilty of hazard lights in non active cabin\nCheck availability of pantograph down command in non active cabin",
+                    "initial_conditions": [
+                        "-Vehicle Switch ON",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-Cab Active",
+                        "-Direction Selector in \"1\" position",
+                        "-Vehicle Stopped"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.09020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In TAIL CABIN\n- Active 76S01 Hazzard/warning light PB",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Hazard/warning light flashing",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.09030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In TAIL CABIN\n- Deactive 76S01 Hazzard/warning light PB",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Hazard/warning light stop flashing",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.09040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In TAIL CABIN\n- Active 12S02 PB; DOWNLOAD PANTOGRAPH PUSHBUTTON",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "AC + TCUs load shutdown order \n-> 1s , APS shutdown order\n-> 2s , Pantograph is lowered",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.09050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In TAIL CABIN\nFrom the HMI, commands screen press the inmediate battery disconnection PB.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Vehicle switch off process is started.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC is stopped.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Doors are commanded to be closed",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Air compressor is disabled",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior lighting is switched to dimmed level",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "APS is stopped",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Once battery disconnection sequence finish vehicle is switched OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.09060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In tail cabin, move the Cab Key to 1 position and Direction selector switch to \"1\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.09070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In tail cabin, move the Cab Key to 0 position and Direction selector switch to \"0\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.09080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In active cab reset the direction selectro from 1 to 0 and back to 1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle will be switch ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nBATTERY ISOLATION",
+                    "id": "1.10",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nBATTERY ISOLATION",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-One Cab Active, cab key at 1.",
+                        "-Direction Selector in \"0\" position",
+                        "-Vehicle Stopped"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.10020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In  C2 car\nActuate 07S02 Push Button",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Vehicle WILL SWITCH OFF immediately\nMain Battery Circuit Breaker is dosconneted (07Q01)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.10030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In  C2 car\nActuate 07S01 Push Button",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Main Battery circuit breaker is connected (07Q01)\nBattery contactor stays OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.10040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the Cab Active (with the cab key at 1 postion), move Direction selector to \"1\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Battery is connected",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.10050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In  C2 car\nActuate 07S02 Push Button",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Vehicle WILL SWITCH OFF immediately\nMain Battery Circuit Breaker is dosconneted (07Q01)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.10060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In  C2 car\nActuate 07S01 Push Button",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Main Battery circuit breaker is connected (07Q01)\nBattery contactor is ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "CLEANING MODE",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTest procedure demonstrates the process to switch on the vehicle from cleaning mode when the vehicle is switched off.",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTest procedure demonstrates the process to switch on the vehicle from cleaning mode when the vehicle is switched off.",
+                    "initial_conditions": [
+                        "-vehicle Switch OFF",
+                        "-Battery Circuit Breaker connected",
+                        "-HV in catenary",
+                        "- Key switch in 0 position",
+                        "-The direction switch in 0 position."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable the Cleaning mode by pressing cleaning PB 10S20",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cleaning pushbutton lamp is ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Pantograph is up",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cabin lights ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passengers lights ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC is OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Right side doors are released, but stays closed.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Baby Carriage is Active",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LEFT and RIGHT HMI will be OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Command to open single door via the exterior open pushnutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Door opens and stay open",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Command again pushbutton to close the door",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Door closes",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the cabin, Move 10A01 direction switch to position 1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "CLEANING mode is disabled and the mode \"CAB CHANGE\" is set up as there is not cab Active in the vehicle",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "The doors must be closed by retracting the child carriage function (acoustic and optical signalling, door locking) and vehicle switch off",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Internal lights switch to EMERGENCY MODE",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In this situation, press again cleaning PB 10S20",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Place 10A01 direction switch in position 0 and  press again cleaning PB 10S20",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cleaning mode will be ON and push button lamp will be ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "5 minutes after, press again cleaning PB 10S20",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cleaning mode active time has been reactivated from the beginning",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the cabin, Move 10A01 direction switch to position 1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "CLEANING mode is destroyed and the mode \"CAB CHANGE\" is set up as there is not cab Active in the vehicle",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "The doors must be closed by retracting the child carriage function (acoustic and optical signalling, door locking) and vehicle switch off",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Internal lights switch to EMERGENCY MODE",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Place 10A01 direction switch in position 0 ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press again cleaning PB 10S20",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cleaning mode will be ON and push button lamp will be ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Let passing the time 30mins, and before the end of the cleaning mode (elapsed time)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "The doors must be closed by retracting the child carriage function (acoustic and optical signalling, door locking)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "When cleaning mode time finish",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Vehicle switch off",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTest procedure demonstrates the vehicle disconnection proccess interruption when cleaning mode pushbutton is pressed",
+                    "id": "2.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTest procedure demonstrates the vehicle disconnection proccess interruption when cleaning mode pushbutton is pressed",
+                    "initial_conditions": [
+                        "-Vehicle Switch ON",
+                        "-Battery Circuit Breaker connected",
+                        "-HV in catenary",
+                        "-The cab active key in \"1\" position",
+                        "-The direction switch in \"1\" position."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\n- Move direction selector from 1 to 0 position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nAt HMI, PB  to force the battery disconection is Active.\nPress the pushbutton to disconnect the battery.\nDeactive the cabin, moving to 0 position cab active key",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle disconnection proccess starts",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "During the first 10 seconds of disconnections proccess, enable the Cleaning mode by pressing cleaning PB 10S20",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Battery disconnection proccess is stopped.\nCleaning Mode operation starts",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cleaning pushbutton lamp is ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Pantograph is up",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cabin lights ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passengers lights ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC is OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Right side doors are released, but stays closed.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Baby Carriage is Active",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LEFT and RIGHT HMI will be OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the cabin, Move 10A01 direction switch to position 1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "CLEANING mode is disabled and the mode \"CAB CHANGE\" is set up as there is not cab Active in the vehicle",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "result": "NE",
+            "name": "MAINTENANCE MODE",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTest procedure demonstrates the maintenance mode function activation\nTest steps are independent of  cabine. ",
+                    "id": "3.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTest procedure demonstrates the maintenance mode function activation\nTest steps are independent of  cabine. ",
+                    "initial_conditions": [
+                        "- Vehicle Switch ON",
+                        "-The cab active key in \"1\" position",
+                        "-Battery connected"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the cabin, enable the maintenance mode by 10S10 MAINTENANCE MODE KEY",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Maintenance mode will be Active",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "The functions activated in this mode will be the following",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Maintenance alarms will be showed in the display",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Coupler cover can be commanded separately from the couple unfolding and folding manoeuvre",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarms will be marked as Maintenance mode",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press HVAC car C1 OFF pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HVAC car C1 stops operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press HVAC car C2 OFF pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HVAC car C2 stops operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable HVAC car C1 and C2 back again",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HVAC car C1 and C2 start operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press APS car C1 Disable Pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "APS in car C1 is  disabled",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable back again APS in car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "APS starts operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press APS car C2 Disable Pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "APS in car C2 is  disabled\nBattery supervision sequence will be active.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable back again APS in car C2",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "APS starts operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disable ED braking",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "ED Brake will be disabled in TCU",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable ED braking and disable regenerative braking",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Regenerative braking is disabled in TCU",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable regenrative Braking ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Regenerative braking is Active in TCU",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press TCU car C1 Disable Pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "TCU  car C1 stops operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01160",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press TCU car C1 Enable Pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "TCU  car C1 resumes operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01170",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01180",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01190",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01200",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press TCU car C2 Disable Pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "TCU  car C2 stops operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01210",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press TCU car C2 Enable Pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "TCU  car C2 resumes operation",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01220",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press the HMI languaje setting to change between German and English",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that the HMI languaje changes between both.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01230",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the cabin, disable the maintenance mode by deactiviting 10S10 MAINTENANCE MODE KEY",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Maintenance mode will be disabled",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "result": "NE",
+            "name": "Checking of Alarms",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nCheck alarms of Cab activation relays and cleaning mode relay.",
+                    "id": "4.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nCheck alarms of Cab activation relays and cleaning mode relay.",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-HV in catenary",
+                        "-Cab Active"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nActuate by hand CB 10Q01 to trip position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset Circuit Breaker",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Make an electyrical bridge between 10K02 (D4) and 10K02 (D3)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Eliminate the electrical bridge between 10K02 (D4) and 10K02 (D3)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Make an electyrical bridge between 10K01 (14) and 10K01 (06)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Break the action before",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Make an electyrical bridge between 10A01-B (04) and 10A01-B (03)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Break the action before",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect cable 86221,04 from terminal bar XT114.113 pin 38b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect cable 86221,04 to terminal bar XT114.113 pin 38b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\nActuate by hand CB 16Q01 to trip position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset Circuit Breaker",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nCheck alarms of High voltage fuses",
+                    "id": "4.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nCheck alarms of High voltage fuses",
+                    "initial_conditions": [
+                        "-Necessary to raise to the vehicle roof to perform the simulation",
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-NO HV in catenary",
+                        "-Cab Active"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the main Fuse Box, force the limit swith in the fuse 01F011",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Release limit switch",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the main Fuse Box, force the limit swith in the fuse 01F012",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Release limit switch",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the main Fuse Box, force the limit swith in the fuse 01F002",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Release limit switch",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the main Fuse Box, force the limit swith in the fuse 01F003",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Release limit switch",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate by hand CB 14Q01 to trip position in C1 car",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset the circuit breaker",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate by hand CB 14Q01 to trip position in C2 car",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate by hand CB 14Q01 to trip position in C1 car",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is eliminated",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset the circuit breakers",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nCheck pantograph alarms ",
+                    "id": "4.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nCheck pantograph alarms ",
+                    "initial_conditions": [
+                        "-Battery connected",
+                        "-Vehicle Switch ON",
+                        "-Pantograph is Down",
+                        "-NO HV in catenary",
+                        "-Cab Active"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect cable 12152.01 from terminal A1 of contactor 12K01 (simulate failure of the contactor).\nCommand to raise the pantograph",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "After 10 seconds check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect cable 12152.01 from terminal A1 of contactor 12K01\nCommand to raise the pantograph",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantograph is raised\nAlarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect cable 12141.01 from terminal A1 of contactor 12K02 (simulate failure of the contactor).\nCommand to lower the pantograph",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect cable 12141.01 from terminal A1 of contactor 12K02 (simulate failure of the contactor).\nCommand to lower the pantograph",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantograph is down\nAlarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate by hand CB 12Q01 to trip position in C2 car",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset the circuit breaker",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Insert the hand crank into the pantograph manual raising",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Remove hand crank",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nCheck vehicle at standstill Alarms",
+                    "id": "4.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nCheck vehicle at standstill Alarms",
+                    "initial_conditions": [
+                        "-Battery connected",
+                        "-Vehicle Switch ON",
+                        "-Pantograph is Down",
+                        "-NO HV in catenary",
+                        "-Cab Active",
+                        "Passenger doors are Closed",
+                        "Passenger alarms are inactive"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect cable 18140.05 from relay 18K01 terminal 2(+)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarms",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect cable 18140.05 to relay 18K01 terminal 2(+)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate vehicle is at speed, via the Event recorder system",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Relay 18K01, 18K02 and 18K03 are denergized",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Force relay 18K01 in car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarms",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04051",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Unforce relay 18K01 in car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04052",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate vehicle is standstill, via the Event recorder system",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Relay 18K01, 18K02 and 18K03 are energized",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04053",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect cable 51121.02 from pin 09 of relay 18K02 in car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarms",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04054",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect cable 51121.02 from pin 09 of relay 18K02 in car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04055",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect cable 51121.02 from pin 07 of relay 18K03 in car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarms",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04056",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect cable 51121.02 from pin 07 of relay 18K03 in car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm is cleared",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect cable 18241.02 from pin 1 of relay 18K05 in car C2\nClose all the doors.\nSimulate vehicle in speed",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "After 10 seconds\nCheck alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconect cable 18241.02 to pin 1 of relay 18K05 in car C2",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Relay 18K05 is energized after 8 seconds\nAfter 10 seconds alarm is cleared",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04071",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate vehicle is standstill",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Relay 18K01, 18K02 and 18K03 are energized",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Made a link between pins 3 and 7 at contact 18K05 in car C2",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Open a door manually",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Eliminate link between pins 3 and 7 at contact 18K05 in car C2",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm clears",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "result": "NE",
+            "name": "TCMS DEGRADED MODE",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test Case\nCheck the functionalities related with the TCMS degraded mode.",
+                    "id": "5.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test Case\nCheck the functionalities related with the TCMS degraded mode.",
+                    "initial_conditions": [
+                        "-Vehicle Switch OFF",
+                        "-Battery connected",
+                        "-HV in catenary"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Switch ON Vehicle\n- Active 10A01 switching Cab Active Key from 0 to 1\n- Move direction selector 10A01 from 0 to 1 position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Tvehicle is switched ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01021",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate on 12S01, Panto raise command",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantograph will raise",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable TCMS degraded mode by 16S01 bypass switch",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Activate Safety Brake by pressig the Emergency Brake mushroom\nEnable TCMS degraded mode via 16S01 Bypass switch\n",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "TCMS degraded mode  is active.\nLeft HMI show indication \"TCMS Degraded Mode\"\nReelay 16K01 is active in car C1 and C2.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": " 60 seg. After, Passengers HVAC will switch on",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": " 60 seg. After, Cab HVAC will switch on",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Windscreen wiper starts slow speed in Active cabin",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Curtains get up in both cabins",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Propulsion Active O_PROP_ENAB=1\nMessure 24Vdc in terminal XT14.113 terminal 22a",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger area lights will switch on at dimmer level in C1 and C2 cars",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Windows demister will switch on at Active cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "11K20 contactor will connect in C1 and C2 cars",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Deactivate Safety Braking releasing the emergency mushroom",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brake is released.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction selector 10A01 from 1 to V position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In car with cab active relay 16K10 is energized\nIn car with not cab active relay 16K11 is energized",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable right  doors by HMI's virtual buttons",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All right doors will Active",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate on 54S01 doors loop bypass to close all doors",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All doors will disabled and closed",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Enable left  doors by HMI's virtual buttons",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All left doors will Active",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate on 54S01 doors loop bypass to close all doors",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All doors will disabled and closed",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move MC in brake position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Brake is applied\nBrake tail-lights will illuminate",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move MC to Emergency position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Forward sanders will active in car with cab Active\nBackward sanders will activate in car with cab not Active",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move MC to COAST position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Brakes are release",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press Emergency mushroom",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brake is applied",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01160",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move MC to mid propulsion position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Vehicle start movement at low speed.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01170",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move MC in brake position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Brake is applied",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01180",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate on 12S02, Panto down command",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantograph will get down",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01190",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disable the cabin\n- Move direction selector 10A01 from V to 0 position\n- Active 10A01 switching Cab Active Key from 1 to 0",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "After 2 minutes the battery is OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01200",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalise the status of 16S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "result": "NE",
+            "name": "WORKSHOP SOCKET MANAGEMENT",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test\nCheck the monitoring of the HV exterior socket by TCMS. \nCheck that it is not possible to raise pantograph if  HV socket is connected.",
+                    "id": "6.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test\nCheck the monitoring of the HV exterior socket by TCMS. \nCheck that it is not possible to raise pantograph if  HV socket is connected.",
+                    "initial_conditions": [
+                        "-Necessary to climb to the vehicle roof to perform the simulation",
+                        "-Battery connected",
+                        "-vehicle switched ON",
+                        "-No HV connected to the catenary",
+                        "-Pantograph down",
+                        "-HV 01X01 external socket located on the roof of the vehicle connected to pantograph."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "6.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Disconnect the connector XC14.114 in the roof of car C1\n",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variables:",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Connect 24Vdc to pin 53",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "The HV external socket connection status will be showed in the lower status indicator icon line in the HMI ",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables:",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Active on of the cabins.\nCommand to raise pantograph from the cabin",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantograph is not raising",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Remove link between pins 01 and 53\nReconnect the connector XC14.114 in the roof of car C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "\nThe HV external socket connection status dissapears from the lower status indicator icon line in the HMI",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables:",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "result": "NE",
+            "name": "APS FAILURE",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test\nCheck that the battery is charged correctly from APS in C1, in the event of failure of the APS in C2.",
+                    "id": "7.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test\nCheck that the battery is charged correctly from APS in C1, in the event of failure of the APS in C2.",
+                    "initial_conditions": [
+                        "-Battery connected",
+                        "-vehicle switched ON",
+                        "-HV connected to the catenary",
+                        "-Pantograph up",
+                        "-Both APS in service",
+                        "-Battery is not fully charged"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "7.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Connect external device to TCMS system and simulate the failure of APS in C2 by forcing the variable APS_C2_BCG_STS.BCGShutDown = 1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Inside the battery housing in C2 check that relay 14K01 is energized.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check that the battery is being charged. Verify that current flows through the battery.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalize the state of  APS in C2 unforcing variable APS_C2_BCG_STS.BCGShutDown.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Inside the battery housing in C2 check that relay 14K01 is de-energized.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

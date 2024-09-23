@@ -1,0 +1,1080 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.90 - STT CAB Aux Controls Functional Test V5_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "WINDSCREEN WIPER OPERATION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Wiper Water Tank Diagnostic",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Wiper Water Tank Diagnostic",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Empty the Wiper Water Tank manually through external pump.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Water Pump tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens (Water pump will not start).",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Fill the Wiper Water Tank manually.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Water Pump Operation",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Water Pump Operation",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- Wiper Water Tank is not empty."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Water Pump tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Water will be Sprayed on Windscreen along with wiper movement in slow speed, as long as virtual pushbutton remains pressed. From the moment the pushbutton is released wipers will remain active for an additional time of PM_WS_CYCLE_TIME+PM_AX_WIPERS_ADD_TIME s.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Wiper Operation in Manual Mode-SLOW speed",
+                    "id": "1.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Wiper Operation in Manual Mode-SLOW speed",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- Windscreen is Wet."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Speed-1 (slow speed) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper in Slow speed will be activated continuosly",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper Off tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will be stopped. \nCheck that Wiper stops at the parked position.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Wiper Operation in Manual Mode-FAST speed",
+                    "id": "1.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Wiper Operation in Manual Mode-FAST speed",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Windscreen is Wet."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Speed-2 (fast speed) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper in Fast speed will be activated continuosly",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper Off tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will be stopped. \nCheck that Wiper stops at the parked position.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Wiper Operation in Manual Mode-Interval Selection",
+                    "id": "1.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Wiper Operation in Manual Mode-Interval Selection",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Windscreen is Wet."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Int 1 (Interval-1 speed) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will continue to operate with slow speed with a time period of PM_AX_WIPERS_INTERVAL1 between consecutive stop & start.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Int 2 (Interval-2 speed) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will continue to operate with slow speed with a time period of PM_AX_WIPERS_INTERVAL2 between consecutive stop & start..\nNotice the change in frequency of wiping from Interval-1.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Int 3 (Interval-3 speed) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will continue to operate with slow speed with a time period of PM_AX_WIPERS_INTERVAL3 between consecutive stop & start.. \nNotice the change in frequency of wiping from Interval-1 & Interval-2.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper Off tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will be stopped. \nCheck that Wiper stops at the parked position.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Wiper Operation in AUTO Mode",
+                    "id": "1.06",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Wiper Operation in AUTO Mode",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Windscreen is Wet."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.06020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the AUTO tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Auto Wiping Mode is selected by TCMS.\n(AUTO tab color changes to Blue)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Connect external device to TCMS system and force the variable IO2_CX_IA_RAIN_SENS of the rain sensor to 25000",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will start with LOW time duration between consecutive wiping cycle.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Connect external device to TCMS system and force the variable IO2_CX_IA_RAIN_SENS of the rain sensor to 11500",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will start with HIGH time duration between consecutive wiping cycle.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.06060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Wiper Off tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wiper will be stopped. \nCheck that Wiper stops at the parked position.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "ACOUSTIC WARNING OPERATION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo Check the operation of Exterior Warning Bell",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo Check the operation of Exterior Warning Bell",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\n- Press the \"Bell\" pushbutton (90S01) located at the Auxiliary handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Warning Bell will produce sound as long as pushbutton remains pressed.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check that operation of Warning Bell has been recorded in Event Recorder.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Non-Active CABIN\n- Press the \"Bell\" pushbutton (90S01) located at the Auxiliary handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Warning Bell will produce sound as long as pushbutton remains pressed.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check that operation of Warning Bell has been recorded in Event Recorder.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "result": "NE",
+            "name": "SUN BLIND CONTROL",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo Check the operation of Electric Curtain",
+                    "id": "3.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo Check the operation of Electric Curtain",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Navigate to Driver Command Screen on HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Curtain DOWN pushbutton on HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Electric Curtain will start going down.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Curtain STOP pushbutton on HMI while the Electric curtain in motion.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Electric Curtain will stop moving and remain in the position.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Curtain DOWN pushbutton on HMI again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Electric Curtain will start going down from the position. Check that sunblind is totally deployed. Pushbutton will deactivate after a certain time.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Curtain UP pushbutton on HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Electric Curtain will start going up.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Curtain STOP pushbutton on HMI while the Electric curtain in motion.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Electric Curtain will stop moving and remain in the position.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Curtain UP pushbutton on HMI again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Electric Curtain will start going up from the position. Check that sunblind is totally collected. Pushbutton will deactivate after a certain time.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "result": "NE",
+            "name": "WINDSCREEN DEMISTER DEFROSTER FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo verify that controls are not active in NON active cabin",
+                    "id": "4.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify that controls are not active in NON active cabin",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- 230V, 1\u00d8 AC voltage from APS is available at MCB 06Q04 terminals.",
+                        "- Local Cab is NOT active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the HVAC tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.\n(Check that Relays 90K04, 90K10 and Contactor 90K11 remain de-energized.)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE:\nTo verify the correct functionality of the device in active cabin",
+                    "id": "4.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE:\nTo verify the correct functionality of the device in active cabin",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- 230V, 1\u00d8 AC voltage from APS is available at MCB 06Q04 terminals.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the HVAC tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the HEAT (windscreen heater) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Relays 90K04, 90K10 and Contactor 90K11 are energized.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check the DC supply voltage at the terminals of below equipments:\n- Lateral Window heaters (90A03 & 90A04).\n- Rear View Cameras (85B11 & 85B12)\n- Blind Spot Cameras (85B13 & 85B14)  \nPhysically verify that heater is ON.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check the 230V, 1-phase AC supply voltage at the Windscreen heater (90A01) terminals. \nPhysically verify that heater is ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Again press the HEAT (windscreen heater) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Relays 90K04, 90K10 and Contactor 90K11 have de-energized.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Verify that there is no voltage at the terminals of Windscreen heater, Lateral Window heaters, Rear View Cameras and Blind Spot cameras.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo Verify the Auto cut-off functionality of Windscreen heater.",
+                    "id": "4.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo Verify the Auto cut-off functionality of Windscreen heater.",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- 230V, 1\u00d8 AC voltage from APS is available at MCB 06Q04 terminals.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the HVAC tab on the Main Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "A pop-up screen will come with different control options.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the HEAT (windscreen heater) tab on the pop-up Screen of HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Windscreen Heater is activated along with Lateral Window heaters and Heaters for Rear View Cameras & Blind Spot cameras.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for 30 minutes ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Windscreen Heater and Camera Heater are de-activated.\n(Check that Relays 90K04, 90K10 and Contactor 90K11 have de-energized)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo Verify the Automatic operation of Camera Heater based on ambient temperature.",
+                    "id": "4.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo Verify the Automatic operation of Camera Heater based on ambient temperature.",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- TCMS is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Simulate the external ambient temperature value from HVAC\n(HVACS_C1_EXT_TEMP\nHVACS_C2_EXT_TEMP\t\nHVACC_C1_EXT_TEMP\t\nHVACC_C2_EXT_TEMP)\nlower than PM_AX_CAM_LOW_TEMPERATURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variable.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Camera Heater is activated. \n(Check that Relay 90K10 is energized).",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Windshield Heater is not activated.\n(Check that Relay 90K04 & 90K11 remain de-energized).",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Simulate the external ambient temperature value from HVAC\n(HVACS_C1_EXT_TEMP\nHVACS_C2_EXT_TEMP\t\nHVACC_C1_EXT_TEMP\t\nHVACC_C2_EXT_TEMP)\nhigher than PM_AX_CAM_LOW_TEMPERATURE + 2 degC.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variable.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Camera Heater is de-activated. \n(Check that Relay 90K10 is de-energized).",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "result": "NE",
+            "name": "LAMP TEST",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check that all the driver desk illuminated lamps and pushbutton indicators are in healthy condition.",
+                    "id": "5.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check that all the driver desk illuminated lamps and pushbutton indicators are in healthy condition.",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press the Lamp Test button on HMI",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that below lamps are illuminated for 5 seconds:\n10S20 (Cleaning Mode PB)\n72S01 (Cab Lighting PB)\n76S01 (Hazard Lighting PB)\n47H01 (Fire Detected Lamp)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "result": "NE",
+            "name": "FAILURES",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check that tripping of circuit breaker is monitored.",
+                    "id": "6.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check that tripping of circuit breaker is monitored.",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "6.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Manually Trip Circuit Breaker 90Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 90Q01 and manually trip MCB 90Q03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 90Q03 and manually trip MCB 91Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 91Q01 and manually trip MCB 90Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 90Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "result": "NE",
+            "name": "DRIVER SEAT FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the operation of Driver Seat.",
+                    "id": "7.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the operation of Driver Seat.",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- Local Cab is NOT Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "7.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Activate the Cab by changing the Key switch from \"0\" to \"1\" position.\n- Measure voltage between main supply terminals.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that measured voltage is 24V DC.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- De-activate the Cab by changing the Key switch from \"1\" to \"0\" position.\n- Measure voltage between main supply terminals.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that there is no voltage between terminals.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the operation of Driver Seat Heater.",
+                    "id": "7.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the operation of Driver Seat Heater.",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "7.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the Driver's Seat:\n- Press the Heating switch on the side of Driver Seat",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Driver Seat Heater is switched ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "No Action (Wait for seat temperature to rise)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Driver Seat Heater is switched OFF automatically.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "No Action (Wait for seat temperature to cool down)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Driver Seat Heater is switched ON automatically.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the Driver's Seat:\n- Press the Heating switch on the side of Driver Seat again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Driver Seat Heater is switched OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the operation of Driver Seat Height Adjustment.",
+                    "id": "7.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the operation of Driver Seat Height Adjustment.",
+                    "initial_conditions": [
+                        "- Train Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "7.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the Driver's Seat:\n- Command to Move Up the Seat.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Driver Seat is moving UP.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In the Driver's Seat:\n- Command to Move Down the Seat.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check that Driver Seat is moving DOWN.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

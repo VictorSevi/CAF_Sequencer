@@ -1,0 +1,1806 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.20 - STT  Propulsion Manage Functional Test V6_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "MASTER CONTROLLER CONTROLS",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE:\nTo check correct acquisition of the Direction Switch values by the TCMS, from C1 cabin.",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE:\nTo check correct acquisition of the Direction Switch values by the TCMS, from C1 cabin.",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-Cab C1 Enabled",
+                        "-Direction Selector in \"1\" position",
+                        "-vehicle Stopped",
+                        "-Master Controller in COAST."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Whitout moving Master Controller",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction Selector to \"V\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction Selector to \"R\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction Selector to \"1\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE:\nTo check correct acquisition of the Direction Switch values by the TCMS, from C2 cabin.",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE:\nTo check correct acquisition of the Direction Switch values by the TCMS, from C2 cabin.",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-Cab C2 Enabled",
+                        "-Direction Selector in \"1\" position",
+                        "-vehicle Stopped",
+                        "-Master Controller in COAST."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Whitout moving Master Controller",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction Selector to \"V\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction Selector to \"R\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction Selector to \"1\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE.\nFailures detection of the vehicle direction by TCMS",
+                    "id": "1.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE.\nFailures detection of the vehicle direction by TCMS",
+                    "initial_conditions": [],
+                    "test_steps": [
+                        {
+                            "id": "1.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nMovement of Master controller command correct values.",
+                    "id": "1.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nMovement of Master controller command correct values.",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-Cab Enabled",
+                        "-Direction Selector in \"1\" position",
+                        "-vehicle Stopped",
+                        "-Master Controller in COAST.",
+                        "-All Doors are closed"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move direction Selector to \"V\"\nMaintain Master controller in COAST",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "\nMove master controller to Min propulsion",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move master controller to Max propulsion",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move master controller to Min propulsion",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move master controller to Min Brake",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move master controller to Max Brake",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move master controller to Emergency Brake",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move Master Controller To COAST",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nCheck Master Controller error generation",
+                    "id": "1.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nCheck Master Controller error generation",
+                    "initial_conditions": [
+                        "-vehicle Switch ON",
+                        "-Battery connected",
+                        "-Cab Enabled",
+                        "-Direction Selector in \"1\" position",
+                        "-vehicle Stopped",
+                        "-Master Controller in COAST.",
+                        "-All Doors are closed"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Fatal Error IO and analog signals:\nRemove the wire 86140.54 from pin 41b of power strip XT14.113 in enabled cab (C1) OR wire 86140.54 from pin 51b of power strip XT14.113 in enabled cab (C2)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalize the wires.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm dissapears",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Lost of digital signals IO1\nRemove the wire 16122.13 from pin 31b (C1) OR 34b (C2) of power strip XT14.113 in enabled cab.\nRemove the wire 16122.12 from pin 31b (C1) OR 34b (C2) of power strip XT14.113 in enabled cab.\nMove Master Controller to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalize the wires.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm dissapears",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Lost of digital signals IO2\nRemove the wire 16122.14 from pin 32b of power strip XT14.113 in enabled cab (C1) OR wire 16122.07 from pin  33b of power strip XT14.113 in enabled cab (C2).\nMove Master Controller to Brake area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalize the wires.\nMove master controller in COAST area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm dissapears",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Lost of Analog input 1\nRemove the wire 86120.24 from pin 57a of power strip XT14.113 in enabled cab.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move master controller to Max Brake",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Move master controller in COAST area\nPress SIFA PB in the handle and release it",
+                    "id": "1.0510",
+                    "result": "NE",
+                    "description": "Move master controller in COAST area\nPress SIFA PB in the handle and release it",
+                    "initial_conditions": [],
+                    "test_steps": [
+                        {
+                            "id": "1.05120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Lost of Analog input 2\nRemove the wire 86160.27 from pin 39 of power strip XT14.113 in enabled cab.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Lost of both analog inputs\nRemove the wire 86120.24 from pin 57 of power strip XT14.113 in enabled cab.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check the following variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalize the wires.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm dissapears",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "PROPULSION ENABLE SIGNAL",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nVerify to start vehicle it is necessary to press the deadman pushbutton in the handle before to reset the propulsion enable loop is reset.\nDuring these Test vehicle can be moved. Pay attention to avoid the presence of any person in the vehicle exterior.",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify to start vehicle it is necessary to press the deadman pushbutton in the handle before to reset the propulsion enable loop is reset.\nDuring these Test vehicle can be moved. Pay attention to avoid the presence of any person in the vehicle exterior.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV is connected to the vehicle and pantographs is up.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "-PZB bypass actuated",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are released"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton for Door Release to command close all the doors.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All Doors closed and indication will be displayed on HMI.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Return back PROPULSION/BRAKE  handle to COAST.\nPress deadman pedal and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Return back PROPULSION/BRAKE  handle to COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "vehicle moves",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Return back PROPULSION/BRAKE  handle to COAST.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Open again the propulsion Enable Loop by \nmoving PROPULSION/BRAKE Handle to Emergency Brake",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Check if reset maneouver is not done the vehicle will not move:\nMove the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Return back PROPULSION/BRAKE  handle to COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move Direction Switch to \"1\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify opening of a door will open the propulsion loop is open. Each door interruption in the All Doors closed Loop is already tested in other procedure, in this procedure only single door will be checked.\nDuring these Test vehicle can be moved. Pay attention to avoid the presence of any person in the vehicle exterior.",
+                    "id": "2.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify opening of a door will open the propulsion loop is open. Each door interruption in the All Doors closed Loop is already tested in other procedure, in this procedure only single door will be checked.\nDuring these Test vehicle can be moved. Pay attention to avoid the presence of any person in the vehicle exterior.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV is connected to the vehicle and pantographs is up.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "-PZB bypass actuated",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Open any door by using door emergency release switch.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate All Doors Closed Bypass in the cab enabled",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalize All Doors Closed Bypass in the cab enabled",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Actuate All Doors Closed Bypass in the cab not enabled",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Normalize All Doors Closed Bypass in the cab not enabled\nAnd normalize the emergency opened door",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify failure of the PZB, opens the propulsion loop. \nDuring these Test vehicle can be moved. Pay attention to avoid the presence of any person in the vehicle exterior.",
+                    "id": "2.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify failure of the PZB, opens the propulsion loop. \nDuring these Test vehicle can be moved. Pay attention to avoid the presence of any person in the vehicle exterior.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV is connected to the vehicle and pantographs is up.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In car C2, simulate a failure of PZB.\nDisconnect cable 43351.01 form terminal bar 43XT01, terminal 70\nwait for 3 seconds\n",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In cab enabled used the PZB bypass",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In car C2,\nReconnect cable 43351.01 to terminal bar 43XT01, terminal 70\nand reset PZB bypass switch\n",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify external connection of power supply opens the propulsion loop. ",
+                    "id": "2.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify external connection of power supply opens the propulsion loop. ",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released",
+                        "-External HV connector at ROFF in C1 car shall be disconnected."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Made a link between pins 04/01 and 04/03 of connector 01X01/M",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Remove link between pins 04/01 and 04/03 of connector 01X01/M",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify Overspeed condition, opens the propulsion loop. ",
+                    "id": "2.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify Overspeed condition, opens the propulsion loop. ",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV is connected to the vehicle and pantographs is up.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simulate vehicle speed is over 80km/h",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.05040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Simuate vehicle is stopped",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.05050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify that when in cab enabled to direction switchis in \"1\" position the propulsion loop is opened.",
+                    "id": "2.06",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify that when in cab enabled to direction switchis in \"1\" position the propulsion loop is opened.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV is connected to the vehicle and pantographs is up.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.06020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move Direction Switch to \"1\" position in active CABIN",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move Direction Switch to \"R\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "vehicle moves",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move Direction Switch to \"V\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move Direction Switch to \"1\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify that when the parking brake is applied the propulsion loop is opened.",
+                    "id": "2.07",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify that when the parking brake is applied the propulsion loop is opened.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV is connected to the vehicle and pantographs is up.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.07020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.07030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press the parking brake pushbutton at enabled cabin and wait for 3  s",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.07040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Release Parking Brake B at enabled cabin",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.07050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify that when the SAFETY BRAKE s applied the propulsion loop is opened.",
+                    "id": "2.08",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify that when the SAFETY BRAKE s applied the propulsion loop is opened.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV is connected to the vehicle and pantographs is up.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.08020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.08030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Press the emergency mushrooom 1 at enabled cabin",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.08040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Release the emergency mushrooom 1 at enabled cabin",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.08050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it\nMove back again the PROPULSION/BRAKE  handle to Propulsion area",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify that if vehicle is not stopped and emergency Brake 1/2 is not applied, it is not possible to activate TCMS degraded mode and the propulsion loop is opened.",
+                    "id": "2.09",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify that if vehicle is not stopped and emergency Brake 1/2 is not applied, it is not possible to activate TCMS degraded mode and the propulsion loop is opened.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released",
+                        "-Emergency Brake 1/2 is released."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.09020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Activate TCMS Degraded mode switch 16S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Relay 16K01 is not energized at any car",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Left HMI inactive, is  showing TCMS degraded mode.\nRight HMI is active but indicates TCMS degraded mode is active",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Measure at terminal var XT14.113 terminal 24a: 0Vdc",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset TCMS Degraded mode switch 16S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HMI is active again",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in Emergency.\nSimulate vehicle is not stopped.\nDisconnect cable 18140.07 from terminal bar XT55.101 terminal 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Activate TCMS Degraded mode switch 16S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Relay 16K01 is not energized at any car",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Left HMI inactive, is  showing TCMS degraded mode.\nRight HMI is active but indicates TCMS degraded mode is active",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Measure at terminal var XT14.113 terminal 24a: 0Vdc",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset TCMS Degraded mode switch 16S01\nSimulate vehicle is stopped.\nConnect cable 18140.07 to terminal bar XT55.101 terminal 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HMI is active again",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in Emergency.\nvehicle is stopped\nActivate TCMS Degraded mode switch 16S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Relay 16K01 is energized at all car",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Left HMI inactive, is  showing TCMS degraded mode.\nRight HMI is active but indicates TCMS degraded mode is active",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Measure at terminal var XT14.113 terminal 24a: 24Vdc",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset TCMS Degraded mode switch 16S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Relay 16K01 is denergized at all car",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HMI is  active again",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Measure at terminal var XT14.113 terminal 24a: 0Vdc",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.09110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nVerify that if vehicle isolation state of the brakes is unknown in all bogies the propulsion loop is opened.",
+                    "id": "2.10",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nVerify that if vehicle isolation state of the brakes is unknown in all bogies the propulsion loop is opened.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "-Direction Switch in \"V\"",
+                        "- vehicle is at Standstill.",
+                        "-Parking Brake Released",
+                        "- Doors are closed and not released",
+                        "-Emergency Brake 1/2 is released."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.10020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, select the virtual pushbutton for Motor Bogie C1.\n- Operate Parking Brake Bypass Switch 32S06.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for approx. 30 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Operate the valve H14 to block the hydraulic circuirt of Motor Bogie C1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wait for the presure to fall below 82 bar.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, select the virtual pushbutton for Trailer Bogie.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for approx. 30 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Trailer Bogie Safety Brake is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Operate the valve H14 to block the hydraulic circuirt of Trailer Bogie",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wait for the presure to fall below 82 bar.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, select the virtual pushbutton for Motor Bogie C2.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for approx. 30 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Operate the valve H14 to block the hydraulic circuirt of Motor Bogie C2",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wait for the presure to fall below 82 bar.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Traction loop is opened in the vehicle",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.10120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Move all H14 valves from the blocking position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

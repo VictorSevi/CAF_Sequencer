@@ -1,0 +1,1379 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.76 - STT Exterior Lighting Functional Test V7_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "HEAD LIGHTS, MARKER LIGHTS & TAIL LIGHTS",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Manual control of exterior lights.",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Manual control of exterior lights.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- No Cab is Active.",
+                        "- External Ambient Light conditions equivalent to Daytime.",
+                        "- Headlights are OFF",
+                        "- Tail lights are ON at both ends."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Activate the Cab by changing the Cab Key Switch from \"0\" to \"1\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01021",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move direction switch from \"0\" to \"1\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01022",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN\n- Move direction switch to \"V\" or \"R\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights ON & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights  OFF\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press low beam virtual pushbutton to switch ON the Headlights",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights ON with low beam\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual pushbutton for Headlights HIGH beam (3 seconds)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights ON with high beam\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual pushbutton to switch OFF the Headlights",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights ON & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press low beam virtual pushbutton for Headlights HIGH beam",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Headlights emit a high beam flash, when PB is held down\nOther Lights status also remains unchanged (same as in previous step)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01061",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move direction switch from \"V\" or \"R\" position to \"0\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights  ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Deactivate the Cab by changing the Cab Key switch from \"1\" to \"0\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Automatic control of exterior lights.",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Automatic control of exterior lights.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- No Cab is Active.",
+                        "- Headlights are OFF.",
+                        "- Tail lights are ON at both ends.",
+                        "- External Ambient Light conditions equivalent to Daytime."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Activate the Cab by changing the Cab Key switch from \"0\" to \"1\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02021",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move direction switch from \"0\" to \"1\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02022",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move direction switch to \"V\" or \"R\" position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights ON & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights  OFF\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Simulate low ambient light condition by covering exterior light sensor.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights ON with low beam\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual pushbutton for Headlights HIGH beam",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights ON with high beam\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Simulate bright ambient light condition by uncovering exterior light sensor.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights ON & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Simulate low ambient light condition by covering exterior light sensor.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights ON with low beam\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Uncover the exterior light sensor.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights ON & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press low beam virtual pushbutton to switch ON the Headlights",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights ON with low beam\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light ON",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights ON\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Cover exterior light sensor.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights status remains unchanged (same as in previous step)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Uncover exterior light sensor.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights status remains unchanged (same as in previous step)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual pushbutton to switch OFF the Headlights",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "In Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights ON & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "In Non-Active Cab: \n- Headlights OFF\n- Tailights OFF\n- Front Marker Lights & Upper Marker Light OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Side Marker Lights are ON",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the tail light illumination (Z6) in Parked vehicle.",
+                    "id": "1.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the tail light illumination (Z6) in Parked vehicle.",
+                    "initial_conditions": [
+                        "- vehicle is parked.",
+                        "- Battery Contactor is Open.",
+                        "- Battery voltage is 24Vdc (nominal value)"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Activate Z6 switch 76S02.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Left Tail light illuminates in the same (Head) Cab (76H12).",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Reset Z6 switch 76S02.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Left Tail light (76H12) switches OFF in Head Cab.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Rear CABIN:\n- Activate Z6 switch 76S02 in other side cabin",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Right Tail light illuminates in the last (Tail) Cab (76H12) with respect to Head Cabin.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Rear CABIN:\n- Reset Z6 switch 76S02.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Tail light (76H12) switches OFF in Rear Cab.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "BRAKING LIGHTS",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the functionality of braking lights with master controller in braking.",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the functionality of braking lights with master controller in braking.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is Active and forward direction is selected",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- vehicle is at Standstill and Holding Brake is applied.",
+                        "- Sufficient Track Length available for vehicle movement.",
+                        "- Emergency Brake 1/2, Emergency Brake 3 and Safety Brake are released.",
+                        "- Parking Brake is released.",
+                        "- Rear Brake Lights are OFF."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move the vehicle at the speed > 2Km/h",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Command Service Braking from Traction Brake handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move the Traction Brake handle to COASTING position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move the Traction Brake handle to BRAKE position and stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Force the output O_BRAKE=0",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Force the output O_BRAKE=1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Unforce output O_BRAKE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the functionality of braking lights with Emergency  Brake 1/2",
+                    "id": "2.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the functionality of braking lights with Emergency  Brake 1/2",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is Active and forward direction is selected",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- vehicle is at Standstill and Holding Brake is applied.",
+                        "- Emergency Brake 1/2, Emergency Brake 3 and Safety Brake are released.",
+                        "- Parking Brake is released.",
+                        "- Rear Brake Lights are OFF."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate Passenger Alarm pushbutton (command emergency brake 1/2).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Reset Passenger Alarm pushbutton (reset emergency brake 1/2).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the functionality of braking lights with Emergency  Brake 3",
+                    "id": "2.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the functionality of braking lights with Emergency  Brake 3",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is Active.",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- vehicle is at Standstill and Holding Brake is applied.",
+                        "- Emergency Brake 1/2, Emergency Brake 3 and Safety Brake are released.",
+                        "- Parking Brake is released.",
+                        "- Rear Brake Lights are OFF."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Disconnect relay coil 18K03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move the Traction Brake handle to Emergency Braking (last) position (command emergency brake 3)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is ON.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Re-connect relay coil 18K03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move the Traction Brake handle to COASTING position (reset emergency brake 3)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the functionality of braking lights with SAFETY BRAKE",
+                    "id": "2.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the functionality of braking lights with SAFETY BRAKE",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is Active and forward direction is selected",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- vehicle is at Standstill and Holding Brake is applied.",
+                        "- Emergency Brake 1/2, Emergency Brake 3 and Safety Brake are released.",
+                        "- Parking Brake is released.",
+                        "- Rear Brake Lights are OFF."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Activate Safety Mushroom pushbutton (command safety brake).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is ON.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Reset Safety Mushroom pushbutton (reset safety brake).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Rear Brake Light is OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "result": "NE",
+            "name": "DIRECTION LIGHTS",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the functionality of Direction lights.",
+                    "id": "3.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the functionality of Direction lights.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for LEFT direction light.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights on the LEFT side of the active cabin start blinking.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for RIGHT direction light.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights on the RIGHT side of the active cabin start blinking.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for LEFT direction light again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights on the LEFT side of the active cabin start blinking.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for LEFT direction light again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights switches OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for RIGHT direction light.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights on the RIGHT side of the active cabin start blinking.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for RIGHT direction light again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Lights switches OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "result": "NE",
+            "name": "HAZARD LIGHTS",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the functionality of Hazard lights.\n-Independent of the Battery Contactor Status (ON/OFF)\n-Independent of the cabin status (active/inactive)",
+                    "id": "4.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the functionality of Hazard lights.\n-Independent of the Battery Contactor Status (ON/OFF)\n-Independent of the cabin status (active/inactive)",
+                    "initial_conditions": [
+                        "- vehicle Switched OFF."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Hazard Light pushbutton 76S01.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All direction lights are blinking on both sides (left & right).",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Hazard Light pushbutton 76S01 is blinking.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Reset Hazard Light pushbutton 76S01.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All direction lights and pushbutton light switch OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "result": "NE",
+            "name": "FAILURES",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check that tripping of circuit breaker is monitored.",
+                    "id": "5.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check that tripping of circuit breaker is monitored.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Manually Trip Circuit Breaker 76Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 76Q01 and manually trip MCB 76Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 76Q02 and manually trip MCB 76Q05",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 76Q05 and manually trip MCB 76Q06",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 76Q06",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check lamps monitoring circuit of Head Lights",
+                    "id": "5.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check lamps monitoring circuit of Head Lights",
+                    "initial_conditions": [
+                        "- Vehicle Switched ON.",
+                        "- Local Cab is Active and forward direction is selected.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual pushbutton to switch ON the Headlights",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Head lights switched ON with low beam.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active Car:\n- Disconnect wire from Relay pin 76K04: 5",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active Car:\n- Re-connect wire in relay socket pin 76K04: 5",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active Car:\n- Disconnect wire from Relay pin 76K04: 14",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active Car:\n- Re-connect wire in relay socket pin 76K04: 14",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual pushbutton to switch OFF the Headlights",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Head lights switched OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check lamps monitoring circuit of Tail Lights",
+                    "id": "5.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check lamps monitoring circuit of Tail Lights",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is NOT Active & Uncoupled.",
+                        "- Z6 switch 76S02 is not pressed.",
+                        "- Tail Light is ON in the Local Cab."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Disconnect wire from Relay pin 76K04: 3",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Re-connect wire in relay socket pin 76K04: 3",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Disconnect wire from Relay pin 76K04: 4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Re-connect wire in relay socket pin 76K04: 4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

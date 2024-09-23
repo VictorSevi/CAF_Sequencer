@@ -1,0 +1,2219 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.40 - STT Safety Systems Functional Test V6_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "PASSENGER ALARM FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality through Passenger Alarm Handle-1: vehicle \"In Station\" scenario.",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality through Passenger Alarm Handle-1: vehicle \"In Station\" scenario.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active with Forward Direction selected.",
+                        "- vehicle is at Standstill and one side doors opened."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Door Release again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All Doors will be closed and \"All Door Close\" Green indicator will appear on HMI.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate Passenger Alarm device 41S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device 41S01 starts flashing.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Emergency Brake 1/2 is applied.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon ON in Active Cabin HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will start in Active Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Intercom is Activated between Driver Cab and Passenger area. Verify that Intercom is working normally.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CCTV screen displays the area where PAD handle has been actuated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, acknoledge the alarm for \"Passenger Alarm acknowledgement\" (AL41021).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device 41S01 starts glowing continuously.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will stop.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Reset Passenger Alarm device 41S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device 41S01 switched OFF.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Emergency Brake 1/2 is de-activated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon disappears from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Intercom is de-activated between Driver Cab and Passenger area.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality through Passenger Alarm Handle-2: vehicle \"In Station\" scenario.",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality through Passenger Alarm Handle-2: vehicle \"In Station\" scenario.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active with Forward Direction selected.",
+                        "- vehicle is at Standstill and one side doors opened."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Door Release again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All Doors will be closed and \"All Door Close\" Green indicator will appear on HMI.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate Passenger Alarm device 41S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device 41S02 starts flashing.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Emergency Brake 1/2 is applied.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon ON in Active Cabin HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will start in Active Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Intercom is Activated between Driver Cab and Passenger area. Verify that Intercom is working normally.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CCTV screen displays the area where PAD handle has been actuated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, acknoledge the alarm for \"Passenger Alarm acknowledgement\" (AL41022).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device 41S02 starts glowing continuously.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will stop.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Reset Passenger Alarm device 41S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device 41S02 switched OFF.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Emergency Brake 1/2 is de-activated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon disappears from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Intercom is de-activated between Driver Cab and Passenger area.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality when vehicle has just departed: vehicle \"In Station\" scenario.",
+                    "id": "1.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality when vehicle has just departed: vehicle \"In Station\" scenario.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active with forward direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- All Doors are Closed.",
+                        "- Sufficient Track Length available for movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n-Reset Propulsion, by pressing SIFA PB with the master controller in COAST.\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving at slow speed.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Before 8s time from the start of movement, Activate any  Passenger Alarm device.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device starts flashing.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Emergency Brake 1/2 is applied and vehicle comes to Standstill.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon ON in Active Cabin HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will start in Active Cabin. Check Alarm.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Intercom is Activated between Driver Cab and Passenger area. Verify that Intercom is working normally.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CCTV screen displays the area where PAD handle has been actuated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, acknoledge the alarm for \"Passenger Alarm acknowledgement\" (AL41021/AL41022).\n- Move the master controller back to Coasting region.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device starts glowing continuously.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will stop.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens. Movement is restricted.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller back to Coasting region.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Reset Passenger Alarm device.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device switched OFF.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Emergency Brake 1/2 is de-activated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon disappears from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Intercom is de-activated between Driver Cab and Passenger area.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality when vehicle is in motion: vehicle \"Out of Station\" scenario.",
+                    "id": "1.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Passenger Alarm Functionality when vehicle is in motion: vehicle \"Out of Station\" scenario.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active with Forward Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- All Doors are Closed.",
+                        "- Sufficient Track Length available for movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n-Reset Propulsion, by pressing SIFA PB with the master controller in COAST.\n- Move the vehicle for short distance for more than 8 seconds at slow speed and stop.\n- Don't open any door.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle is at standstill and doors are closed.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate any  Passenger Alarm device.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brake 1/2 is NOT applied.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon ON in Active Cabin HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will start in Active Cabin. Check Alarm.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Intercom is Activated between Driver Cab and Passenger area. Verify that Intercom is working normally.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CCTV screen displays the area where PAD handle has been actuated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, acknoledge the alarm for \"Passenger Alarm acknowledgement\" (AL41021/AL41022).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "LED next to the Passenger Alarm device starts glowing continuously.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will stop.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller back to Coasting region and apply service brake. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In HMI of Active CABIN:\n- Press virtual PB for Door side selection.\n- Press virtual PB for Door Release.\n- Press virtual PB for Central Opening.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Door will open on the selected side.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In HMI of Active CABIN:\n- Press virtual PB for Door Release.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All doors will close.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens. vehicle does not start movement.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Passenger Alarm icon disappears from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Intercom is de-activated between Driver Cab and Passenger area.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "In Active CABIN:\n- Move the master controller back to Coasting region.",
+                    "id": "1.0410",
+                    "result": "NE",
+                    "description": "In Active CABIN:\n- Move the master controller back to Coasting region.",
+                    "initial_conditions": [
+                        "- Reset Passenger Alarm device"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.04120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Reset Propulsion, by pressing SIFA PB with the master controller in COAST.\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller back to Coasting region and apply service brake. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the failures of Passenger Alarm Function.",
+                    "id": "1.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the failures of Passenger Alarm Function.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- vehicle is Active.",
+                        "- vehicle is at Standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove the cable from Relay terminal 41K01: 3",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Activate Passenger Alarm device 41S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Reset Passenger Alarm device 41S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Activate Passenger Alarm device 41S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Local Car:\n- Reset Passenger Alarm device 41S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the cable in Relay terminal 41K01: 3",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove both the Cables (41123.02 & 41123.03) from Relay coil terminal 41K01: 2(+).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cables (41123.02 & 41123.03) into the Relay coil terminal 41K01: 2(+).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In car C2, disconnect circuit breaker 41Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.05110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reconnect Circuit Breaker",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "FIRE DETECTION SYSTEM FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Fire detection in Cab & Passenger Area",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Fire detection in Cab & Passenger Area",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- vehicle is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Activate Smoke detector in Cabin 47B01\n- Wait until the smoke detector is deactivated (wait a minimun of 10s)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will appear on at HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will sound in Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on desk will glow in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "All the HVAC units of the vehicle will switch off.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Fire Detection Unit Reset Command.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will disappear from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be OFF in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC units will start operation after 15 seconds",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate Smoke detector 47B02\n- Wait until the smoke detector is deactivated (wait a minimun of 10s)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) on HMI and will appear on HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will sound in Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will glow in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "All the HVAC units of the vehicle will switch off.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Fire Detection Unit Reset Command.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will disappear from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be OFF in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC units will start operation after 15 seconds",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate Smoke detector 47B03\n- Wait until the smoke detector is deactivated (wait a minimun of 10s)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) on HMI and will appear on HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will sound in Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will glow in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "All the HVAC units of the vehicle will switch off.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Fire Detection Unit Reset Command.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will disappear from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be OFF in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC units will start operation after 15 seconds",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate Smoke detector 47B04\n- Wait until the smoke detector is deactivated (wait a minimun of 10s)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) on HMI and will appear on HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will sound in Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will glow in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "All the HVAC units of the vehicle will switch off.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Fire Detection Unit Reset Command.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will disappear from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be OFF in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC units will start operation after 15 seconds",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01160",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01170",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01180",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Activate Smoke detector 47B05\n- Wait until the smoke detector is deactivated (wait a minimun of 10s)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) on HMI and will appear on HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will sound in Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will glow in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "All the HVAC units of the vehicle will switch off.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01190",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Fire Detection Unit Reset Command.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will disappear from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be OFF in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC units will start operation after 15 seconds",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01200",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01210",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01211",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for 30 min since the last reset operation.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check variable value",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Fire detection in Propulsion & APS units.",
+                    "id": "2.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Fire detection in Propulsion & APS units.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "-Cab is active",
+                        "- HMI is Active.",
+                        "- vehicle is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Simulate Fire detection in Propulsion Unit \n(Using external 1.5 sq.mm. cable, make a short circuit between the terminals 1-2 of resistor 47R01)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will appear on HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will sound in Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will glow in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC continues to work normally.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Affected propulsion system is disabled",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Fire Detection Unit Reset Command.\n(As PM_FD_RESET_OPERATIONS=0, the Fire detection system will not be reset).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) stays on at HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on desk stays ON in both the cabs.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In active cabina acknowledge the alarm Pop UP",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm will change from \"Active\" to \"Acknowldeged\".",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Forced reset the fire detection system. \nForce output O_OPTO_RESET with AUNIA",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will disappear from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be OFF in both the cabs.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Remove the external cable connected between the terminals 1-2 of resistor 47R01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Simulate Fire detection in APS Unit \n(Using external 1.5 sq.mm. cable, make a short circuit between the terminals 1-2 of resistor 47R03)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will appear on HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Audible Alarm (Buzzer) will start in Cabin.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will glow in both the cabs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC continues to work normally.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press the virtual pushbutton for Fire Detection Unit Reset Command.\n(As PM_FD_RESET_OPERATIONS=0, the Fire detection system will not be reset).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) stays on at HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be ON in both the cabs.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In active cabina acknowledge the alarm Pop UP",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm will change from \"Active\" to \"Acknowldeged\".",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Forced reset the fire detection system. \nForce output O_OPTO_RESET with AUNIA",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Visual Alarm (Fire Indication) will disappear from HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "LED 47H01 on Desk will be OFF in both the cabs.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Remove the external cable connected between the terminals 1-2 of resistor 47R03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the manual HVAC shutdown.",
+                    "id": "2.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the manual HVAC shutdown.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Activate HVAC OFF Switch 47S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All the HVAC units of the vehicle will switch off.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HVAC Switch OFF message will appear on HMI.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Activate HVAC OFF Switch 47S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All the HVAC units of the vehicle will be switched ON again.\nAlarm is reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the diagnostic for Fire extinguisher removal.",
+                    "id": "2.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the diagnostic for Fire extinguisher removal.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove the Fire extinguisher from its place.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Keep the Fire extinguisher back to its place.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "id": "2.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active.",
+                        "- C1 Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Manually Trip Circuit Breaker 47Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 47Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "SIFA FUNCTION",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "NOTE: Testing Procedure for SIFA Reset Sequence (FAST & SLOW) has been described in document D0000008205",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the SIFA Bypass functionality",
+                    "id": "3.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the SIFA Bypass functionality",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- All Doors are Closed.",
+                        "- Sufficient Track Length available for movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Operate Sealed Bypass Switch 42S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Bypass switch operation will be shown on HMI..",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Bypass switch operation will be recorded in EVR.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed > 1.5 Kmph\n- Release both SIFA pushbutton (on Traction Brake handle) and SIFA pedal.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens. vehicle continue to move.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Apply service brake to stop the vehicle.\n-Reset the SIFA BYPASS to its normal position",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "id": "3.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active.",
+                        "- C2 Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Manually Trip Circuit Breaker 42Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 42Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "result": "NE",
+            "name": "FORWARD WARNING COLLISION DETECTION FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the operation of FWCD System",
+                    "id": "4.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the operation of FWCD System",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is Active with Forward Direction selected.",
+                        "- HMI is Active.",
+                        "- Sufficient Track length available for movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "On Track:\n- Place the test object (detectable collision element) at about 250 meter on the front of Active Cab.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Take the movement at slow speed towards the test object.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "FWCD System detects the object from a distance of about 70 meter.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "CDWS Warning Pushbutton  glows (49S01)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Buzzer will activate. ",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the CDWS Reset pushbutton (49S01)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "FWCS System Resets and LED 49S01 stops glowing.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Buzzer will de-activate. ",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Apply service brake to stop the vehicle safely before reaching the  test object.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle comes to standstill.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the FWCD System Bypass operation.",
+                    "id": "4.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the FWCD System Bypass operation.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Local Cab is Active with Forward Direction selected.",
+                        "- HMI is Active.",
+                        "- Sufficient Track length available for movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "On Track:\n- Place the test object (detectable collision element) at about 250 meter on the front of Active Cab.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Operate CDWS Bypass Switch 49S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Bypass status wil be shown to Driver on HMI.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Take the movement at slow speed towards the test object.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "FWCD System does not detect the object.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Apply service brake to stop the vehicle safely before reaching the  test object.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle comes to standstill.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Reset CDWS Bypass Switch 49S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "id": "4.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active.",
+                        "- MCB 86Q02 is not tripped."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Manually Trip Circuit Breaker 49Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Reset MCB 49Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PZB SYSTEM FUNCTION",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "NOTE: PZB Routine System Testing Procedure has been described in document D0001726948",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the alarms of PZB Function.",
+                    "id": "5.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the alarms of PZB Function.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active.",
+                        "- vehicle is Active.",
+                        "- PZB is powered ON  not emergency Brake 1/2 required.",
+                        "- vehicle is standstill with only Holding brake applied.",
+                        "- PZB Bypass switch 43S01 is not activated."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Operate PZB bypass switch 43S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "PZB Bypass switch operation will be recorded in EVR.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Reset PZB bypass switch 43S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove the cable 43320.04 from TB 43XT01:72",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the cable 43320.04 in the TB 43XT01:72",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Connect  24Vdc to terminal TB 43XT01:74",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove 24Vdc to terminal TB 43XT01:74",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove the cable 43320.03 from relay terminal TB 43XT01:72",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the cable 43320.03 from relay terminal TB 43XT01:72",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Disconnect the cable 43330.03 from relay terminal TB 43XT01:74 and connect it to 43XT01:73",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Disconnect the cable 43330.03 from relay terminal TB 43XT01:73 and connect it back to 43XT01:74",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "id": "5.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the tripping of circuit breaker.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active.",
+                        "- C2 Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Manually Trip PZB Circuit Breaker 43Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 43Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

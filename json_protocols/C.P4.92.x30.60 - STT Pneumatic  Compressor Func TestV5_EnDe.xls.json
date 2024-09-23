@@ -1,0 +1,2934 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.60 - STT Pneumatic  Compressor Func TestV5_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "COMPRESSOR OPERATION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Compressor operation in Normal mode.",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Compressor operation in Normal mode.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- C1 Cab is Active.",
+                        "- Pantograph is UP.",
+                        "- APS is Operative.",
+                        "- Direction Switch position is at \"1\"",
+                        "- Compressor Circuit Breaker is not tripped (IO2_C1_IS_COMP_CB = 0)",
+                        "- Compressor cotactor is not manually switched off ",
+                        "(IO1_C1_IS_COMP_SW_ON = 1) or ",
+                        "No Fault in Contactor (IO1_C1_IS_FAULT_COMP = 1)",
+                        "- Compressor Isolation Valve is Open (IO1_C1_IS_COMP_OFF = 0 and IO2_C1_IS_COMP_NO_OFF = 1)"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually reduce the air pressure below PM_MIN_PRESSURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Read Pressure value and pressure switch signal, \nWhen decreases under 8.3 bars, pressure switch signal changes",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Compressor Starts and Main pipe pressure increases gradually.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Wait for the Main Pipe pressure to increase above PM_MAX_PRESSURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Read Pressure value and pressure switch signal, \nWhen increases over 9.8 bars, pressure switch signal changes",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Compressor Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually reduce the air pressure between PM_MIN_PRESSURE and PM_MAX_PRESSURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Forced start of Compressor",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Forced start of Compressor",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- C1 Cab is Active.",
+                        "- Pantograph is UP.",
+                        "- APS is Operative.",
+                        "- Direction Switch position is at \"1\""
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n - Insert the Maintence Key and rotate the switch.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Maintenance mode is activated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "On HMI:\n- Navigate to Maintenace Control Screen and press the virtual pushbutton for Forced Compressor Start. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor Started.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "On HMI:\n- Press the virtual pushbutton for Forced Compressor Start again.\n(Note: This step is to be performed after Main Pipe pressure reaches 10 bar, with the safety valve opened.)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02041",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually reduce the air pressure between PM_MIN_PRESSURE and PM_MAX_PRESSURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02042",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "On HMI:\n- Navigate to Maintenace Control Screen and press the virtual pushbutton for Forced Compressor Start.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor Started.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02043",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "On HMI:\n- Press the virtual pushbutton for Forced Compressor Start again.\n(Note: This step is to be performed before Main Pipe pressure reaches PM_MAX_PRESSURE.)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02044",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Wait until the pressure reaches PM_MAX_PRESSURE.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n - Rotate the Maintenace switch and remove the key.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Maintenance mode is de-activated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the failures related to circuit breaker tripping",
+                    "id": "1.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the failures related to circuit breaker tripping",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- Direction Switch position is at \"1\""
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually trip Compressor Supply AC circuit breaker 06Q06 (press trip PB in the protection device)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Reset Compressor Supply AC circuit breaker 06Q06",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually OPEN Compressor Supply AC Circuit Breaker 06Q06",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Reset Compressor Supply AC Circuit Breaker 06Q06",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually trip Compressor Control Circuit Breaker 60Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Reset Compressor Control Circuit Breaker 60Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the failures related to Compressor function",
+                    "id": "1.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the failures related to Compressor function",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- C1 Cab is Active.",
+                        "- Pantograph is UP.",
+                        "- APS is Operative.",
+                        "- Direction Switch position is at \"1\""
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Pneumatically isolate the Compressor",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Remove the Compressor Isolation Valve Cable 86120.28 from TB XT73.171: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Re-connect back the Compressor Isolation Valve Cable 86120.28 into the TB XT73.171: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "- Reset the pneumatic isolation of the Compressor.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Deactivate the Compressor Control Contactor 60K01 by removing cable from its terminal A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually reduce the air pressure below PM_MIN_PRESSURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor does not start.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Re-connect the cable in terminal A1 of the Compressor Control Contactor 60K01.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor starts & Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Wait for the Compressor to Stop.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Mechanically force the Contactor 60K01 power contacts",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Keep the Contactor 60K01 power contacts forced for more than 5 minutes.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Unforce the Contactor 60K01 power contacts ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Manually reduce the air pressure below PM_MIN_PRESSURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor starts.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Remove the Air Dryer Cables 86120.25 and 86120.29 from TB XT73.171: 03\n- Wait for 3 min with the compressor on.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Re-connect the cables 86120.25 and 86120.29 in the TB XT73.171: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04160",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Remove the MRP Pressure Transducer sensor Cable 60151.01 from TB XT73.181: 12",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04170",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Re-connect the MRP Pressure Transducer sensor Cable 60151.01 in the TB XT73.181: 12",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04180",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- By using an 1.5sq.mm external cable, create a shorting link between TB XT14.113: 04b and XT14.113: 06b\n- Manually reduce the air pressure below PM_MIN_PRESSURE",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Compressor starts.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04190",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car-C1:\n- Wait for Compressor to Stop automatically.\n- Remove the 1.5sq.mm external cable between TB XT14.113: 04b and XT14.113: 06b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04200",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04210",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "COUPLING OPERATION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the opening of Coupler cover & Coupler extension in normal scenario.",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the opening of Coupler cover & Coupler extension in normal scenario.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Coupling Mode is Active.",
+                        "- Forward direction is selected in enabled cabin",
+                        "- vehicle is at standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Coupling System Open\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler Cover is opened and Coupler is extended in below sequence:",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "1. Coupler Cover opened. Check Inputs.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "2. Coupler folding joints starts unlocking. Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "3. Coupler starts unfolding (extending). Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "4. Coupler folding joints starts locking. Check Inputs",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Coupler retraction & closing of Coupler cover in normal scenario.",
+                    "id": "2.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Coupler retraction & closing of Coupler cover in normal scenario.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Coupling Mode is Active.",
+                        "- Local Cab is Active.",
+                        "- Forward direction is selected in enabled cabin",
+                        "- vehicle is at standstill.",
+                        "- Coupler Cover is Open and Coupler is in extended position."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Coupling System Close\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler is retracted back and Cover is closed in below sequence:",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "1. Coupler folding joints starts unlocking. Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "2. Coupler starts folding (retracting). Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "3. Coupler folding joints starts locking. Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "4. Coupler Cover closed. Check Inputs",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the opening of Coupler cover & Coupler extension in Maintenance mode.",
+                    "id": "2.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the opening of Coupler cover & Coupler extension in Maintenance mode.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Maintenance Mode is Active.",
+                        "- Local Cab is Active.",
+                        "- vehicle is at standstill.",
+                        "-Coupler cover is closed."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Extend Coupler\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pushbutton is not operative. Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Open Cover\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler Cover is Opened.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Extend Coupler\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler is extended (Unfolded) and locked.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Coupler retraction & closing of Coupler cover in Maintenance mode.",
+                    "id": "2.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Coupler retraction & closing of Coupler cover in Maintenance mode.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Maintenance Mode is Active.",
+                        "- Local Cab is Active.",
+                        "- vehicle is at standstill.",
+                        "- Coupler Cover is Open and Coupler is in extended position."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Close Cover\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pushbutton is not operative. Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Retract Coupler\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler is retracted (folded) back and locked.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the virtual pushbutton command \"Close Cover\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler Cover is Closed.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo monitor the circuit breaker tripping",
+                    "id": "2.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo monitor the circuit breaker tripping",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Manually trip circuit breaker 62Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Reset MCB 62Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the failures of Coupling Circuit",
+                    "id": "2.06",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the failures of Coupling Circuit",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Maintenance Mode is Active.",
+                        "- Local Cab is Active.",
+                        "- vehicle is at standstill.",
+                        "- Coupler Cover is closed."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.06020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Connect external Laptop to 86A05\n- Using AUNIA tool, force the input I_S_COVER_OPND = 1\n- Wait for > 2s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Using AUNIA tool, Unforce the input I_S_COVER_OPND",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the cable 62160.05 from TB XT14.113: 05a.\n- On HMI, press the virtual pushbutton command \"Open Cover\"\n- Wait for > 10s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Re-connect back the cable 62160.05 in the TB XT14.113: 05a.\n- On HMI, press the virtual pushbutton command \"Open Cover\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset & Coupler Cover is Opened.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the cable 62160.06 from TB XT14.113: 05a.\n- On HMI, press the virtual pushbutton command \"Close Cover\"\n- Wait for > 10s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Re-connect back the cable 62160.06 in the TB XT14.113: 05a.\n- On HMI, press the virtual pushbutton command \"Close Cover\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset & Coupler Cover is Closed.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Connect external Laptop to 86A05\n- Using AUNIA tool, force the input I_S_UNLOCKED_COUP = 1\n- Wait for > 2s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Using AUNIA tool, Unforce the input I_S_UNLOCKED_COUP",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Connect external Laptop to 86A05\n- Using AUNIA tool, force the input I_S_UNFOLDED_COUP = 1\n- Wait for > 2s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Using AUNIA tool, Unforce the input I_S_UNFOLDED_COUP",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the Cable from Relay terminal 62K13: A1\n- On HMI, press the virtual pushbutton command \"Coupling System Open\"\n- Wait for > 15s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Reconnect back the Cable in the Relay terminal 62K13: A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the Cable from Relay terminal 62K14: A1\n- On HMI, press the virtual pushbutton command \"Coupling System Open\"\n- Wait for > 15s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler is extended but not locked.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Reconnect back the Cable in the Relay terminal 62K14: A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Coupler remain extended and Unlocked.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06160",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the Cable from Relay terminal 62K11: A1\n- On HMI, press the virtual pushbutton command \"Coupling System Close\"\n- Wait for > 10s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler remain extended and unlocked\nCheck Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06170",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Re-connect back the Cable in the Relay terminal 62K11: A1\n- On HMI, press the virtual pushbutton command \"Coupling System Close\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset & Coupler is retracted back.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06180",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the Cable from Relay terminal 62K12: A1\n- On HMI, press the virtual pushbutton command \"Coupling System Open\"\n- Wait for > 10s.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Coupler remain closed and unlocked\nCheck Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06190",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Reconnect back the Cable in the Relay terminal 62K12: A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the failures of Coupling Detection Circuit",
+                    "id": "2.07",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the failures of Coupling Detection Circuit",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Maintenance Mode is Active.",
+                        "- Local Cab is Active.",
+                        "- vehicle is at standstill.",
+                        "- Coupler Cover is closed.",
+                        "-vehicle is uncoupled"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.07020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the Cable from Relay terminal 62K01: C4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.07030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Re-connect back the Cable in the Relay terminal 62K01: C4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.07040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the Cable from Relay terminal 62K02: E4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.07050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Re-connect back the Cable in the Relay terminal 62K02: E4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the failures of Coupling Detection Circuit",
+                    "id": "2.08",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the failures of Coupling Detection Circuit",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Maintenance Mode is Active.",
+                        "- Local Cab is Active.",
+                        "- vehicle is at standstill.",
+                        "- Coupler Cover is open",
+                        "-vehicle is uncoupled, simulate the coupling of the vehicle by making a link between pins RC09 and LC10 of the automatic coupler."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.08020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Remove the link between pins RC09 and LC10 of the automatic coupler.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.08030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Press the uncouple pushbutton in the cabin",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "result": "NE",
+            "name": "SANDING",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C1, FWD Direction",
+                    "id": "3.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C1, FWD Direction",
+                    "initial_conditions": [
+                        "- Vehicle Switched ON.",
+                        "- C1 Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenence Mode is Active.",
+                        "- Forward Direction selected from Active Cab.",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- Pantograph is UP.",
+                        "- TCMS Communincation with TCU & BCU is OK. ",
+                        "- Sanding Valves not isolated ",
+                        "(IO2_C1_IS_SANDING_ISOL = 0 and IO2_C2_IS_SANDING_ISOL = 0)",
+                        "- Sufficient Track Length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 1st axle & 5th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check that Sandbox Ventillation remained activated for next 10s after Sand demand has ceased.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) again before less than <PM_AX_SAND_CONSECUTIVE_TIME> seconds from the last application. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for Sanding.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_TEST_TIME> seconds.\n(on 1st axle & 5th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In UNDERFRAME:\n- Press Sand Test pushbutton (63S03) ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated as long as button is pressed.\n(on 1st axle & 2nd axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Gradually shift the Traction Brake Handle in TRACTION position & maintain vehicle speed > 3Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated continuously as long as button is pressed.\n(on 1st axle & 5th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Release Sanding pushbutton (63S01) mounted on the hand rail.\n- Apply Emergency Brake from Traction Brake Handle",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated continuously as long as Traction Brake Handle in EB position and vehicle speed > 3Kmph.\n(on 1st axle & 5th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Apply Service Braking and gradually stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding deactivated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C1, REV Direction",
+                    "id": "3.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C1, REV Direction",
+                    "initial_conditions": [
+                        "- Vehicle Switched ON.",
+                        "- C1 Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenence Mode is Active.",
+                        "- Reverse (Backward) Direction selected from Active Cab.",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- Pantograph is UP and High Voltage is available.",
+                        "- TCMS Communincation with TCU & BCU is OK. ",
+                        "- Sanding Valves not isolated ",
+                        "(IO2_C1_IS_SANDING_ISOL = 0 and IO2_C2_IS_SANDING_ISOL = 0)"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check that Sandbox Ventillation remained activated for next 10s after Sand demand has ceased.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) again before less than <PM_AX_SAND_CONSECUTIVE_TIME> seconds from the last application. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for Sanding.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_TEST_TIME> seconds.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In UNDERFRAME:\n- Press Sand Test pushbutton (63S03) ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated as long as button is pressed..\n(on 1st axle & 2nd axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C2, FWD Direction",
+                    "id": "3.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C2, FWD Direction",
+                    "initial_conditions": [
+                        "- Vehicle Switched ON.",
+                        "- C2 Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenence Mode is Active.",
+                        "- Forward Direction selected from Active Cab.",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- Pantograph is UP.",
+                        "- TCMS Communincation with TCU & BCU is OK. ",
+                        "- Sanding Valves not isolated ",
+                        "(IO2_C1_IS_SANDING_ISOL = 0 and IO2_C2_IS_SANDING_ISOL = 0)"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check that Sandbox Ventillation remained activated for next 10s after Sand demand has ceased.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) again before less than <PM_AX_SAND_CONSECUTIVE_TIME> seconds from the last application. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for Sanding.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_TEST_TIME> seconds.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In UNDERFRAME:\n- Press Sand Test pushbutton (63S03) ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated as long as button is pressed.\n(on 5th axle & 6th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Gradually shift the Traction Brake Handle in TRACTION position & maintain vehicle speed > 3Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated continuously as long as button is pressed.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Release Sanding pushbutton (63S01) mounted on the hand rail.\n- Apply Emergency Brake from Traction Brake Handle",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated continuously as long as Traction Brake Handle in EB position and vehicle speed > 3Kmph.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.03100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Apply Service Braking and gradually stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding deactivated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C2, REV Direction",
+                    "id": "3.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify the manual application of Sanding- C2, REV Direction",
+                    "initial_conditions": [
+                        "- Vehicle Switched ON.",
+                        "- C2 Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenence Mode is Active.",
+                        "- Reverse (Backward) Direction selected from Active Cab.",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- Pantograph is UP.",
+                        "- TCMS Communincation with TCU & BCU is OK. ",
+                        "- Sanding Valves not isolated ",
+                        "(IO2_C1_IS_SANDING_ISOL = 0 and IO2_C2_IS_SANDING_ISOL = 0)"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "STEP DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 2st axle & 6th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check that Sandbox Ventillation remained activated for next 10s after Sand demand has ceased.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) again before less than <PM_AX_SAND_CONSECUTIVE_TIME> seconds from the last application. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for Sanding.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_TEST_TIME> seconds.\n(on 2st axle & 6th axle)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.04060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In UNDERFRAME:\n- Press Sand Test pushbutton (63S03) ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated as long as button is pressed.\n(on 5th axle & 6th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs and Flow meter of corresponding axles.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo verify the Manual Sanding override command.",
+                    "id": "3.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify the Manual Sanding override command.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenace Mode is Active.",
+                        "- Forward or Reverse Direction selected.",
+                        "- Traction Brake Handle in COASTING position."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds on corresponding axles.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for overriding manual Sanding.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.05040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press Sanding pushbutton (63S01) mounted on the hand rail again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.05050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, again press virtual pushbutton for overriding manual Sanding.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the working of sandbox heaters",
+                    "id": "3.06",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the working of sandbox heaters",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- Cab is Active.",
+                        "- Check the state of the following variables:",
+                        "HVACS_C1_EXT_TEMP_SENSORFAIL\t= 0",
+                        "HVACS_C2_EXT_TEMP_SENSORFAIL\t= 0",
+                        "HVACC_C1_EXT_TEMP_SENSORFAIL\t= 0",
+                        "HVACC_C2_EXT_TEMP_SENSORFAIL\t= 0",
+                        "HVACS_C1_EXT_TEMP_CV = 1",
+                        "HVACS_C2_EXT_TEMP_CV = 1",
+                        "HVACC_C1_EXT_TEMP_CV = 1",
+                        "HVACC_C2_EXT_TEMP_CV = 1"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.06020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Connect external Laptop to 86A01\n- Using AUNIA tool, Force the variables\nHVACS_C1_EXT_TEMP\nHVACS_C2_EXT_TEMP\t\nHVACC_C1_EXT_TEMP\t\nHVACC_C2_EXT_TEMP\nto any value less than <PM_AX_SAND_LOW_TEMPERATURE>",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Physically verify that all four sandbox heaters (63R01, 63R02, 63R03 & 63R04) are switched ON.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.06030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Using AUNIA tool, Force the variablen\nHVACS_C1_EXT_TEMP\nHVACS_C2_EXT_TEMP\t\nHVACC_C1_EXT_TEMP\t\nHVACC_C2_EXT_TEMP\nto any value greater than <PM_AX_SAND_LOW_TEMPERATURE + 2 degC>",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sandbox heaters switched off.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.06040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR:\n- Using AUNIA tool, Unforce the variables\nHVACS_C1_EXT_TEMP\nHVACS_C2_EXT_TEMP\t\nHVACC_C1_EXT_TEMP\t\nHVACC_C2_EXT_TEMP\n",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo perform Sandbox Level Testing",
+                    "id": "3.07",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo perform Sandbox Level Testing",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenace Mode is Active.",
+                        "-Sand Depots shall be fullfilled"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.07020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for \"Sand Level Test\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Inputs",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Remove the Sand Reservoir 63B01 Test Cable 63220.04 from TB XT43.101: 09a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Re-connect back the Cable 63220.04 into the TB XT43.101: 09a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Remove the Sand Reservoir 63B02 Test Cable 63220.07 from TB XT14.113: 28a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Re-connect back the Cable 63220.07 into the TB XT14.113: 28a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Remove the Sand Reservoir 63B03 Test Cable 63220.05 from TB XT43.101: 09a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Re-connect back the Cable 63220.05 into the TB XT43.101: 09a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Remove the Sand Reservoir 63B04 Test Cable 63220.03 from TB XT43.101: 09a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Re-connect back the Cable 63220.03 into the TB XT43.101: 09a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.07110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for \"Sand Level Test\" again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Test aborted. Check Inputs",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Low Sand level detection.",
+                    "id": "3.08",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Low Sand level detection.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.08020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- By using an 1.5sq.mm external cable, create a shorting link between TB XT14.113: 27b and XT14.113: 28a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Low Sand level fault message will be displayed on HMI for all the four sand reservoirs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Low Sand level fault message will be transferred to BMS",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarms",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.08030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Remove the 1.5sq.mm external cable connected between TB XT14.113: 27b and XT14.113: 28a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Low Sand level fault message disappears on HMI for all the four sand reservoirs.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Sanding System Isolation",
+                    "id": "3.09",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Sanding System Isolation",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.09020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Sanding Panel:\n- Manually Isolate the Air Supply to Sanding System",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.09030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Sanding Panel:\n- Manually Reset the Air Supply isolation. ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo simulate the failures of Flow Sensor-Axle 1 & 2",
+                    "id": "3.10",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo simulate the failures of Flow Sensor-Axle 1 & 2",
+                    "initial_conditions": [
+                        "- Vehicle Switched ON.",
+                        "- C1 Cab is Active.",
+                        "- HMI is Active.",
+                        "- Pantograph is UP and APS is Working.",
+                        "- TCMS Communincation with TCU & BCU is OK. "
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.10020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C1:\n- Select Forward Direction by moving Direction Selector switch to position \"V\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Forward Direction selected.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Remove the Sand Flow Sensor-1 Axle-1 Cable 63310.02 from TB XT71.112: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C1:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 1st axle & 5th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Re-connect back the Sand Flow Sensor-1 Axle-1 Cable 63310.02 into the TB XT71.112: 03\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Remove the Sand Flow Sensor-2 Axle-1 Cable 63330.02 from TB XT71.111: 04",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C1:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 1st axle & 5th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Re-connect back the Sand Flow Sensor-2 Axle-1 Cable 63330.02 into the TB XT71.111: 04\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C1:\n- Select Reverse (Backward) Direction by moving Direction Selector switch to position \"R\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Reverse (Backward) Direction selected.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Remove the Sand Flow Sensor-1 Axle-2 Cable 63340.02 from TB XT73.131: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C1:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Re-connect back the Sand Flow Sensor-1 Axle-2 Cable 63340.02 into the TB XT73.131: 03\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Remove the Sand Flow Sensor-2 Axle-2 Cable 63350.02 from TB XT73.161: 04",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C1:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 2nd axle & 6th axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.10150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C1:\n- Re-connect back the Sand Flow Sensor-2 Axle-2 Cable 63350.02 into the TB XT73.161: 04\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo simulate the failures of Flow Sensor-Axle 5 & 6",
+                    "id": "3.11",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo simulate the failures of Flow Sensor-Axle 5 & 6",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- C2 Cab is Active.",
+                        "- HMI is Active.",
+                        "- Pantograph is UP and APS is Working.",
+                        "- TCMS Communincation with TCU & BCU is OK. "
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.11020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C2:\n- Select Forward Direction by moving Direction Selector switch to position \"V\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Forward Direction selected.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Remove the Sand Flow Sensor-1 Axle-6 Cable 63310.02 from TB XT71.112: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C2:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 6th axle & 2nd axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Re-connect back the Sand Flow Sensor-1 Axle-6 Cable 63310.02 into the TB XT71.112: 03\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Remove the Sand Flow Sensor-2 Axle-6 Cable 63330.02 from TB XT71.111: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C2:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 6th axle & 2nd axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Re-connect back the Sand Flow Sensor-2 Axle-6 Cable 63330.02 into the TB XT71.111: 03\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C2:\n- Select Reverse (Backward) Direction by moving Direction Selector switch to position \"R\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Reverse (Backward) Direction selected.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Remove the Sand Flow Sensor-1 Axle-5 Cable 63340.02 from TB XT73.131: 03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C2:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 5th axle & 1st axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Re-connect back the Sand Flow Sensor-1 Axle-2 Cable 63340.02 into the TB XT73.131: 03\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Remove the Sand Flow Sensor-2 Axle-5 Cable 63350.02 from TB XT73.161: 04",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN C2:\n- Press Sanding pushbutton (63S01) mounted on the hand rail.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Sanding activated for <PM_AX_SAND_PB_STOP_TIME> seconds.\n(on 5th axle & 1st axle)",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.11150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CAR C2:\n- Re-connect back the Sand Flow Sensor-2 Axle-2 Cable 63350.02 into the TB XT73.161: 04\n- Wait for 15 seconds.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the circuit breaker tripping.",
+                    "id": "3.12",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the circuit breaker tripping.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.12020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Manually Trip Circuit Breaker 63Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.12030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Reset the Circuit Breaker 63Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "result": "NE",
+            "name": "WHEEL FLANGE LUBRICATION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo verify Wheel Flange Lubrication function in normal operation.",
+                    "id": "4.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify Wheel Flange Lubrication function in normal operation.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Cab is Active.",
+                        "- HMI is Active.",
+                        "- Forward Direction selected from Active Cab.",
+                        "- Traction Brake Handle in COASTING position.",
+                        "- Sufficient Track Length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Gradually shift the Traction Brake Handle in TRACTION position & maintain vehicle speed > 10Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wheel Flange Lubrication activated based on travelled distance.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable: O_WHEEL_FLA_ON = 1\nfor PM_FL_WL_GREASING_TIME seconds after every 500m distance travelled.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Apply Service Braking and gradually stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Wheel Flange Lubrication de-activated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo perform Wheel Flange Lubrication Test",
+                    "id": "4.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo perform Wheel Flange Lubrication Test",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenance Mode is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton \"Test Wheel Flange Lubrication\" in Maintenance command screen.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cyclic application of Wheel Flange Lubrication lasts for PM_FL_WL_TEST_SPRAY_CYCLES cycles.\n. Physically verify the application of Lubricant on wheel flange surface.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable: O_WHEEL_FLA_ON = 1 for  PM_FL_WL_GREASING_TIME s  \nThereafter O_WHEEL_FLA_ON = 0 for PM_FL_WL_BLOCKING_TIME s. \nAfter PM_FL_WL_TEST_SPRAY_CYCLES cycles  O_WHEEL_FLA_ON=0 always.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02021",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton \"Test Wheel Flange Lubrication\", and press it again before the PM_FL_WL_TEST_SPRAY_CYCLES cycle in Maintenance command screen.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Test stops",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo verify the WFL Lubricant level diagnostic",
+                    "id": "4.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify the WFL Lubricant level diagnostic",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Manually remove the lubricant from the WFL Grease reservoir.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Car:\n- Manually re-fill the lubricant in the WFL Grease reservoir.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "result": "NE",
+            "name": "TOP OF RAIL LUBRICATION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo perform Top of Rail Lubrication Test",
+                    "id": "5.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo perform Top of Rail Lubrication Test",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Cab is Active.",
+                        "- HMI is Active.",
+                        "- Maintenance Mode is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton \"Test Wheel TOR Lubrication\" in Maintenance command screen.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cyclic application of Top of Rail Lubrication lasts for PM_FL_TOR_TEST_TIME seconds on both sides. Physically verify the application of Lubricant on rail surface.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variable: \nO_TOR_ON = 1 for 1s\nO_TOR_RIGHT_ON = 1 for 1s  Thereafter\nO_TOR_ON = 0 for 1s\nO_TOR_RIGHT_ON = 0 for 1s \nAfter 3s total time, \nO_TOR_ON = 0 always\nO_TOR_RIGHT_ON = 0 always ",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01021",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton \"Test Wheel TOR Lubrication\" and press it again before PM_FL_TOR_TEST_TIME.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Tests stops",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo verify the TOR Lubricant level diagnostic",
+                    "id": "5.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo verify the TOR Lubricant level diagnostic",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Manually remove the lubricant from the TOR reservoir.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Manually re-fill the lubricant in the TOR reservoir.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

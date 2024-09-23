@@ -1,0 +1,2634 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.30 - STT Brake management Functional  Test V6_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "EMERGENCY BRAKE 1/2 FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check EB1/2 application due to loss of vehicle integrity.",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check EB1/2 application due to loss of vehicle integrity.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV connected to the vehicle",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- Passenger Alarm is not activated in the vehicle.",
+                        "- Tear Off Brake Bypass Switch 33S02 NOT operated in any Cab.",
+                        "- Sufficient Track length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at slow speed (approx. 3 Kmph)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Operate Tear Off Brake Bypass Switch 33S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Operation of Tear Off Brake Bypass Switch 33S02 is recorded in Event Recorder.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Simulate loss of vehicle integrity by removing the cable 33220.03 from Relay Coil terminal 33K12: 2(+)\nIn non-Active CABIN:\n- Connect +24Vdc supply to relays 62K01 (X1) and 62K02 (X1)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens. vehicle continue to move.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Reset Tear Off Brake Bypass Switch 33S02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are applied in both the Cars.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Drive Control Screen in HMI, \"EB applied\" \nsymbol will illuminate.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI following information is showed\n\"Traction inhibited : Emergency Brake 1/2\"\n\"Brake Loop: Loss of integrity between units\"",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Wait for the vehicle to Stop.\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens. Traction is inhibited & vehicle remains at Standstill.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back  the cable 33220.03 into the Relay Coil terminal 33K12: 2(+)\nIn non-Active CABIN:\n- Normalize relays 62K01 and 62K02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Inputs",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Drive Control Screen in HMI, \"EB applied\" symbol will be OFF.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI messages dissapeared\n\"Traction inhibited : Emergency Brake 1/2\"\n\"Brake Loop: Loss of integrity between units\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller back to Coasting region and apply service brake.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo perform Brake Loop Test",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo perform Brake Loop Test",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- Passenger Alarm is not activated in the vehicle.",
+                        "- Move master controller to apply service brake."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual PB \"EMERGENCY BRAKE TEST\".",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are applied in both the Cars during the test.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "On Drive Control Screen in HMI, \"EB applied\" symbol \nwill illuminate during the test.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Additionally connect +24Vdc supply to TB XT51.101: 03a through external 1.5 sq.mm. cable.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, press virtual PB \"EMERGENCY BRAKE TEST\" again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are not applied.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove the external +24Vdc supply cable from TB XT51.101: 03a ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "EMERGENCY BRAKE 3 FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check EB3 application during vehicle movement.",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check EB3 application during vehicle movement.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV Connected to the vehicle",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- Sufficient Track length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Km/h.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller to Emergency position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in the vehicle. Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "On Drive Control Screen in HMI, \"EB applied\" symbol\n will illuminate.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI following message will appear:\n\"Traction inhibited: Emergency Brake 3\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "EB3 application is recorded in Event recorder.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Wait for the vehicle to Stop.\n- Move the master controller back to Coasting.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are released. Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "On Drive Control Screen in HMI, \"EB applied\" symbol will stop illuminating.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI messages dissapeared\n\"Traction inhibited : Emergency brake 3\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Propulsion Loop is reset",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check EB3 application during standstill condition.",
+                    "id": "2.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check EB3 application during standstill condition.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller to Emergency position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are NOT applied in the vehicle. Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "On Drive Control Screen in HMI, \"EB applied\" symbol \nwill illuminate.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI following message will appear:\n\"Traction inhibited: Emergency Brake 3\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "EB3 application is recorded in Event recorder.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller back to Coasting.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Emergency Brakes are released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Drive Control Screen in HMI, \"EB applied\" symbol will stop illuminating.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI messages dissapeared\n\"Traction inhibited : Emergency brake 3\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Propulsion Loop is reset",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "result": "NE",
+            "name": "SAFETY BRAKE FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check Safety Brake application during vehicle movement.",
+                    "id": "3.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Safety Brake application during vehicle movement.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HV connected to the vehicle",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- Sufficient Track length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Km/h.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Safety Mushroom pushbutton (33S01).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in the vehicle. Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI following message will appear:\n\"Traction inhibited: Safety Brake\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Safety Brake application is recorded in Event recorder.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Wait for the vehicle to Stop.\n- Move the master controller back to Coasting and then again towards Traction region.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens. Traction is inhibited & vehicle remains at Standstill.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are released. Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Reset the Safety Mushroom pushbutton (33S01).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are released in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI messages dissapeared\n\"Traction inhibited : Safety Brake\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Propulsion Loop is reset",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Slowly move the master controller forward (towards Traction region).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the master controller back to Coasting region and apply service brake.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check Safety Brake application during standstill condition.",
+                    "id": "3.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Safety Brake application during standstill condition.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "-HV connected to the vehicle",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "3.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Safety Mushroom pushbutton (33S01).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are NOT applied in the vehicle. Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI following message will appear:\n\"Traction inhibited: Safety Brake\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Safety Brake application is recorded in Event recorder.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Reset the Safety Mushroom pushbutton (33S01).",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are released in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "On Loop Screen in HMI messages dissapeared\n\"Traction inhibited : Safety Brake\"",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "PROPULSION/BRAKE  handle in COAST.\nPress SIFA PB in the handle and release it",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Propulsion Loop is reset\n",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "result": "NE",
+            "name": "ELECTROMAGNETIC TRACK BRAKE FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check Track Brake application in normal scenario.",
+                    "id": "4.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Track Brake application in normal scenario.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV connected to the vehicle.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- Sufficient Track length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press electromagnetic brake application button (37S01) located on the supplementary handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are NOT applied in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": " Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Release the electromagnetic brake application button (37S01)\n- Move the vehicle at a speed of approx. 5 Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press electromagnetic brake application button (37S01) located on the supplementary handle again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in the vehicle. ",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n-Release the electromagnetic brake application button (37S01)\n- Move the master controller back to Coasting region and apply service brake.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are released. Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01051",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01052",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Non-active CABIN:\n- Press electromagnetic brake application button (37S01) located on the supplementary handle again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in the vehicle. ",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.01053",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Non-active CABIN:\n-Release the electromagnetic brake application button (37S01)\nIn Active CABIN:\n- Move the master controller back to Coasting region and apply service brake.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Track Brakes are released. Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check Track Brake application in case of BCU failure.",
+                    "id": "4.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Track Brake application in case of BCU failure.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- Sufficient Track length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02021",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Simulate failure of the failure of the TCU by switching off MCB 21Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Simulate failure of the of the TCU by switching off MCB 21Q01\n- Simulate failure of 2 BCUs by switching off MCBs 30Q01 & 30Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in the vehicle. Check Input",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "DELETED",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "- Wait for the vehicle to stop.\nIn C2 Car:\n- Reset MCBs 30Q01 & 30Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are released. Check Input",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 21Q01\nIn C2 Car:\n- Reset MCB 21Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": NaN,
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check failures of Track Brake contactors.",
+                    "id": "4.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check failures of Track Brake contactors.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- Sufficient Track length available for vehicle movement."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "4.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Remove Cable 37121.01 from Contactor terminal 37K01: A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press electromagnetic brake application button (37S01) located on the supplementary handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in Trailer Bogie and Motor Bogie of C2 only.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Release electromagnetic brake application button (37S01).\n- Apply Service Brake to Stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Re-Connect back the Cable 37121.01 into the Contactor terminal 37K01: A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Remove below cables:\n(a) Cable 37252.02 from Contactor terminal 37K02: 3/L2\n(b) Cable 37261.02 from Contactor terminal 37K02: 7/L4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press electromagnetic brake application button (37S01) located on the supplementary handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in Motor Bogie of C1 and Motor Bogie of C2 only.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Previous Alarm Reset.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check New Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Release electromagnetic brake application button (37S01).\n- Apply Service Brake to Stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Re-Connect back the below Cables removed earlier:\n(a) Cable 37252.02 into the Contactor terminal 37K02: 3/L2\n(b) Cable 37261.02 into the Contactor terminal 37K02: 7/L4",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove Cable 37121.01 from Contactor terminal 37K01: A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press electromagnetic brake application button (37S01) located on the supplementary handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in Trailer Bogie and Motor Bogie of C1 only.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Previous Alarm Reset.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check New Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Release electromagnetic brake application button (37S01).\n- Apply Service Brake to Stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03160",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cable 37121.01 into the Contactor terminal 37K01: A1",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03170",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the vehicle at a speed of approx. 5 Kmph.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle starts moving.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03180",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press electromagnetic brake application button (37S01) located on the supplementary handle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Track Brakes are applied in all the Bogies.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4.03190",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Reset electromagnetic brake application button (37S01).\n- Apply Service Brake to Stop the vehicle.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle Stops.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "result": "NE",
+            "name": "PARKING BRAKE FUNCTION",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check Parking Brake application when vehicle is at Standstill.",
+                    "id": "5.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Parking Brake application when vehicle is at Standstill.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "HV conneced to the vehicle",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- vehicle is at Standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Brake application status is shown on HMI.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02) again",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are release in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Brake application status dissapears on HMI.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Move the Cab Activation key switch to \"0\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab is de-activated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Safety Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Move the Cab Activation key switch to \"1\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab is activated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Safety Brakes are release in the vehicle.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check Parking Brake application during vehicle movement.",
+                    "id": "5.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check Parking Brake application during vehicle movement.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HV is connected",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Simulate vehicle movement by removing Cable 18140.03 from Relay Coil terminal 18K02: 2(+)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Brake application status is shown on HMI.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Re-connect back Cable 18140.03 in the Relay Coil terminal 18K02: 2(+)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02) again",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Safety Brakes are release in the vehicle.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Brake release status is shown on HMI.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Auxiliary Release of Parking Brakes",
+                    "id": "5.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Auxiliary Release of Parking Brakes",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HV is connected to the vehicle",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward  Direction selected.",
+                        "- vehicle is at Standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Remove Cable 33622.02 from TB XT43.101: 05a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking (Safety) Brake is applied in Motor Bogie C1.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, select the virtual pushbutton for Motor Bogie C1.\n- Operate Parking Brake Bypass Switch 32S06.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for approx. 30 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Reset Parking Brake Bypass Switch 32S06.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake is applied again.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Re-connect back the Cable 33622.02 in the TB XT43.101: 05a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake is released in Motor Bogie C1.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove Cable 33652.03 from TB XT43.101: 19b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking (Safety) Brake is applied in Trailer Bogie.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, select the virtual pushbutton for Trailer Bogie.\n- Operate Parking Brake Bypass Switch 32S06.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for approx. 30 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Trailer Bogie Safety Brake is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Reset Parking Brake Bypass Switch 32S06.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Trailer Bogie Safety Brake is applied again.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cable 33652.03 in the TB XT43.101: 19b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake is released in Trailer Bogie.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove Cable 33622.02 from TB XT43.101: 07a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking (Safety) Brake is applied in Motor Bogie C2.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- On HMI, select the virtual pushbutton for Motor Bogie C2.\n- Operate Parking Brake Bypass Switch 32S06.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for approx. 30 seconds",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03150",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Reset Parking Brake Bypass Switch 32S06.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake is applied again.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Alarms Reset.",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.03160",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cable 33622.02 in the TB XT43.101: 07a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake is released in Motor Bogie C2.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the mechanical isolation of Parking Brakes",
+                    "id": "5.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the mechanical isolation of Parking Brakes",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "-HV connected.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active and Forward direction selected.",
+                        "- vehicle is at Standstill.",
+                        "- TCUs and MTB are available.",
+                        "-WASHING, COUPLING or TOWING modes are not active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Remove Cable 33622.02 from TB XT43.101: 05a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking (Safety) Brake is applied in Motor Bogie C1.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Mechanically operate Auxiliary Release pump cock for Motor Bogie (32S03)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake of C1 is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Mechanically Reset the Auxiliary Release pump cock for Motor Bogie (32S03)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake of C1 is applied again.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Re-connect back the Cable 33622.02 in the TB XT43.101: 05a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake is released in Motor Bogie C1.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove Cable 33622.02 from TB XT43.101: 07a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking (Safety) Brake is applied in Motor Bogie C2.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Mechanically operate Auxiliary Release pump cock for Motor Bogie (32S03)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake of C2 is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Mechanically Reset the Auxiliary Release pump cock for Motor Bogie (32S03)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Motor Bogie Safety Brake of C2 is applied again.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cable 33622.02 in the TB XT43.101: 07a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake is released in Motor Bogie C2.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove Cable 33652.03 from TB XT43.101: 19b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking (Safety) Brake is applied in Trailer Bogie.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Mechanically operate Auxiliary Release pump cock for Trailer Bogie (32S04)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Trailer Bogie Safety Brake is hydraulically released.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Mechanically Reset the Auxiliary Release pump cock for Trailer Bogie (32S04)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Trailer Bogie Safety Brake is applied again.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Variables",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.04130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cable 33652.03 in the TB XT43.101: 19b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake is released in Trailer Bogie.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Parking Brake malfunction",
+                    "id": "5.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Parking Brake malfunction",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HV connected",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- vehicle is at Standstill."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "5.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Remove Cable 33622.02 from TB XT43.101: 05a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02) again",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake remains applied in Motor Bogie C1 and released in other two bogies.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Re-connect back the Cable 33622.02 in the TB XT43.101: 05a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake released in Motor Bogie C1.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove Cable 33622.02 from TB XT43.101: 07a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02) again",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake remains applied in Motor Bogie C2 and released in other two bogies.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cable 33622.02 in the TB XT43.101: 07a",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake released in Motor Bogie C2.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brakes are applied in the vehicle.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Remove Cable 33652.03 from TB XT43.101: 19b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Nothing happens.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Press the Parking Brake pushbutton (32S02) again",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake remains applied in Trailer Bogie and released in other two motor bogies.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5.05130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Re-connect back the Cable 33652.03 in the TB XT43.101: 19b",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Parking Brake released in Trailer Bogie.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "result": "NE",
+            "name": "MCB MONITORING",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo monitor the MCB tripping of Brake System - C1 Car",
+                    "id": "6.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo monitor the MCB tripping of Brake System - C1 Car",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active.",
+                        "- C1 Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "6.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Manually Trip Circuit Breaker 30Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 30Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Manually Trip Circuit Breaker 32Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 32Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Manually Trip Circuit Breaker 33Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 33Q01 & manually trip MCB 33Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 33Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Manually Trip Circuit Breaker 37Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 37Q01 & manually trip MCB 37Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 37Q02 & manually trip MCB 37Q03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 37Q03 & manually trip MCB 37Q04",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 37Q04 & manually trip MCB 37Q05",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.01140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C1 Car:\n- Reset MCB 37Q05",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo monitor the MCB tripping of Brake System - C2 Car",
+                    "id": "6.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo monitor the MCB tripping of Brake System - C2 Car",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor is closed.",
+                        "- HMI is Active.",
+                        "- C2 Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "6.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Manually Trip Circuit Breaker 30Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 30Q01 & manually trip MCB 30Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 30Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Manually Trip Circuit Breaker 32Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 32Q01 & manually trip MCB 32Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 32Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Manually Trip Circuit Breaker 33Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02090",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 33Q01 & manually trip MCB 33Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02100",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 33Q02 & manually trip MCB 33Q03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02110",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 33Q03",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02120",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Manually Trip Circuit Breaker 37Q02",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02130",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 37Q02 & manually trip MCB 37Q04",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6.02140",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In C2 Car:\n- Reset MCB 37Q04",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

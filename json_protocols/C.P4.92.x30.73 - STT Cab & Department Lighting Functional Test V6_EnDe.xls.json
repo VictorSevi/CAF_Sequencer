@@ -1,0 +1,747 @@
+{
+    "Protocol_edition": "P",
+    "Parser_Version": "1.0.0",
+    "Protocol_name": "C.P4.92.x30.73 - STT Cab & Department Lighting Functional Test V6_EnDe.xls",
+    "result": "NE",
+    "Test_Suites": [
+        {
+            "id": "1",
+            "result": "NE",
+            "name": "CABIN LIGHTING CONTROL",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Cabin Light operation through Pushbutton when HMI is not active",
+                    "id": "1.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Cabin Light operation through Pushbutton when HMI is not active",
+                    "initial_conditions": [
+                        "- vehicle is in OFF state."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Cab Light pushbutton 72S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Main Light 72H01 is illuminated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 is not illuminated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Coupler Light 72H03 is illuminated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Pushbutton 72S01 is illuminated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Cab Light pushbutton 72S01 again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Main Light 72H01 switches OFF",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 remains switched OFF.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Coupler Light 72H03 switches OFF.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Pushbutton 72S01 switches OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Cabin Light operation through Pushbutton when HMI is active",
+                    "id": "1.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Cabin Light operation through Pushbutton when HMI is active",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- All cabin lights are switched OFF"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Cab Light pushbutton 72S01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Main Light (72H01) and Pushbutton 72S01 are illuminated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 is not illuminated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Navigate to Command Screen & press Lighting tab",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HMI  pushbuttons for Main Light is disabled but HMI pushbutton for Reading Light is not disabled.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the Virtual pushbutton for Cab Reading Light",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 is illuminated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the Cab Light pushbutton 72S01 again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Main Light (72H01) and Pushbutton 72S01 switches OFF.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "HMI pushbuttons for Main Light & Reading Light are enabled.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 remains illuminated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "DELETED",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the Virtual pushbutton for Cab Reading Light",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 switches OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Cabin Light operation through Virtual pushbuttons on HMI.",
+                    "id": "1.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Cabin Light operation through Virtual pushbuttons on HMI.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- Cab Light pushbutton 72S01 is not pressed."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Navigate to Command Screen & press Lighting tab on HMI.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "HMI pushbuttons for Main Light & Reading Light are enabled.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the Virtual pushbutton for Cab Main Light",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Main Light 72H01 is illuminated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Coupler Light 72H03 remains switched OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the Virtual pushbutton for Cab Main Light again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Main Light 72H01 switches OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the Virtual pushbutton for Cab Reading Light",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 is illuminated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.03060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press the Virtual pushbutton for Cab Reading Light again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cab Reading Light 72H02 switches OFF",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Cabin Light illumination in Cleaning Mode",
+                    "id": "1.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Cabin Light illumination in Cleaning Mode",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- No Cab is Active.",
+                        "- Cab Light pushbutton 72S01 is not pressed."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "1.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Inside vehicle CABIN:\n- Press the Cleaning Mode Pushbutton",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cleaning Mode is activated.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Both Cab Main Light (72H01) & Reading Light (72H02) are illuminated.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Change the Direction Selector switch from \"0\" to \"1\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Cleaning Mode is de-activated and the Local Cab is enabled.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Both Cab Main Light (72H01) & Reading Light (72H02) switches OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "result": "NE",
+            "name": "DEPARTMENT INTERIOR LIGHTING CONTROL",
+            "Test_Cases": [
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Interior Light control in AUTO Mode",
+                    "id": "2.01",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Interior Light control in AUTO Mode",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HV Connected (Pantograph UP)",
+                        "- Battery Charger is working ",
+                        "- HMI is Active.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.01020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for Lighting mode (EXTERIOR LIGHTING MODE) in Interior Lighting screen to select automatic mode.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "AUTO Mode will be enabled.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Simulate condition of ambient light above threshold value (Daytime)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity changes to 40% level (DIMMED)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.01040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Passenger Area:\n- Simulate condition of ambient light below threshold value (Night time)",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity changes to 100% level (AUTO ON)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Interior Light control in Manual Mode",
+                    "id": "2.02",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Interior Light control in Manual Mode",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HV Connected (Pantograph UP)",
+                        "- Battery Charger is working ",
+                        "- HMI is Active.",
+                        "- Local Cab is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.02020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for Lighting mode (EXTERIOR LIGHTING MODE) in Interior Lighting screen to select manual mode.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Manual Mode will be enabled.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for \"low beam + passenger lights\"",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity changes to 100% level (MANUAL ON)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- On HMI, press virtual pushbutton for \"low beam + passenger lights\" again.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity changes to 40% level (DIMMED)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Manually trip MCB 74Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Half of the Interior Light switches OFF in 2-Car Composition.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02060",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Active CABIN:\n- Reset MCB 74Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All the Interior Lights are illuminating.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02070",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Non-Active CABIN:\n- Manually trip MCB 74Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Half of the Interior Light switches OFF in 2-Car Composition.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.02080",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Non-Active CABIN:\n- Reset MCB 74Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All the Interior Lights are illuminating.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Interior Light control in Emergency Mode",
+                    "id": "2.03",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Interior Light control in Emergency Mode",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HV Connected (Pantograph UP)",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- Interior Light is illuminating at 100% level."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.03020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the \"Pantograph Down\" pushbutton ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantpgraph will be lowered and HV disconnected.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Wait for approx. 1 minutes.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity changes to 33% level (EMERGENCY)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.03040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the \"Pantograph UP\" pushbutton ",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantpgraph will be raised and HV connected again.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity changes to 40% level (DIMMED)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check that tripping of circuit breaker is monitored.",
+                    "id": "2.04",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check that tripping of circuit breaker is monitored.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active.",
+                        "-CAB is active"
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.04020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Manually Trip Circuit Breaker 72Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 72Q01 and manually trip MCB 73Q01 in the contrary CAB where the cab is active",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 73Q01 and manually trip MCB 74Q01  in the contrary CAB where the cab is active",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.04050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "Reset MCB 74Q01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the alarm of Twilight Sensor.",
+                    "id": "2.05",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the alarm of Twilight Sensor.",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- Battery Contactor closed.",
+                        "- HMI is Active."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.05020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Twilight Sensor:\n- Simulate the fault of Twilight Sensor by removing connector 73B01-X01",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.05030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In Twilight Sensor:\n- Re-connect back the connector 73B01-X01.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Alarm Reset",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Purpose of the Test CASE\nTo check the Interior lighting availability until vehicle is OFF",
+                    "id": "2.06",
+                    "result": "NE",
+                    "description": "Purpose of the Test CASE\nTo check the Interior lighting availability until vehicle is OFF",
+                    "initial_conditions": [
+                        "- vehicle Switched ON.",
+                        "- HV Connected (Pantograph UP)",
+                        "- HMI is Active.",
+                        "- Local Cab is Active.",
+                        "- Interior Lights are illuminating at 100% level."
+                    ],
+                    "test_steps": [
+                        {
+                            "id": "2.06020",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Manually Trip Circuit Breaker 86Q04 in both cars",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "All the Interior Lights are illuminating at 100% level.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Check Alarm",
+                                    "type": "ACA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06030",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Press the \"Pantograph Down\" pushbutton and wait for approx. 1 mins.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Pantpgraph will be lowered and HV disconnected.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity changes to 33% level (EMERGENCY)",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06040",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Deactivate the Cab by changing the Direction Selector switch from \"1\" to \"0\" position.",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "Interior Light luminosity remains at 33% level",
+                                    "type": "MCA"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2.06050",
+                            "result": "NE",
+                            "test_actions": [
+                                {
+                                    "text": "In CABIN:\n- Select \"QUICK SHUTDOWN\" on HMI screen and turn the Driver Key to OFF position.\nOnce vehicle is OFF reset the circuit breaker 86Q04",
+                                    "type": "MFA"
+                                },
+                                {
+                                    "text": "vehicle is OFF after sometime.",
+                                    "type": "MCA"
+                                },
+                                {
+                                    "text": "All the Interior Lights are switched OFF.",
+                                    "type": "MCA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
