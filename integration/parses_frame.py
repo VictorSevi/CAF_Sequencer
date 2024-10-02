@@ -13,15 +13,15 @@ class test_struct:
         return self.content
  
 
-
-
 class test_action(test_struct):
-    def __init__(self,text,type):
+    def __init__(self,text,type,variables=[],values=[],checktypes=[]):
        super().__init__()
        self.content={
             "text": text,
             "type": type
        }
+       if type =='ACA':
+        self.content.update({"variables":variables,"values":values,"checktypes":checktypes})
 
 class test_step(test_struct):
     def __init__(self,step_id,test_actions=[]):
